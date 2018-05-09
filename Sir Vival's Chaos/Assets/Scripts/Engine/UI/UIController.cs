@@ -59,7 +59,13 @@ public class UIController : MonoBehaviour {
     {
         infoNameText.text = b.Name;
 
+        updateStats(b);
         statsPanel.SetActive(true);
+    }
+
+    private void updateStats(Building b)
+    {
+
     }
     #endregion
 

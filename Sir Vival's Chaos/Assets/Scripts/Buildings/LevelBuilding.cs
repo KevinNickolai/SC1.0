@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelBuilding : Building {
+public class LevelBuilding : Building, ILevelable{
+
+    //TODO: Max level constexpr(?)
 
     /// <summary>
     /// The current level of the building
@@ -28,7 +30,7 @@ public class LevelBuilding : Building {
     /// <summary>
     /// Level the building up by one
     /// </summary>
-    protected void LevelUp()
+    public void LevelUp()
     {
         ++this.level;
     }
@@ -36,7 +38,7 @@ public class LevelBuilding : Building {
     /// <summary>
     /// Handle event when the mouse is pressed on this LevelBuilding
     /// </summary>
-    protected void OnMouseDown()
+    private void OnMouseDown()
     {
         //Display the information for this LevelBuilding
         GameObject.FindObjectOfType<UIController>().DisplayLevelBuildingInfo(this);

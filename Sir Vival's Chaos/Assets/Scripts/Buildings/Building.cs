@@ -8,6 +8,12 @@ public class Building : MonoBehaviour {
     /// </summary>
     private new string name; //< the new keyword distinguishes Building::name from Object::name, since that's not the intended inheiritance.
 
+
+    /// <summary>
+    /// The player that owns this building
+    /// </summary>
+    private Player player;
+
     public string Name
     {
         get

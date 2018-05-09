@@ -9,5 +9,7 @@ public class Player : MonoBehaviour {
         //add Player input controls to the player
         gameObject.AddComponent<InputControls>();
     }
+
+
     
 }

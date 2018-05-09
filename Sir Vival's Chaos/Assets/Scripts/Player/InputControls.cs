@@ -52,6 +52,10 @@ public class InputControls : MonoBehaviour {
         //temporary value to store the transform of the camera
         Vector3 tf = transform.position;
 
+        if (Input.GetAxisRaw("Mouse ScrollWheel") == 1) {
+            Debug.Log("Mouse Scroll");
+        }
+
         //Moving right (+x) on panning or a Horizontal+ input
         if ((Input.mousePosition.x > screenWidth - PAN_BOUNDARY) || (Input.GetAxisRaw(HORIZONTAL_KEY) == 1))
         {
