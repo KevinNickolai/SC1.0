@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ILevelable{
+/// <summary>
+/// Interface describing a Levelable object
+/// Levelable objects are also describable
+/// </summary>
+public interface ILevelable : IDescribable{
     
     int Level { get; }
 

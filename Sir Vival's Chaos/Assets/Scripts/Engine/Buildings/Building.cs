@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour {
+public class Building : MonoBehaviour, IDescribable {
     /// <summary>
     /// The name of the building
     /// </summary>
@@ -22,7 +22,7 @@ public class Building : MonoBehaviour {
         }
     }
 
-    private void Start()
+    protected void Start()
     {
         name = gameObject.transform.name;
     }
@@ -33,7 +33,7 @@ public class Building : MonoBehaviour {
     protected void OnMouseDown()
     {
         //Display information for this Building
-        GameObject.FindObjectOfType<UIController>().DisplayBuildingInfo(this);
+        GameObject.FindObjectOfType<UIController>().DisplayInfo(this);
     }
 
     /// <summary>

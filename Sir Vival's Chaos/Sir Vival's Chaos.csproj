@@ -78,16 +78,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Buildings\Barrack\Barrack.cs" />
-    <Compile Include="Assets\Scripts\Buildings\Barrack\LeftBarrack.cs" />
-    <Compile Include="Assets\Scripts\Buildings\Barrack\MiddleBarrack.cs" />
-    <Compile Include="Assets\Scripts\Buildings\Barrack\RightBarrack.cs" />
-    <Compile Include="Assets\Scripts\Buildings\Building.cs" />
-    <Compile Include="Assets\Scripts\Buildings\LevelBuilding.cs" />
-    <Compile Include="Assets\Scripts\Buildings\Nexus.cs" />
-    <Compile Include="Assets\Scripts\Buildings\Tower.cs" />
+    <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\Barrack.cs" />
+    <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\LeftBarrack.cs" />
+    <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\MiddleBarrack.cs" />
+    <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\RightBarrack.cs" />
+    <Compile Include="Assets\Scripts\Engine\Buildings\Building.cs" />
+    <Compile Include="Assets\Scripts\Engine\Buildings\LevelBuilding.cs" />
+    <Compile Include="Assets\Scripts\Engine\Buildings\Nexus.cs" />
+    <Compile Include="Assets\Scripts\Engine\Buildings\Tower.cs" />
     <Compile Include="Assets\Scripts\Engine\GameController.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\RaxCounter.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\UIController.cs" />
+    <Compile Include="Assets\Scripts\Engine\Units\Unit.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IDescribable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ILevelable.cs" />
     <Compile Include="Assets\Scripts\Player\InputControls.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />

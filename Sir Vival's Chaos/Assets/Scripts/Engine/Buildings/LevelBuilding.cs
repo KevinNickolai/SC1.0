@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that describes a Levelable building
+/// </summary>
 public class LevelBuilding : Building, ILevelable{
 
     //TODO: Max level constexpr(?)
@@ -41,6 +44,6 @@ public class LevelBuilding : Building, ILevelable{
     private void OnMouseDown()
     {
         //Display the information for this LevelBuilding
-        GameObject.FindObjectOfType<UIController>().DisplayLevelBuildingInfo(this);
+        GameObject.FindObjectOfType<UIController>().DisplayInfo(this);
     }
 }

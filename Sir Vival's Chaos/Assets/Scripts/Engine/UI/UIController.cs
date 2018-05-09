@@ -39,36 +39,38 @@ public class UIController : MonoBehaviour {
         timerText.text = convertTime(gc.GameTime);
 	}
 
-    #region Displaying Buildings
-    public void DisplayBuildingInfo(Building building)
+    #region Displaying Information for objects
+  
+    /// <summary>
+    /// Display information of an IDescribable object
+    /// </summary>
+    /// <param name="obj">the object to describe</param>
+    public void DisplayInfo(IDescribable obj)
     {
-        //no level for this building, reset the level text
+        infoNameText.text = obj.Name;
+
+        //clear unused text
         infoLevelText.text = "";
-
-        //display the building info
-        DisplayInfo(building);
     }
 
-    public void DisplayLevelBuildingInfo(LevelBuilding building)
+    /// <summary>
+    /// Display information of an ILevelable object
+    /// </summary>
+    /// <param name="obj">the object to describe</param>
+    public void DisplayInfo(ILevelable obj)
     {
-        DisplayInfo(building);
-        infoLevelText.text = "Level " + building.Level;
+        //display base object information
+        DisplayInfo((IDescribable)obj);
+
+        //display the level of the object
+        infoLevelText.text = "Level " + obj.Level;
     }
 
-    private void DisplayInfo(Building b)
-    {
-        infoNameText.text = b.Name;
-
-        updateStats(b);
-        statsPanel.SetActive(true);
-    }
-
-    private void updateStats(Building b)
-    {
-
-    }
     #endregion
 
+    /// <summary>
+    /// Clear information on the UI
+    /// </summary>
     public void ClearInfo()
     {
         infoNameText.text = "";
