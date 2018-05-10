@@ -8,17 +8,50 @@ public class Building : MonoBehaviour, IDescribable {
     /// </summary>
     private new string name; //< the new keyword distinguishes Building::name from Object::name, since that's not the intended inheiritance.
 
-
     /// <summary>
     /// The player that owns this building
     /// </summary>
     private Player player;
+
+    private int minDmg, maxDmg, armor;
+
+    public Player Player
+    {
+        get
+        {
+            return player;
+        }
+    }
 
     public string Name
     {
         get
         {
             return name;
+        }
+    }
+
+    public int MinDamage
+    {
+        get
+        {
+            return minDmg;
+        }
+    }
+
+    public int MaxDamage
+    {
+        get
+        {
+            return maxDmg;
+        }
+    }
+
+    public int Armor
+    {
+        get
+        {
+            return armor;
         }
     }
 

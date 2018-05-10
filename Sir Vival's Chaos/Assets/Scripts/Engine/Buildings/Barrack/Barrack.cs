@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Barrack : LevelBuilding {
-    public GameObject unit;
+
+    private List<string> wave;
 
     private int spawnTimer = 40;
 
@@ -15,6 +16,11 @@ public class Barrack : LevelBuilding {
         //we still want to initialize other features of the base classes
         base.Start();
 
+        wave = new List<string>();
+
+        wave.Add(Unit.unit);
+
+        wave.Add(Hero.hero);
         /**
         Quaternion rot = Quaternion.Euler(new Vector3(0, 270, 0));
 
@@ -27,8 +33,14 @@ public class Barrack : LevelBuilding {
         raxCounter.transform.GetComponentInChildren<RaxCounter>().init();*/
     }
 
-    public void Spawn()
+    /// <summary>
+    /// Spawn a wave from this barrack
+    /// </summary>
+    public void SpawnWave()
     {
-        GameObject unitClone = (GameObject)Instantiate(Resources.Load("Prefabs/unit", typeof(GameObject)),transform.position + new Vector3(0,30,0),transform.rotation);
+        foreach(string unit in wave)
+        {
+            Unit.Spawn(unit,this.transform.position + new Vector3(0,30,0), this.transform.rotation);
+        }
     }
 }

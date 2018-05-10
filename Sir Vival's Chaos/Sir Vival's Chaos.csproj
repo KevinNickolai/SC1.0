@@ -87,9 +87,12 @@
     <Compile Include="Assets\Scripts\Engine\Buildings\Nexus.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Tower.cs" />
     <Compile Include="Assets\Scripts\Engine\GameController.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\AbilityPane.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\RaxCounter.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\UIController.cs" />
+    <Compile Include="Assets\Scripts\Engine\Units\Hero.cs" />
     <Compile Include="Assets\Scripts\Engine\Units\Unit.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IAttributable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDescribable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ILevelable.cs" />
     <Compile Include="Assets\Scripts\Player\InputControls.cs" />

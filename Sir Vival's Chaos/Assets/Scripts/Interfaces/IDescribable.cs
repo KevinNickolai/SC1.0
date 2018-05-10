@@ -9,4 +9,10 @@ public interface IDescribable {
 
     string Name { get; }
 
+    Player Player { get; }
+
+    int MinDamage { get; }
+    int MaxDamage { get; }
+
+    int Armor { get; }
 }
