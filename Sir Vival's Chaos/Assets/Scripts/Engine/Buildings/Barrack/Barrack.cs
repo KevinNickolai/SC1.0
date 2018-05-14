@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Barrack : LevelBuilding {
 
+    /// <summary>
+    /// List of things to spawn in a wave
+    /// </summary>
     private List<string> wave;
 
-    private int spawnTimer = 40;
+    /// <summary>
+    /// The timer for the barrack spawns associated with this barrack
+    /// </summary>
+    RaxCounter raxTimer;
 
     /// <summary>
     /// Initialize Barracks features
@@ -20,17 +26,15 @@ public class Barrack : LevelBuilding {
 
         wave.Add(Unit.unit);
 
-        wave.Add(Hero.hero);
-        /**
-        Quaternion rot = Quaternion.Euler(new Vector3(0, 270, 0));
-
+        //wave.Add(Hero.hero);
+        
+        //instantiate a rax counter for the barrack
         GameObject raxCounter = (GameObject)Instantiate(Resources.Load("Prefabs/Rax Counter"),
-            gameObject.transform.position + new Vector3(0, 10, 0),
-            gameObject.transform.rotation);
+            gameObject.transform.position + new Vector3(0, 25, 0),
+            Quaternion.Euler(new Vector3(15, 0, 0)),
+            gameObject.transform);
 
-        raxCounter.GetComponent<RectTransform>().rotation = Quaternion.Euler(new Vector3(0, 90, 0));
-        raxCounter.transform.SetParent(gameObject.transform);
-        raxCounter.transform.GetComponentInChildren<RaxCounter>().init();*/
+        raxTimer = raxCounter.GetComponentInChildren<RaxCounter>();
     }
 
     /// <summary>
@@ -42,5 +46,14 @@ public class Barrack : LevelBuilding {
         {
             Unit.Spawn(unit,this.transform.position + new Vector3(0,30,0), this.transform.rotation);
         }
+    }
+
+    /// <summary>
+    /// Update the counter for this barrack
+    /// </summary>
+    /// <param name="time">the time to increment the counter by</param>
+    public void UpdateCounter(float time)
+    {
+        raxTimer.UpdateTimer(time);
     }
 }

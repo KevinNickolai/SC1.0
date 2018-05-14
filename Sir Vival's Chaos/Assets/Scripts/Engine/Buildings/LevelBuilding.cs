@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Class that describes a Levelable building
 /// </summary>
-public class LevelBuilding : Building, ILevelable{
+public class LevelBuilding : Building, ILevelableObject{
 
     //TODO: Max level constexpr(?)
 

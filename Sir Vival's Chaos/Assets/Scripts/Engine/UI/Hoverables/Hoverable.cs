@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityPane : MonoBehaviour {
+public class Hoverable : MonoBehaviour {
 
     private void OnMouseDown()
     {
@@ -13,10 +13,15 @@ public class AbilityPane : MonoBehaviour {
     {
         //Display tooltip
         Debug.Log("Display Tooltip");
+
+        UIController.GetInstance().DisplayTooltip("Hovering over: " + gameObject.name);
     }
 
     private void OnMouseExit()
     {
         Debug.Log("Hiding Tooltip");
+
+        UIController.GetInstance().HideTooltip();
     }
+
 }

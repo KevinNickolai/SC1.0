@@ -6,10 +6,7 @@ public class GameController : MonoBehaviour {
 
     UIController uiCont;
 
-    /// <summary>
-    /// temporary flag to only spawn once
-    /// </summary>
-    bool spawn = false;
+    Barrack[] rax;
 
     /// <summary>
     /// current time in game
@@ -30,6 +27,7 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         uiCont = gameObject.AddComponent<UIController>();
+        rax = GameObject.FindObjectsOfType<Barrack>();
 	}
 	
 	// Update is called once per frame
@@ -38,17 +36,19 @@ public class GameController : MonoBehaviour {
         //increment timer
         time += Time.deltaTime;
 
-        //temporary spawning code
-        if(time > 1 && !spawn)
-        {
-            spawn = true;
-            Barrack[] rax = GameObject.FindObjectsOfType<Barrack>();
+        UpdateBarrackCounters(Time.deltaTime);
 
-            for(int i = 0; i < rax.Length; ++i)
-            {
-                rax[i].SpawnWave();
-            }
-        }
 	}
 
+    /// <summary>
+    /// Update the timer that tracks barrack spawns
+    /// </summary>
+    /// <param name="t">the time elapsed </param>
+    void UpdateBarrackCounters(float t)
+    {
+        foreach(Barrack barrack in rax)
+        {
+            barrack.UpdateCounter(t);
+        }
+    }
 }

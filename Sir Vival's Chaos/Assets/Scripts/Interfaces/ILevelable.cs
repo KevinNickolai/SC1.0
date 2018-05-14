@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Interface describing a Levelable object
-/// Levelable objects are also describable
+/// Interface describing something levelable
+///
+/// Levelable things must have a Level accessor
+/// as well as a way to level up.
 /// </summary>
-public interface ILevelable : IDescribable{
+public interface ILevelable {
     
     int Level { get; }
 

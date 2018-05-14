@@ -6,7 +6,7 @@ public class Hero : Unit, IAttributable {
 
     public const string hero = "Prefabs/hero";
 
-    int str, agi, intel, level;
+    int str, agi, intel, level = 1;
 
     public int Strength
     {

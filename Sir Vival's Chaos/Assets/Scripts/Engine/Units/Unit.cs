@@ -59,6 +59,16 @@ public class Unit : MonoBehaviour, IDescribable {
         }
     }
 
+    private Ability[] abilities;
+
+    public Ability[] Abilities
+    {
+        get
+        {
+            return abilities;
+        }
+    }
+
     protected void Start()
     {
         name = gameObject.transform.name;

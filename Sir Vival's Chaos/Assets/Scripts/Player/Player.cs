@@ -9,6 +9,16 @@ public class Player : MonoBehaviour {
     /// </summary>
     private Race race;
 
+    private int gold;
+
+    public int Gold
+    {
+        get
+        {
+            return gold;
+        }
+    }
+
     /// <summary>
     /// The player's race
     /// </summary>

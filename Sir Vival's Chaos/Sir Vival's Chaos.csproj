@@ -78,6 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Engine\Abilities\Ability.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\AbilityLevel.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\AbilitySpawn.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\ActivatedAbility.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\InactiveAbility.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\Barrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\LeftBarrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\MiddleBarrack.cs" />
@@ -87,17 +92,31 @@
     <Compile Include="Assets\Scripts\Engine\Buildings\Nexus.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Tower.cs" />
     <Compile Include="Assets\Scripts\Engine\GameController.cs" />
-    <Compile Include="Assets\Scripts\Engine\UI\AbilityPane.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Hoverables\AbilityPane.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Hoverables\Hoverable.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Hoverables\ImagePane.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\RaxCounter.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\Tooltip.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSection.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\UIController.cs" />
     <Compile Include="Assets\Scripts\Engine\Units\Hero.cs" />
     <Compile Include="Assets\Scripts\Engine\Units\Unit.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IAttributable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDescribable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ILevelable.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\ILevelableObject.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IUpgradable.cs" />
     <Compile Include="Assets\Scripts\Player\InputControls.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\AttackUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\AuxUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\DefenseUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\MageUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\MeleeUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\RangeUpgrade.cs" />
     <Compile Include="Assets\Scripts\Player\Upgrades\Upgrade.cs" />
+    <Compile Include="Assets\Scripts\Races\Human.cs" />
+    <Compile Include="Assets\Scripts\Races\Orc.cs" />
     <Compile Include="Assets\Scripts\Races\Race.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

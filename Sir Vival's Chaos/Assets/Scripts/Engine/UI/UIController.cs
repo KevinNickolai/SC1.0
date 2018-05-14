@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
 
+    private static UIController instance;
+
     #region Constant Text Object names
     private const string TIMER_NAME = "Timer";
 
@@ -13,7 +15,7 @@ public class UIController : MonoBehaviour {
 
     private const string STATS_PANEL = "Stats Panel";
     private const string ATTR_PANEL = "Attributes Panel";
-
+    private const string TT_PANEL = "Tooltip Panel";
     private const string DEF_LEVEL = "Defense Level";
     private const string ATK_LEVEL = "Attack Level";
 
@@ -23,6 +25,10 @@ public class UIController : MonoBehaviour {
     private const string STRENGTH = "Strength";
     private const string AGILITY = "Agility";
     private const string INTELLIGENCE = "Intelligence";
+
+    private const string TOOLTIP = "Tooltip";
+
+
     #endregion
 
     private Text timerText;
@@ -37,6 +43,8 @@ public class UIController : MonoBehaviour {
     private Text agi;
     private Text intel;
 
+    private Text tooltip;
+
     /// <summary>
     /// The panel displaying stats information
     /// </summary>
@@ -47,16 +55,37 @@ public class UIController : MonoBehaviour {
     /// </summary>
     private GameObject attrPanel;
 
+    /// <summary>
+    /// The panel displaying the tooltip
+    /// </summary>
+    private GameObject tooltipPanel;
+
     GameController gc;
+
+    /// <summary>
+    /// Get the instance of the UIController in the scene
+    /// </summary>
+    /// <returns>instance of UIController</returns>
+    public static UIController GetInstance()
+    {
+        if (instance == null)
+        {
+            Debug.Log("UIController instance not initialized");
+        }
+
+        return instance;
+    }
 
 	// Use this for initialization
 	void Start () {
         //relation to GameController
         gc = GameObject.FindObjectOfType<GameController>();
 
+        instance = this;
 
         statsPanel = GameObject.Find(STATS_PANEL);
         attrPanel = GameObject.Find(ATTR_PANEL);
+        tooltipPanel = GameObject.Find(TT_PANEL);
 
         //timer text object
         timerText = GameObject.Find(TIMER_NAME).GetComponent<Text>();
@@ -77,6 +106,9 @@ public class UIController : MonoBehaviour {
         str = GameObject.Find(STRENGTH).GetComponent<Text>();
         agi = GameObject.Find(AGILITY).GetComponent<Text>();
         intel = GameObject.Find(INTELLIGENCE).GetComponent<Text>();
+
+        //tooltip text object
+        tooltip = GameObject.Find(TOOLTIP).GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -112,7 +144,7 @@ public class UIController : MonoBehaviour {
     /// Display information of an ILevelable object
     /// </summary>
     /// <param name="obj">the object to describe</param>
-    public void DisplayInfo(ILevelable obj)
+    public void DisplayInfo(ILevelableObject obj)
     {
         //display base object information
         DisplayInfo((IDescribable)obj);
@@ -128,7 +160,7 @@ public class UIController : MonoBehaviour {
     public void DisplayInfo(IAttributable obj)
     {
         //display base object information
-        DisplayInfo((ILevelable)obj);
+        DisplayInfo((ILevelableObject)obj);
 
         //redisplay the attributes panel
         attrPanel.SetActive(true);
@@ -167,5 +199,23 @@ public class UIController : MonoBehaviour {
         //to make it appear as this example: "0:09" instead of "0:9"
         t += minutes + ":" + (seconds < 10 ? "0" : "") + ((int)time % 60);
         return t;
+    }
+
+    /// <summary>
+    /// Display a tooltip
+    /// </summary>
+    /// <param name="tt">the tooltip string we want to display</param>
+    public void DisplayTooltip(string tt)
+    {
+        tooltipPanel.SetActive(true);
+        tooltip.text = tt;
+    }
+
+    /// <summary>
+    /// Hide the tooltip
+    /// </summary>
+    public void HideTooltip()
+    {
+        tooltipPanel.SetActive(false);
     }
 }

@@ -55,6 +55,24 @@ public class Building : MonoBehaviour, IDescribable {
         }
     }
 
+    private Ability[] abilities;
+
+    public Ability[] Abilities
+    {
+        get
+        {
+            return abilities;
+        }
+
+        set
+        {
+            abilities = value;
+        }
+    }
+
+    /// <summary>
+    /// Initialization of the building
+    /// </summary>
     protected void Start()
     {
         name = gameObject.transform.name;

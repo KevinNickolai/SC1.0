@@ -4,6 +4,10 @@ using UnityEngine;
 
 /// <summary>
 /// Interface that describes a describable object
+/// 
+/// Describable objects are anything with a name, damage, and armor
+/// Describable objects also require a player to reference for upgrades
+/// which may modify base armor and damage
 /// </summary>
 public interface IDescribable {
 
@@ -15,4 +19,6 @@ public interface IDescribable {
     int MaxDamage { get; }
 
     int Armor { get; }
+
+    Ability[] Abilities { get; }
 }
