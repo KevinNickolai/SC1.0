@@ -19,6 +19,4 @@ public interface IDescribable {
     int MaxDamage { get; }
 
     int Armor { get; }
-
-    Ability[] Abilities { get; }
 }

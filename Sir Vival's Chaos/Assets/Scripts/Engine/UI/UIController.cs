@@ -81,6 +81,9 @@ public class UIController : MonoBehaviour {
         //relation to GameController
         gc = GameObject.FindObjectOfType<GameController>();
 
+        //initialize the AbilityPanelManager
+        gameObject.AddComponent<AbilityPanelManager>();
+
         instance = this;
 
         statsPanel = GameObject.Find(STATS_PANEL);
@@ -169,7 +172,6 @@ public class UIController : MonoBehaviour {
         agi.text = obj.Agility.ToString();
         intel.text = obj.Intelligence.ToString();
     }
-
     #endregion
 
     /// <summary>
@@ -212,10 +214,29 @@ public class UIController : MonoBehaviour {
     }
 
     /// <summary>
+    /// Display a tooltip
+    /// </summary>
+    /// <param name="tt">the Tooltip to display</param>
+    public void DisplayTooltip(Tooltip tt)
+    {
+        tooltipPanel.SetActive(true);
+        tooltip.text = tt.GetDisplayText();
+    }
+
+    /// <summary>
     /// Hide the tooltip
     /// </summary>
     public void HideTooltip()
     {
         tooltipPanel.SetActive(false);
+    }
+
+    /// <summary>
+    /// Set the ability panes for the currently selected object
+    /// </summary>
+    /// <param name="list">The list of abilities associated with the object</param>
+    public void SetAbilityPanes(AbilityList list)
+    {
+        AbilityPanelManager.GetInstance().SetPanes(list);
     }
 }

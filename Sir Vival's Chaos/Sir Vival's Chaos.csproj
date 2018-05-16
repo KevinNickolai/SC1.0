@@ -79,10 +79,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Engine\Abilities\Ability.cs" />
-    <Compile Include="Assets\Scripts\Engine\Abilities\AbilityLevel.cs" />
-    <Compile Include="Assets\Scripts\Engine\Abilities\AbilitySpawn.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\AbilityList\AbilityEnum.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\AbilityList\AbilityList.cs" />
     <Compile Include="Assets\Scripts\Engine\Abilities\ActivatedAbility.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\CastAbility.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\CostedAbility.cs" />
     <Compile Include="Assets\Scripts\Engine\Abilities\InactiveAbility.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\LevelAbility.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\RepairAbility.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\SpawnAbility.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\Barrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\LeftBarrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\MiddleBarrack.cs" />
@@ -93,15 +98,25 @@
     <Compile Include="Assets\Scripts\Engine\Buildings\Tower.cs" />
     <Compile Include="Assets\Scripts\Engine\GameController.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\AbilityPane.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Hoverables\AbilityPanelManager.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\Hoverable.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\ImagePane.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\RaxCounter.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\AuxiliaryTooltip.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\CastTooltip.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\DescriptorTooltip.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\Tooltip.cs" />
-    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSection.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\MultiLineTooltipSection.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\TooltipSection.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TrainTooltip.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\UpgradeTooltip.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\UIController.cs" />
     <Compile Include="Assets\Scripts\Engine\Units\Hero.cs" />
     <Compile Include="Assets\Scripts\Engine\Units\Unit.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IAbilityContainable.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IAbilityUsable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IAttributable.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\ICooldownable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDescribable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ILevelable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ILevelableObject.cs" />

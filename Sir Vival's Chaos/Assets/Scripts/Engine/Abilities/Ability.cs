@@ -22,7 +22,7 @@ public abstract class Ability {
         }
     }
 
-    private Tooltip tooltip;
+    private readonly Tooltip tooltip;
 
     public Tooltip Tooltip
     {
@@ -36,8 +36,12 @@ public abstract class Ability {
     /// Constructor for an ability
     /// </summary>
     /// <param name="activatable">flag indicating if the ability can be activated</param>
-    protected Ability(bool activatable)
+    protected Ability(bool activatable, Tooltip tt)
     {
         isActivatable = activatable;
+
+        tooltip = tt;
     }
+
+    public virtual void SetBuilding(Building b) { }
 }

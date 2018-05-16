@@ -56,4 +56,13 @@ public class Barrack : LevelBuilding {
     {
         raxTimer.UpdateTimer(time);
     }
+
+    /// <summary>
+    /// Spawn a specific unit from the barrack
+    /// </summary>
+    /// <param name="loc">the path of the prefab of the unit</param>
+    public void Spawn(string loc)
+    {
+        Unit.Spawn(loc, this.transform.position + new Vector3(0, 30, 0), this.transform.rotation);
+    }
 }

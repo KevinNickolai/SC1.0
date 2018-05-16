@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Building : MonoBehaviour, IDescribable {
+public abstract class Building : MonoBehaviour, IDescribable, IAbilityUsable {
     /// <summary>
     /// The name of the building
     /// </summary>
@@ -55,19 +55,23 @@ public class Building : MonoBehaviour, IDescribable {
         }
     }
 
-    private Ability[] abilities;
+    private AbilityList abilities;
 
-    public Ability[] Abilities
+    public AbilityList Abilities
     {
         get
         {
             return abilities;
         }
+    }
 
-        set
-        {
-            abilities = value;
-        }
+    /// <summary>
+    /// Set the Ability List for this building
+    /// </summary>
+    /// <param name="list">The initial AbilityList for this building</param>
+    public void SetAbilityList(AbilityList list)
+    {
+        abilities = list;
     }
 
     /// <summary>
@@ -75,7 +79,11 @@ public class Building : MonoBehaviour, IDescribable {
     /// </summary>
     protected void Start()
     {
+        //set building name
         name = gameObject.transform.name;
+
+        //associate the player that owns this building; incomplete due to differences of multiple players.
+        player = GameObject.FindObjectOfType<Player>();
     }
 
     /// <summary>
@@ -85,6 +93,8 @@ public class Building : MonoBehaviour, IDescribable {
     {
         //Display information for this Building
         GameObject.FindObjectOfType<UIController>().DisplayInfo(this);
+
+        UIController.GetInstance().SetAbilityPanes(abilities);
     }
 
     /// <summary>

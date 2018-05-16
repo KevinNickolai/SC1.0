@@ -10,9 +10,14 @@ public class TooltipSection {
     private static string HEADER_COLOR = "#ffa500ff";
 
     /// <summary>
-    /// header and body variables for a tooltip section
+    /// header of the tooltip section
     /// </summary>
-    private readonly string header, body;
+    private string header;
+
+    /// <summary>
+    /// body of the tooltip section
+    /// </summary>
+    private string body;
 
     /// <summary>
     /// Header of the tooltip section
@@ -34,6 +39,11 @@ public class TooltipSection {
         {
             return body;
         }
+
+        set
+        {
+            body = value;
+        }
     }
 
     /// <summary>
@@ -42,6 +52,24 @@ public class TooltipSection {
     /// <param name="header">tooltip header for this section</param>
     /// <param name="body">tooltip body for this section</param>
     public TooltipSection(string header, string body)
+    {
+        Init(header,body);
+    }
+
+    /// <summary>
+    /// Tooltip Section constructor
+    /// </summary>
+    /// <param name="header">tooltip header for this section</param>
+    public TooltipSection(string header)
+    {
+        Init(header);
+    }
+
+    /// <summary>
+    /// Initialize the Tooltip section
+    /// </summary>
+    /// <param name="header">the header for the TooltipSection</param>
+    private void Init(string header,string body = "*Empty Body*")
     {
         this.header = header;
         this.body = body;
@@ -57,7 +85,7 @@ public class TooltipSection {
         string dispStr =
             "<color=" + HEADER_COLOR + ">" +
             header +
-            ": </color>" +
+            ":</color> " +
             body;
 
         return dispStr;

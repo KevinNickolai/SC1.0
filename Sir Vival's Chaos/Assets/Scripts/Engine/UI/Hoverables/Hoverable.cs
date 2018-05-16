@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hoverable : MonoBehaviour {
+public abstract class Hoverable : MonoBehaviour {
 
     private void OnMouseDown()
     {
         Debug.Log("Clicked Ability");
     }
 
-    private void OnMouseEnter()
-    {
-        //Display tooltip
-        Debug.Log("Display Tooltip");
-
-        UIController.GetInstance().DisplayTooltip("Hovering over: " + gameObject.name);
-    }
+    /// <summary>
+    /// Display the tooltip for the hoverable object
+    /// </summary>
+    protected abstract void OnMouseEnter();
+    
 
     private void OnMouseExit()
     {
-        Debug.Log("Hiding Tooltip");
+        //Debug.Log("Hiding Tooltip");
 
         UIController.GetInstance().HideTooltip();
     }

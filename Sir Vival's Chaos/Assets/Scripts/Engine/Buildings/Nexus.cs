@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Nexus : LevelBuilding {
 
+    /// <summary>
+    /// Nexus Constructor
+    /// </summary>
 	public Nexus()
     {
 

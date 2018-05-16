@@ -7,7 +7,8 @@ public class InactiveAbility : Ability {
     /// <summary>
     /// Constructor for an inactive ability
     /// </summary>
-    public InactiveAbility() : base(false)
+    /// <param name="tt">The tooltip for this ability</param>
+    public InactiveAbility(Tooltip tt) : base(false,tt)
     {
 
     }

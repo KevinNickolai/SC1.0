@@ -9,7 +9,10 @@ public abstract class ActivatedAbility : Ability {
     /// base ability class constructor call that
     /// indicates isActivatable as true.
     /// </summary>
-    protected ActivatedAbility() : base(true) { }
+    protected ActivatedAbility(Tooltip tt) : base(true,tt) { }
 
+    /// <summary>
+    /// Activate the activated ability
+    /// </summary>
     public abstract void Activate();
 }

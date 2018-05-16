@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilitySpawn : MonoBehaviour {
+public class AuxiliaryTooltip : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

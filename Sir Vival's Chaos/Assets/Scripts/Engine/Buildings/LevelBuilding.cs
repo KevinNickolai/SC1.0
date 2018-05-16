@@ -5,9 +5,9 @@ using UnityEngine;
 /// <summary>
 /// Class that describes a Levelable building
 /// </summary>
-public class LevelBuilding : Building, ILevelableObject{
+public abstract class LevelBuilding : Building, ILevelableObject{
 
-    //TODO: Max level constexpr(?)
+    //TODO: Max level readonly(?)
 
     /// <summary>
     /// The current level of the building
@@ -45,5 +45,7 @@ public class LevelBuilding : Building, ILevelableObject{
     {
         //Display the information for this LevelBuilding
         GameObject.FindObjectOfType<UIController>().DisplayInfo(this);
+
+        UIController.GetInstance().SetAbilityPanes(Abilities);
     }
 }
