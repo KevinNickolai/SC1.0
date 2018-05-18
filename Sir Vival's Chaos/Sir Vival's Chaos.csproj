@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\LeftBarrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\MiddleBarrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\RightBarrack.cs" />
+    <Compile Include="Assets\Scripts\Engine\Buildings\Barrack\SpawnPoints.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Building.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\LevelBuilding.cs" />
     <Compile Include="Assets\Scripts\Engine\Buildings\Nexus.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Assets\Scripts\Races\Human.cs" />
     <Compile Include="Assets\Scripts\Races\Orc.cs" />
     <Compile Include="Assets\Scripts\Races\Race.cs" />
+    <Compile Include="Assets\Walk.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -10,6 +10,11 @@ public class Barrack : LevelBuilding {
     private List<string> wave;
 
     /// <summary>
+    /// The spawnpoints for this Barrack Object
+    /// </summary>
+    private SpawnPoints spawnPoints;
+
+    /// <summary>
     /// The timer for the barrack spawns associated with this barrack
     /// </summary>
     RaxCounter raxTimer;
@@ -25,10 +30,48 @@ public class Barrack : LevelBuilding {
         wave = new List<string>();
 
         wave.Add(Unit.unit);
+        wave.Add(Unit.unit);
 
-        //wave.Add(Hero.hero);
         
-        //instantiate a rax counter for the barrack
+        //wave.Add(Hero.hero);
+
+        InitializeSpawnPoints();
+
+        InitializeRaxCounter();
+    }
+
+    /// <summary>
+    /// Initialize the spawn points for this barrack
+    /// </summary>
+    private void InitializeSpawnPoints()
+    {
+        List<Vector3> sp = new List<Vector3>();
+
+        // x direction affects forward
+        if(transform.forward.x != 0)
+        {
+
+        }
+        //z direction affects forward
+        else if(transform.forward.z != 0)
+        {
+
+        }
+
+        Debug.Log(transform.forward);
+
+        sp.Add(new Vector3(transform.forward.x * 17.5f, 0, transform.forward.z * 17.5f));
+        //create a spawnpoint, using the gameObject.transform.forward as the measure for a direction, to give a spawnpoint on the 
+        //forward face of the barrack
+        spawnPoints = new SpawnPoints(sp);
+    }
+
+    /// <summary>
+    /// Instantiate a rax counter for the barrack
+    /// </summary>
+    private void InitializeRaxCounter()
+    {
+        //instantiate the prefab of a rax counter, spawned above the parent barrack and slightly tilted for better readability
         GameObject raxCounter = (GameObject)Instantiate(Resources.Load("Prefabs/Rax Counter"),
             gameObject.transform.position + new Vector3(0, 25, 0),
             Quaternion.Euler(new Vector3(15, 0, 0)),
@@ -44,7 +87,7 @@ public class Barrack : LevelBuilding {
     {
         foreach(string unit in wave)
         {
-            Unit.Spawn(unit,this.transform.position + new Vector3(0,30,0), this.transform.rotation);
+            Unit.Spawn(unit, this.transform.position + spawnPoints.GetNextSpawnPoint(), gameObject.transform.rotation);
         }
     }
 
