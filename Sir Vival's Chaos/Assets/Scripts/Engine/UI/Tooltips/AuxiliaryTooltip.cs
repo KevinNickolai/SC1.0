@@ -2,15 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AuxiliaryTooltip : MonoBehaviour {
+[CreateAssetMenu(fileName = "NewAuxiliaryTooltip", menuName = "Tooltips/AuxiliaryTooltip", order = 3)]
+public class AuxiliaryTooltip : Tooltip {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

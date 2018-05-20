@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TooltipSection {
+[CreateAssetMenu(fileName = "NewTooltipSection", menuName = "Tooltips/TooltipSections/TooltipSection", order = 1)]
+public class TooltipSection : ScriptableObject{
 
     /// <summary>
     /// Constant for the header color
@@ -17,6 +18,7 @@ public class TooltipSection {
     /// <summary>
     /// body of the tooltip section
     /// </summary>
+    [SerializeField][TextArea]
     private string body;
 
     /// <summary>
@@ -39,40 +41,11 @@ public class TooltipSection {
         {
             return body;
         }
-
-        set
-        {
-            body = value;
-        }
     }
 
-    /// <summary>
-    /// Tooltip Section constructor
-    /// </summary>
-    /// <param name="header">tooltip header for this section</param>
-    /// <param name="body">tooltip body for this section</param>
-    public TooltipSection(string header, string body)
-    {
-        Init(header,body);
-    }
-
-    /// <summary>
-    /// Tooltip Section constructor
-    /// </summary>
-    /// <param name="header">tooltip header for this section</param>
-    public TooltipSection(string header)
-    {
-        Init(header);
-    }
-
-    /// <summary>
-    /// Initialize the Tooltip section
-    /// </summary>
-    /// <param name="header">the header for the TooltipSection</param>
-    private void Init(string header,string body = "*Empty Body*")
+    protected void SetHeader(string header)
     {
         this.header = header;
-        this.body = body;
     }
 
     /// <summary>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "NewCastTooltip", menuName = "Tooltips/CastTooltip", order = 4)]
 public class CastTooltip : Tooltip{
 
     /// <summary>
@@ -14,6 +15,6 @@ public class CastTooltip : Tooltip{
     /// </summary>
     public CastTooltip()
     {
-        AddSection(new TooltipSection(EFFECT_HEADER));
+
     }
 }

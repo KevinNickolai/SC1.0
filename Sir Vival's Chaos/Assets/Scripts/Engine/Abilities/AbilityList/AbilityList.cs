@@ -9,7 +9,8 @@ using UnityEngine;
 /// Basis of IEnumerable code found at:
 /// https://msdn.microsoft.com/en-us/library/system.collections.ienumerable.getenumerator(v=vs.110).aspx
 /// </summary>
-public class AbilityList : IEnumerable
+[CreateAssetMenu(fileName = "NewAbilityList", menuName = "Abilities/AbilityList", order = 1)]
+public class AbilityList : ScriptableObject, IEnumerable
 {
 
     /// <summary>
@@ -52,6 +53,7 @@ public class AbilityList : IEnumerable
     /// <summary>
     /// The underlying list of the abilities
     /// </summary>
+    [SerializeField]
     private Ability[] list;
 
     public AbilityList(Ability[] al)

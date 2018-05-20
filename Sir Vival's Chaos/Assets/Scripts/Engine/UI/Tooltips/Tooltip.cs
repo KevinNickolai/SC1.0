@@ -2,12 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tooltip {
-
-    private List<TooltipSection> sections;
-
+/// <summary>
+/// Class that describes a tooltip for some object.
+/// </summary>
+public abstract class Tooltip : ScriptableObject {
+    
+    /// <summary>
+    /// Title of the Tooltip
+    /// </summary>
+    [SerializeField]
     private string title = "*No Title*";
 
+    /// <summary>
+    /// The sections the tooltip is divided into
+    /// </summary>
+    [SerializeField]
+    private List<TooltipSection> sections;
+
+    /// <summary>
+    /// The title of the tooltip
+    /// </summary>
     public string Title
     {
         get
@@ -21,11 +35,10 @@ public class Tooltip {
         }
     }
 
-    public Tooltip()
-    {
-        sections = new List<TooltipSection>();
-    }
-
+    /// <summary>
+    /// Get the text formatted for display to show for the tooltip
+    /// </summary>
+    /// <returns>string of formatted text to display</returns>
     public string GetDisplayText()
     {
         string dispStr = title + "\n\n";

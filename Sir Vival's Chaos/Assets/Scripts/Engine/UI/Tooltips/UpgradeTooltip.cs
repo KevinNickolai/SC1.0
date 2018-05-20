@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "NewUpgradeTooltip", menuName = "Tooltips/UpgradeTooltip", order = 1)]
 public class UpgradeTooltip : Tooltip {
 
     public static string GIVES_HEADER = "Gives";
@@ -9,9 +10,8 @@ public class UpgradeTooltip : Tooltip {
     /// <summary>
     /// UpgradeTooltip Constructor
     /// </summary>
-    public UpgradeTooltip()
+    private void OnEnable()
     {
-        //add a multiline tooltip section, for listing the upgrade that the header gives
-        AddSection(new MultiLineTooltipSection(GIVES_HEADER, ""));
+        
     }
 }

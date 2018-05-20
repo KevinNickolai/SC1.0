@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "NewUpgrade", menuName = "Abilities/Ability/SpawnAbility", order = 1)]
 public class SpawnAbility : CostedAbility {
 
     /// <summary>
@@ -21,11 +22,8 @@ public class SpawnAbility : CostedAbility {
     /// <param name="loc">The path to the prefab of the unit to spawn</param>
     /// <param name="cost">The cost associated with spawning the unit from this barrack</param>
     /// <param name="tt">The tooltip for this ability</param>
-    public SpawnAbility(Barrack b, string loc, int cost, Tooltip tt) : base(CostType.GOLD,cost,tt)
-    {
-        barrack = b;
-        unitLoc = loc;
-    }
+    //public SpawnAbility(Barrack b, string loc, int cost, Tooltip tt) : base(CostType.GOLD,cost,tt)
+    
 
     /// <summary>
     /// Activate the spawn of the unit

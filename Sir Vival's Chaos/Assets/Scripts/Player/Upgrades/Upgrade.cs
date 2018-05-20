@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Upgrade : ILevelable {
+[CreateAssetMenu(fileName = "NewUpgrade", menuName = "Upgrade", order = 1)]
+public class Upgrade : ScriptableObject, ILevelable {
 
     /// <summary>
     /// The level of the upgrade

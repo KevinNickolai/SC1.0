@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that describes an inactive ability
+/// </summary>
+[CreateAssetMenu(fileName = "NewInactiveAbility", menuName = "Abilities/Ability/InactiveAbility", order = 5)]
 public class InactiveAbility : Ability {
 
     /// <summary>
-    /// Constructor for an inactive ability
+    /// OnEnable to initialize the instance once it is loaded
     /// </summary>
-    /// <param name="tt">The tooltip for this ability</param>
-    public InactiveAbility(Tooltip tt) : base(false,tt)
+    private void OnEnable()
     {
-
+        SetActivatable(false);
     }
 
 }

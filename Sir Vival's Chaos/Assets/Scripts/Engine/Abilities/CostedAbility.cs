@@ -2,13 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class describing an ability with a cost associated to it
+/// </summary>
 public abstract class CostedAbility : ActivatedAbility {
 
     /// <summary>
     /// the cost of using the ability
     /// </summary>
-    readonly int cost;
+    [SerializeField]
+    private int cost;
     
+    /// <summary>
+    /// Set the cost type for the CostedAbility
+    /// </summary>
+    /// <param name="ct">The CostType for the Ability</param>
+    protected void SetCostType(CostType ct)
+    {
+        costType = ct;
+    }
+
     /// <summary>
     /// The cost of using the ability
     /// </summary>
@@ -28,7 +41,8 @@ public abstract class CostedAbility : ActivatedAbility {
     /// <summary>
     /// the cost type for this costed ability
     /// </summary>
-    private readonly CostType costType;
+    [SerializeField]
+    private CostType costType;
 
     /// <summary>
     /// The type of cost for this ability
@@ -39,18 +53,6 @@ public abstract class CostedAbility : ActivatedAbility {
         {
             return costType;
         }
-    }
-
-    /// <summary>
-    /// CostedAbility Constructor
-    /// </summary>
-    /// <param name="ct">the CostType of the costed ability</param>
-    /// <param name="c">the actual cost of the ability</param>
-    /// <param name="tt">The tooltip for the ability</param>
-    public CostedAbility(CostType ct, int c, Tooltip tt) : base(tt)
-    {
-        costType = ct;
-        cost = c;
     }
 
 }

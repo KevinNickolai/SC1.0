@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Race : IUpgradable, IAbilityContainable {
+public abstract class Race : ScriptableObject, IUpgradable, IAbilityContainable {
 
     /**
  * Implement baseline Tower/Nexus/Barrack abilities lists for derived classes to use as a structure
@@ -62,22 +62,22 @@ public abstract class Race : IUpgradable, IAbilityContainable {
         Ability[] nexusAbilities = new Ability[AbilityList.MAX_SIZE];
 
         //create skeleton descriptor tooltip
-        nexusAbilities[0] = new InactiveAbility(new DescriptorTooltip());
+        //nexusAbilities[0] = new InactiveAbility(new DescriptorTooltip());
 
-        //create the abilities for upgrades
-        nexusAbilities[1] = new LevelAbility(500,new UpgradeTooltip());
-        nexusAbilities[3] = new LevelAbility(1500, new UpgradeTooltip());
-        nexusAbilities[4] = new LevelAbility(200, new UpgradeTooltip());
-        nexusAbilities[5] = new LevelAbility(300, new UpgradeTooltip());
-        nexusAbilities[6] = new LevelAbility(300, new UpgradeTooltip());
-        nexusAbilities[7] = new LevelAbility(500, new UpgradeTooltip());
+        ////create the abilities for upgrades
+        //nexusAbilities[1] = new LevelAbility(500,new UpgradeTooltip());
+        //nexusAbilities[3] = new LevelAbility(1500, new UpgradeTooltip());
+        //nexusAbilities[4] = new LevelAbility(200, new UpgradeTooltip());
+        //nexusAbilities[5] = new LevelAbility(300, new UpgradeTooltip());
+        //nexusAbilities[6] = new LevelAbility(300, new UpgradeTooltip());
+        //nexusAbilities[7] = new LevelAbility(500, new UpgradeTooltip());
 
         //set buildings for the abilities
-        nexusAbilities[3].SetBuilding(nexus);
+        //nexusAbilities[3].SetBuilding(nexus);
 
         //create the cast abilities
-        nexusAbilities[8] = new CastAbility(50, new CastTooltip());
-        nexusAbilities[9] = new CastAbility(150, new CastTooltip());
+        //nexusAbilities[8] = new CastAbility(50, new CastTooltip());
+        //nexusAbilities[9] = new CastAbility(150, new CastTooltip());
 
         //TODO: Create nexus abilities for selection of aura & ultimate weapon
         
@@ -93,8 +93,6 @@ public abstract class Race : IUpgradable, IAbilityContainable {
     protected AbilityList BaseBarrackAbilities(Barrack barrack)
     {
         Ability[] barrackAbilities = new Ability[AbilityList.MAX_SIZE];
-
-        barrackAbilities[0] = new RepairAbility(new Tooltip());
         
 
 

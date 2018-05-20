@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Class describing an ability that will level something up
 /// </summary>
+[CreateAssetMenu(fileName = "NewLevelAbility", menuName = "Abilities/Ability/LevelAbility", order = 1)]
 public class LevelAbility : CostedAbility {
 
     /// <summary>
@@ -17,10 +18,8 @@ public class LevelAbility : CostedAbility {
     /// </summary>
     /// <param name="cost">The cost associated with this Leveling ability</param>
     /// <param name="tt">The Tooltip for this ability</param>
-    public LevelAbility(int cost, Tooltip tt) : base(CostType.GOLD,cost,tt)
-    {
+    //public LevelAbility(int cost, Tooltip tt) : base(CostType.GOLD,cost,tt)
 
-    }
 
     /// <summary>
     /// Activate a level up ability

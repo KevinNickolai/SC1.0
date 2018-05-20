@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Abstract base class for any activated ability
+/// </summary>
 public abstract class ActivatedAbility : Ability {
 
     /// <summary>
-    /// Initialize this activatable ability with a
-    /// base ability class constructor call that
-    /// indicates isActivatable as true.
+    /// OnEnable initializes the instance when the instance is loaded
     /// </summary>
-    protected ActivatedAbility(Tooltip tt) : base(true,tt) { }
+    private void OnEnable()
+    {
+        SetActivatable(true);
+    }
 
     /// <summary>
     /// Activate the activated ability

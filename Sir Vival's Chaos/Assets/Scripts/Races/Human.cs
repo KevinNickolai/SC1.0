@@ -19,8 +19,6 @@ public class Human : Race {
     private const string SIEGE_UNIT = "Knight";
     private const string AIR_UNIT = "Griffin Rider";
     private const string ARTILLERY_UNIT = "Ballista";
-
-
     
     #endregion
 
@@ -43,23 +41,23 @@ public class Human : Race {
         InitializeDescriptor(nexusAbilities);
 
         
-        UpgradeTooltip upgrTT = (UpgradeTooltip)nexusAbilities[3].Tooltip;
+        //UpgradeTooltip upgrTT = (UpgradeTooltip)nexusAbilities[3].Tooltip;
 
-        upgrTT.Title = "Upgrade ";
-
-
+        //upgrTT.Title = "Upgrade ";
 
 
 
 
 
 
-        upgrTT = (UpgradeTooltip)nexusAbilities[4].Tooltip;
 
-        //get the upgrade section for the 1st upgrade ability
-        //Cast the section to a multiline section to add lines to the body
-        ((MultiLineTooltipSection)(upgrTT.GetSection(UpgradeTooltip.GIVES_HEADER))).AddLine("+4 Melee to Footman");
-        ((MultiLineTooltipSection)(upgrTT.GetSection(UpgradeTooltip.GIVES_HEADER))).AddLine("+6 Melee to Knight");
+
+        //upgrTT = (UpgradeTooltip)nexusAbilities[4].Tooltip;
+
+        ////get the upgrade section for the 1st upgrade ability
+        ////Cast the section to a multiline section to add lines to the body
+        //((MultiLineTooltipSection)(upgrTT.GetSection(UpgradeTooltip.GIVES_HEADER))).AddLine("+4 Melee to Footman");
+        //((MultiLineTooltipSection)(upgrTT.GetSection(UpgradeTooltip.GIVES_HEADER))).AddLine("+6 Melee to Knight");
 
         return nexusAbilities;
         //Ability[] nexusAbilities = new Ability[AbilityList.MAX_SIZE];
@@ -72,14 +70,7 @@ public class Human : Race {
     /// <param name="nexusAbilities">The AbilityList for the nexus</param>
     private void InitializeDescriptor(AbilityList nexusAbilities)
     {
-        //modify the descriptor tooltip, making it show the human buffs
-        DescriptorTooltip descriptorTT = (DescriptorTooltip)nexusAbilities[0].Tooltip;
-        descriptorTT.Title = GetRaceFaction() + " - " + Human.HUMAN_RACE;
-        descriptorTT.GetSection(DescriptorTooltip.UNIT_HEADER).Body = "+5% attack rate";
-        descriptorTT.GetSection(DescriptorTooltip.BUILDING_HEADER).Body = "+1 armor";
-        descriptorTT.GetSection(DescriptorTooltip.UPGRADE_HEADER).Body = "+3Lv unit armor";
-        descriptorTT.GetSection(DescriptorTooltip.TRAIT_HEADER).Body = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\"";
-        descriptorTT.GetSection(DescriptorTooltip.DIFFICULTY_HEADER).Body = "Beginner";
+
     }
 
     /// <summary>

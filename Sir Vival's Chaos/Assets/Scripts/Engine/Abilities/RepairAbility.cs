@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "NewUpgrade", menuName = "Abilities/Ability/RepairAbility", order = 1)]
 public class RepairAbility : ActivatedAbility {
 
     /// <summary>
@@ -13,7 +14,7 @@ public class RepairAbility : ActivatedAbility {
     /// RepairAbility Constructor
     /// </summary>
     /// <param name="tt">tooltip for the RepairAbility</param>
-    public RepairAbility(Tooltip tt) : base(tt) { }
+    //public RepairAbility(Tooltip tt) : base(tt) { }
 
     /// <summary>
     /// Activate the Repair Ability

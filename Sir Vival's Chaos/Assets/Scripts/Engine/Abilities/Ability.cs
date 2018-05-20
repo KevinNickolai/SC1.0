@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Ability {
+/// <summary>
+/// Abstract base class for a general ability
+/// Inheirits from ScriptableObject to allow for Serialization and better data storage,
+/// since abilities are all base data.
+/// </summary>
+public abstract class Ability : ScriptableObject{
 
     /// <summary>
     /// flag indicating if the ability is activatable or not
     /// readonly indicates this is known when the object is created,
     /// and a constant otherwise
     /// </summary>
-    private readonly bool isActivatable;
+    private bool isActivatable;
     
     /// <summary>
     /// Flag indicating if an ability can be activated
@@ -22,25 +27,30 @@ public abstract class Ability {
         }
     }
 
-    private readonly Tooltip tooltip;
+    /// <summary>
+    /// Set the ability's status flag of activatable
+    /// </summary>
+    /// <param name="activatable">flag indicating if the ability is activatable or not</param>
+    protected void SetActivatable(bool activatable)
+    {
+        isActivatable = activatable;
+    }
 
+    /// <summary>
+    /// The tooltip for the ability
+    /// </summary>
+    [SerializeField]
+    private Tooltip tooltip;
+
+    /// <summary>
+    /// The tooltip for the ability
+    /// </summary>
     public Tooltip Tooltip
     {
         get
         {
             return tooltip;
         }
-    }
-
-    /// <summary>
-    /// Constructor for an ability
-    /// </summary>
-    /// <param name="activatable">flag indicating if the ability can be activated</param>
-    protected Ability(bool activatable, Tooltip tt)
-    {
-        isActivatable = activatable;
-
-        tooltip = tt;
     }
 
     public virtual void SetBuilding(Building b) { }
