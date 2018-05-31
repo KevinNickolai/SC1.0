@@ -9,6 +9,12 @@ using UnityEngine;
 public class Stats : ScriptableObject {
 
     /// <summary>
+    /// The name of the selectable object
+    /// </summary>
+    [SerializeField]
+    private new string name;
+
+    /// <summary>
     /// the attack for the object
     /// </summary>
     [SerializeField]
@@ -19,6 +25,17 @@ public class Stats : ScriptableObject {
     /// </summary>
     [SerializeField]
     private Defense defense;
+
+    /// <summary>
+    /// The name of the object that the stats describe
+    /// </summary>
+    public string Name
+    {
+        get
+        {
+            return name;
+        }
+    }
 
     /// <summary>
     /// The attack stats for the object

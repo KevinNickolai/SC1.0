@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class AbilityPanelManager : MonoBehaviour {
 
-    public static AbilityPanelManager instance;
+    private static AbilityPanelManager instance;
+
+    public AbilityPanelManager Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
 
     private AbilityPane[] panes;
 

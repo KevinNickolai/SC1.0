@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AbilityPane : Hoverable {
+
     private Ability ability;
 
     public Ability Ability

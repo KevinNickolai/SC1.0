@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3580aeb8ad74e1a46b9e8ace0348df1c, type: 3}
+  m_Name: Human
+  m_EditorClassIdentifier: 
+  name: {fileID: 11400000, guid: cc0307d47f279e0419772d7b154cbc03, type: 2}
+  mageUpgr: {fileID: 0}
+  rangeUpgr: {fileID: 0}
+  meleeUpgr: {fileID: 0}
+  armorUpgr: {fileID: 0}
+  auxUpgrs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  nexusAbilities: {fileID: 11400000, guid: 52c47f914cfad2a4983adde5371e01f3, type: 2}
+  barrackAbilities: {fileID: 11400000, guid: 217a5c50b72dea44b91631ff6f0113a0, type: 2}
+  towerAbilities: {fileID: 11400000, guid: 6c2958b6366c2db4fa41e242d678e62c, type: 2}

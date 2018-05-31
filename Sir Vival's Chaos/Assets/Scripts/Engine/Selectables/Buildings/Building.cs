@@ -2,22 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Building : MonoBehaviour, IDescribable, IAbilityUsable {
-    /// <summary>
-    /// The name of the building
-    /// </summary>
-    private new string name; //< the new keyword distinguishes Building::name from Object::name, since that's not the intended inheiritance.
+public abstract class Building : Selectable, IAbilityUsable {
 
+    /// <summary>
+    /// The building set that this building is associated with
+    /// </summary>
+    [SerializeField]
+    private BuildingSet buildingSet;
     /// <summary>
     /// The player that owns this building
     /// </summary>
     private Player player;
-
-    /// <summary>
-    /// The stats for a building
-    /// </summary>
-    [SerializeField]
-    private Stats buildingStats;
 
     public Player Player
     {
@@ -27,38 +22,7 @@ public abstract class Building : MonoBehaviour, IDescribable, IAbilityUsable {
         }
     }
 
-    public string Name
-    {
-        get
-        {
-            return name;
-        }
-    }
-
-    public int MinDamage
-    {
-        get
-        {
-            return buildingStats.Attack.Damage.MinDamage;
-        }
-    }
-
-    public int MaxDamage
-    {
-        get
-        {
-            return buildingStats.Attack.Damage.MaxDamage;
-        }
-    }
-
-    public int Armor
-    {
-        get
-        {
-            return buildingStats.Defense.Armor;
-        }
-    }
-
+    [SerializeField]
     private AbilityList abilities;
 
     public AbilityList Abilities
@@ -83,8 +47,7 @@ public abstract class Building : MonoBehaviour, IDescribable, IAbilityUsable {
     /// </summary>
     protected void Start()
     {
-        //set building name
-        name = gameObject.transform.name;
+        buildingSet.Add(this);
 
         //associate the player that owns this building; incomplete due to differences of multiple players.
         player = GameObject.FindObjectOfType<Player>();
@@ -93,7 +56,7 @@ public abstract class Building : MonoBehaviour, IDescribable, IAbilityUsable {
     /// <summary>
     /// Handle event when the mouse is pressed on this Building
     /// </summary>
-    protected void OnMouseDown()
+    protected virtual void OnMouseDown()
     {
         //Display information for this Building
         GameObject.FindObjectOfType<UIController>().DisplayInfo(this);

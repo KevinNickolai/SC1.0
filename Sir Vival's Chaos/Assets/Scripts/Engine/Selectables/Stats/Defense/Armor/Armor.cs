@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Class describing Armor data for an object
 /// </summary>
-[CreateAssetMenu(fileName = "NewArmor",menuName = "Stats/Defense/Armor", order = 1)]
+[CreateAssetMenu(fileName = "NewArmor",menuName = "Stats/Defense/Armor/Armor", order = 1)]
 public class Armor : ScriptableObject {
 
     /// <summary>

@@ -41,7 +41,7 @@ public abstract class LevelBuilding : Building, ILevelableObject{
     /// <summary>
     /// Handle event when the mouse is pressed on this LevelBuilding
     /// </summary>
-    private void OnMouseDown()
+    protected override void OnMouseDown()
     {
         //Display the information for this LevelBuilding
         GameObject.FindObjectOfType<UIController>().DisplayInfo(this);

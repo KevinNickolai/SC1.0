@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Hero Unit
+/// </summary>
 public class Hero : Unit, IAttributable {
 
     public const string hero = "Prefabs/hero";

@@ -6,8 +6,4 @@ using UnityEngine;
 /// A FloatVariable object that holds a float value
 /// </summary>
 [CreateAssetMenu(fileName = "NewFloatVariable", menuName = "Values/Variables/FloatVariable", order = 2)]
-public class FloatVariable : ScriptableObject {
-
-    public float Value;
-
-}
+public class FloatVariable : Variable<float> { }

@@ -13,6 +13,7 @@ public class TooltipSection : ScriptableObject{
     /// <summary>
     /// header of the tooltip section
     /// </summary>
+    [SerializeField][ReadOnly]
     private string header;
 
     /// <summary>

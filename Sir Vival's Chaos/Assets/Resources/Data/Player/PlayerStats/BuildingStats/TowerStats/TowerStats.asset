@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c449a4e39b0e30a4ab7634509402dfd5, type: 3}
+  m_Name: TowerStats
+  m_EditorClassIdentifier: 
+  name: Tower
+  attack: {fileID: 11400000, guid: 631a0c2f2c990aa4490cc9771237e66b, type: 2}
+  defense: {fileID: 11400000, guid: 0cafb4434d4d89f41894c3d42215cab8, type: 2}

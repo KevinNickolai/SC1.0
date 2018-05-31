@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour, IDescribable{
+public class Unit : Selectable {
+
+    /// <summary>
+    /// The runtime set for the unit to add itself to
+    /// </summary>
     [SerializeField]
-    private UnitAttributes unitAttributes;
+    private UnitSet unitSet;
 
     public const string unit = "Prefabs/unit";
 
     protected Vector3 spawnPoint;
+
     /// <summary>
     /// The name of the unit
     /// </summary>
@@ -27,38 +32,6 @@ public class Unit : MonoBehaviour, IDescribable{
         }
     }
 
-    public string Name
-    {
-        get
-        {
-            return name;
-        }
-    }
-
-    public int MinDamage
-    {
-        get
-        {
-            return unitAttributes.MinDamage;
-        }
-    }
-
-    public int MaxDamage
-    {
-        get
-        {
-            return unitAttributes.MaxDamage;
-        }
-    }
-
-    public int Armor
-    {
-        get
-        {
-            return unitAttributes.Armor;
-        }
-    }
-
     private Ability[] abilities;
 
     public Ability[] Abilities
@@ -71,6 +44,7 @@ public class Unit : MonoBehaviour, IDescribable{
 
     protected void Start()
     {
+        unitSet.Add(this);
         name = gameObject.transform.name;
         spawnPoint = new Vector3(0, 30, 0);
     }

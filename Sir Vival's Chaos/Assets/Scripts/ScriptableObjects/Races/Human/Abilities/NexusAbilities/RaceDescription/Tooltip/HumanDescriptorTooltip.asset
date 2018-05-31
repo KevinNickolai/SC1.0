@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2301e0548d9f2647988b96329c5bc95, type: 3}
+  m_Name: HumanDescriptorTooltip
+  m_EditorClassIdentifier: 
+  title: {fileID: 11400000, guid: cc0307d47f279e0419772d7b154cbc03, type: 2}
+  sections:
+  - {fileID: 11400000, guid: 67e9d0aea6da4734e984bf32435e20a3, type: 2}
+  - {fileID: 11400000, guid: 6b31b3245b97c244c8c63a2a292aac16, type: 2}
+  - {fileID: 11400000, guid: d31d2c8c195d78c4b9713cba5d36638e, type: 2}
+  - {fileID: 11400000, guid: d7faad4ec40d3eb45ba40979e783f3eb, type: 2}

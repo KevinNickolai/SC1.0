@@ -10,7 +10,7 @@ using UnityEngine;
 /// can be created to allow for use of either a constant or variable in Unity's inspector
 /// </summary>
 [System.Serializable]
-public abstract class Reference<T> : ScriptableObject {
+public class Reference<T,Tvar> : ScriptableObject where Tvar : Variable<T> {
 
     /// <summary>
     /// flag indicator to use the constant value or variable value of the reference
@@ -25,7 +25,19 @@ public abstract class Reference<T> : ScriptableObject {
     protected T ConstantValue;
 
     /// <summary>
+    /// The variable value of the reference
+    /// </summary>
+    [SerializeField]
+    protected Tvar Variable;
+
+    /// <summary>
     /// The value the reference contains
     /// </summary>
-    public abstract T Value { get; }
+    public T Value
+    {
+        get
+        {
+            return UseConstant ? ConstantValue : Variable.Value;
+        }
+    }
 }

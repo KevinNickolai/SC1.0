@@ -11,7 +11,7 @@ public abstract class Tooltip : ScriptableObject {
     /// Title of the Tooltip
     /// </summary>
     [SerializeField]
-    private string title = "*No Title*";
+    private StringReference title;
 
     /// <summary>
     /// The sections the tooltip is divided into
@@ -26,12 +26,7 @@ public abstract class Tooltip : ScriptableObject {
     {
         get
         {
-            return title;
-        }
-
-        set
-        {
-            title = value;
+            return title.Value;
         }
     }
 
@@ -41,7 +36,7 @@ public abstract class Tooltip : ScriptableObject {
     /// <returns>string of formatted text to display</returns>
     public string GetDisplayText()
     {
-        string dispStr = title + "\n\n";
+        string dispStr = Title + "\n\n";
         foreach(TooltipSection tts in sections)
         {
             dispStr += tts.Display() + '\n';
