@@ -56,6 +56,18 @@ public class AbilityList : ScriptableObject, IEnumerable
     [SerializeField]
     private Ability[] list;
 
+    /// <summary>
+    /// Initialize the AbilityList
+    /// </summary>
+    public void Init()
+    {
+        //if the list doesn't currently exist, set it to its max size
+        if(list == null)
+        {
+            list = new Ability[MAX_SIZE];
+        }
+    }
+
     public AbilityList(Ability[] al)
     {
         list = al;

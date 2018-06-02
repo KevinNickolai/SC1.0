@@ -7,7 +7,6 @@ public static class AssetCopier {
 
     public static ScriptableObject DeepCopy(ScriptableObject so)
     {
-
         ScriptableObject test = Object.Instantiate(so);
         AssetDatabase.CreateAsset(test, "Assets/NewAbilityListTest.asset");
 

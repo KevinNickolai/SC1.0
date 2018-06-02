@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Engine\Abilities\RepairAbility.cs" />
     <Compile Include="Assets\Scripts\Engine\Abilities\SpawnAbility.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\AssetCopier.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\RaceCreator.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\References\FloatReference.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\References\IntReference.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\References\Reference.cs" />

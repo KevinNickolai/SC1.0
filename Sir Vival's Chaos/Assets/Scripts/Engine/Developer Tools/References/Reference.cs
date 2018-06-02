@@ -40,4 +40,13 @@ public class Reference<T,Tvar> : ScriptableObject where Tvar : Variable<T> {
             return UseConstant ? ConstantValue : Variable.Value;
         }
     }
+
+    /// <summary>
+    /// Set the constant value of the reference
+    /// </summary>
+    /// <param name="constVal">the constant value to set for the reference</param>
+    public void SetConstant(T constVal)
+    {
+        ConstantValue = constVal;
+    }
 }

@@ -4,12 +4,6 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewRace",menuName = "Race",order = 1)]
 public class TestRace : ScriptableObject {
-    
-    [UnityEditor.MenuItem("Create/NewRace")]
-    public static void NewRace()
-    {
-
-    }
 
     /**
  * Implement baseline Tower/Nexus/Barrack abilities lists for derived classes to use as a structure
