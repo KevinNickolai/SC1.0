@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005bb91358795f3448ed3a04925c8314, type: 3}
+  m_Name: TowerDamage
+  m_EditorClassIdentifier: 
+  minDmg: {fileID: 11400000, guid: d89a02e2a3488fe4c8ebc3b8b2912556, type: 2}
+  maxDmg: {fileID: 11400000, guid: 49c950b12b040ac4f8ac31d9d042f901, type: 2}
+  damageType: {fileID: 11400000, guid: 930a76c1e28e1d34691f5bb8b25f0b5a, type: 2}

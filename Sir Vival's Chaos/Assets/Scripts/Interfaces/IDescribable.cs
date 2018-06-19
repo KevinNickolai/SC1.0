@@ -19,4 +19,7 @@ public interface IDescribable {
     int MaxDamage { get; }
 
     int Armor { get; }
+
+    ArmorType ArmorType { get; }
+    DamageType DamageType { get; }
 }

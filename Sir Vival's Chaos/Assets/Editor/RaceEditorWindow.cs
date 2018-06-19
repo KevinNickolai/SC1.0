@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class RaceEditorWindow : EditorWindow
 {
-    private TestRace race;
+    private Race race;
 
     bool showingUpgrades = false;
     bool showingAbilityLists = false;
@@ -19,7 +19,7 @@ public class RaceEditorWindow : EditorWindow
     static void Init()
     {
         // Get existing open window or if none, make a new one:
-        RaceEditorWindow window = (RaceEditorWindow)EditorWindow.GetWindow(typeof(RaceEditorWindow));
+        RaceEditorWindow window = (RaceEditorWindow)EditorWindow.GetWindow<RaceEditorWindow>();
         //Set minimum size for the window to accomodate fields
         window.minSize = new Vector2(250, 250);
         window.maxSize = new Vector2(500, 500);
@@ -33,8 +33,8 @@ public class RaceEditorWindow : EditorWindow
 
         GUILayout.Label("Race Settings", EditorStyles.boldLabel);
 
-        //the race object edit field, of type TestRace, only accepting assets (false as the last parameter)
-        race = (TestRace)EditorGUILayout.ObjectField("Race:", race, typeof(TestRace), false, options);
+        //the race object edit field, of type Race, only accepting assets (false as the last parameter)
+        race = (Race)EditorGUILayout.ObjectField("Race:", race, typeof(Race), false, options);
 
 
         if (race != null)

@@ -53,5 +53,6 @@ public abstract class Ability : ScriptableObject{
         }
     }
 
+    public virtual void SetLevelable(ILevelable b) { }
     public virtual void SetBuilding(Building b) { }
 }

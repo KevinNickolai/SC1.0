@@ -5,4 +5,5 @@ using UnityEngine;
 /// <summary>
 /// Abstract base class defining an ArmorType
 /// </summary>
-public abstract class ArmorType : ScriptableObject { }
+[System.Serializable]
+public abstract class ArmorType : StatType { }

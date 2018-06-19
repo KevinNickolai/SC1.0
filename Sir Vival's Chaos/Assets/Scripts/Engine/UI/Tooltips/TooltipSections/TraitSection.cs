@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewTraitSection", menuName = "Tooltips/TooltipSections/TraitSection", order = 1)]
-public class TraitSection : TooltipSection
+public class TraitSection : HeaderTooltipSection
 {
 
     /// <summary>

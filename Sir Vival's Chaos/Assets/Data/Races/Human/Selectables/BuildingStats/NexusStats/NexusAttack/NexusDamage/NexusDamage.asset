@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005bb91358795f3448ed3a04925c8314, type: 3}
+  m_Name: NexusDamage
+  m_EditorClassIdentifier: 
+  minDmg: {fileID: 11400000, guid: 675ac9f380a409945affec6c930f1244, type: 2}
+  maxDmg: {fileID: 11400000, guid: d8b18e1c86c882345a24a72c858e260e, type: 2}
+  damageType: {fileID: 11400000, guid: e426f0a4ffea27741b94541efe64713e, type: 2}

@@ -3,18 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewTooltipSection", menuName = "Tooltips/TooltipSections/TooltipSection", order = 1)]
-public class TooltipSection : ScriptableObject{
-
-    /// <summary>
-    /// Constant for the header color
-    /// </summary>
-    private static string HEADER_COLOR = "#ffa500ff";
-
-    /// <summary>
-    /// header of the tooltip section
-    /// </summary>
-    [SerializeField][ReadOnly]
-    private string header;
+public class TooltipSection : ScriptableObject {
 
     /// <summary>
     /// body of the tooltip section
@@ -22,15 +11,9 @@ public class TooltipSection : ScriptableObject{
     [SerializeField][TextArea]
     private string body;
 
-    /// <summary>
-    /// Header of the tooltip section
-    /// </summary>
-    public string Header
+    public void Init(string b)
     {
-        get
-        {
-            return header;
-        }
+        body = b;
     }
 
     /// <summary>
@@ -44,24 +27,12 @@ public class TooltipSection : ScriptableObject{
         }
     }
 
-    protected void SetHeader(string header)
-    {
-        this.header = header;
-    }
-
     /// <summary>
     /// Display the tooltip section in a formatted way
     /// </summary>
     /// <returns></returns>
-    public string Display()
+    public virtual string Display()
     {
-        //display the header, colored a specific way
-        string dispStr =
-            "<color=" + HEADER_COLOR + ">" +
-            header +
-            ":</color> " +
-            body;
-
-        return dispStr;
+        return body;
     }
 }

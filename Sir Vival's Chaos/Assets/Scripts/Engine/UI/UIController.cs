@@ -22,6 +22,9 @@ public class UIController : MonoBehaviour {
     private const string ARMOR = "Defense Armor";
     private const string DAMAGE = "Attack Damage";
 
+    private const string ATTACK_IMAGE = "Attack Image";
+    private const string DEFENSE_IMAGE = "Defense Image";
+
     private const string STRENGTH = "Strength";
     private const string AGILITY = "Agility";
     private const string INTELLIGENCE = "Intelligence";
@@ -38,6 +41,9 @@ public class UIController : MonoBehaviour {
 
     private Text dmg;
     private Text armor;
+
+    private Image dmgType;
+    private Image armorType;
 
     private Text str;
     private Text agi;
@@ -61,6 +67,8 @@ public class UIController : MonoBehaviour {
     private GameObject tooltipPanel;
 
     GameController gc;
+
+    IDescribable objDisplayed;
 
     /// <summary>
     /// Get the instance of the UIController in the scene
@@ -112,6 +120,9 @@ public class UIController : MonoBehaviour {
 
         //tooltip text object
         tooltip = GameObject.Find(TOOLTIP).GetComponent<Text>();
+
+        dmgType = GameObject.Find(ATTACK_IMAGE).GetComponent<Image>();
+        armorType = GameObject.Find(DEFENSE_IMAGE).GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -130,6 +141,8 @@ public class UIController : MonoBehaviour {
         //clear all prior information
         ClearInfo();
 
+        objDisplayed = obj;
+
         //set text for the object's name
         infoNameText.text = obj.Name;
 
@@ -141,6 +154,10 @@ public class UIController : MonoBehaviour {
 
         //set text armor for the object
         armor.text = obj.Armor.ToString();
+
+        //set sprites for the Damage & Armor types
+        dmgType.sprite = obj.DamageType.SpriteOfType;
+        armorType.sprite = obj.ArmorType.SpriteOfType;
     }
 
     /// <summary>
@@ -183,6 +200,8 @@ public class UIController : MonoBehaviour {
         infoLevelText.text = "";
         statsPanel.SetActive(false);
         attrPanel.SetActive(false);
+
+        objDisplayed = null;
     }
 
     /// <summary>
@@ -222,6 +241,17 @@ public class UIController : MonoBehaviour {
         tooltipPanel.SetActive(true);
         tooltip.text = tt.GetDisplayText();
     }
+
+    public void DisplayDamageTypeTooltip()
+    {
+        DisplayTooltip(objDisplayed.DamageType.GetMatchupTooltip());
+    }
+
+    public void DisplayArmorTypeTooltip()
+    {
+        DisplayTooltip(objDisplayed.ArmorType.GetMatchupTooltip());
+    }
+
 
     /// <summary>
     /// Hide the tooltip

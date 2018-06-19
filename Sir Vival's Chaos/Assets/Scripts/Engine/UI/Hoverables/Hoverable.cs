@@ -6,7 +6,7 @@ public abstract class Hoverable : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        Debug.Log("Clicked Ability");
+        Debug.Log("Clicked Hoverable");
     }
 
     /// <summary>

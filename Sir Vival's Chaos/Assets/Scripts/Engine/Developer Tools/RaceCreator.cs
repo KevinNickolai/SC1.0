@@ -49,7 +49,7 @@ public static class RaceCreator{
         //in case folder creation of races with the same name is allowed
         baseRaceFolder = AssetDatabase.GUIDToAssetPath(baseRaceGUID);
 
-        TestRace raceAsset = CreateRaceAsset(baseRaceFolder, raceName);
+        Race raceAsset = CreateRaceAsset(baseRaceFolder, raceName);
 
         CreateAbilities(baseRaceFolder,raceName, raceAsset);
         //CreateUnits();
@@ -64,13 +64,13 @@ public static class RaceCreator{
     /// <param name="baseFolder">the folder to put the race asset in</param>
     /// <param name="raceName">the name of the race</param>
     /// <returns>The Race Asset created</returns>
-    private static TestRace CreateRaceAsset(string baseFolder, string raceName)
+    private static Race CreateRaceAsset(string baseFolder, string raceName)
     {
         //the asset path for the Race asset file
         string raceAssetPath = baseFolder + "/" + raceName + FILE_EXT;
 
         //create the Race object for the race
-        AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<TestRace>(), raceAssetPath);
+        AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<Race>(), raceAssetPath);
 
         //create a string reference to associate to the Race's name
         StringReference srName = ScriptableObject.CreateInstance<StringReference>();
@@ -81,7 +81,7 @@ public static class RaceCreator{
         //reimport the asset to show the added asset
         AssetDatabase.ImportAsset(raceAssetPath);
 
-        TestRace race = (TestRace)AssetDatabase.LoadAssetAtPath(raceAssetPath, typeof(TestRace));
+        Race race = (Race)AssetDatabase.LoadAssetAtPath(raceAssetPath, typeof(Race));
 
         //create a serialized object to make the connection between the Race asset and the StringReference
         SerializedObject soRace = new SerializedObject(race);
@@ -101,7 +101,7 @@ public static class RaceCreator{
     /// </summary>
     /// <param name="baseFolder"></param>
     /// <param name="raceName"></param>
-    private static void CreateAbilities(string baseFolder, string raceName, TestRace raceAsset)
+    private static void CreateAbilities(string baseFolder, string raceName, Race raceAsset)
     {
         /**
          * Create the Abilities folder and retrieve its path using its GUID

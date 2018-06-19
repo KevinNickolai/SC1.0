@@ -24,7 +24,6 @@ public class SpawnAbility : CostedAbility {
     /// <param name="tt">The tooltip for this ability</param>
     //public SpawnAbility(Barrack b, string loc, int cost, Tooltip tt) : base(CostType.GOLD,cost,tt)
     
-
     /// <summary>
     /// Activate the spawn of the unit
     /// </summary>

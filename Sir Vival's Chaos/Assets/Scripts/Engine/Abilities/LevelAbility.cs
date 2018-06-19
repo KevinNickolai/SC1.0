@@ -29,7 +29,7 @@ public class LevelAbility : CostedAbility {
         lb.LevelUp();
     }
 
-    public override void SetBuilding(Building b)
+    public override void SetLevelable(ILevelable b)
     {
         lb = (LevelBuilding)b;
     }

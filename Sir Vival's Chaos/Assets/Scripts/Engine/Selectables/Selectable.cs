@@ -56,4 +56,26 @@ public abstract class Selectable : MonoBehaviour, IDescribable {
             return stats.Defense.Armor;
         }
     }
+
+    /// <summary>
+    /// ArmorType of the selectable object
+    /// </summary>
+    public ArmorType ArmorType
+    {
+        get
+        {
+            return stats.Defense.ArmorType;
+        }
+    }
+
+    /// <summary>
+    /// DamateType of the selectable object
+    /// </summary>
+    public DamageType DamageType
+    {
+        get
+        {
+            return stats.Attack.Damage.DamageType;
+        }
+    }
 }

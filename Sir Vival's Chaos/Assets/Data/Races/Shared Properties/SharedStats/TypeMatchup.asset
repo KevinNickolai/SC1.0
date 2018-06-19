@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c46387ba669204ea0370225f6ec5b1, type: 3}
+  m_Name: TypeMatchup
+  m_EditorClassIdentifier: 
+  armorTypes:
+  - {fileID: 11400000, guid: 5288d1fd5762cad4eb6dab18ac863b4f, type: 2}
+  - {fileID: 11400000, guid: a1a48605462f60844bc5e0cfdbb32647, type: 2}
+  - {fileID: 11400000, guid: e7a44247841acb4429d1824ff09202ef, type: 2}
+  - {fileID: 11400000, guid: 3c6424df3273c3b4d91b984b4c3972aa, type: 2}
+  - {fileID: 11400000, guid: c1d5b3599adec234e81373ad1d2f8738, type: 2}
+  - {fileID: 11400000, guid: aa11e86fc4b97ba4eb1224cdd1a90618, type: 2}
+  - {fileID: 11400000, guid: 57e5432c2dd1b6843b76600209a561b3, type: 2}
+  damageTypes:
+  - {fileID: 11400000, guid: def494a676c478c45aaa03e8eafefdb4, type: 2}
+  - {fileID: 11400000, guid: 70586fd150a3f574db67c58d02007903, type: 2}
+  - {fileID: 11400000, guid: 8363b08f86c53da45bb6cdf458aa6b34, type: 2}
+  - {fileID: 11400000, guid: 15f98dd4098c95844b4729eeb185a5c9, type: 2}
+  - {fileID: 11400000, guid: 930a76c1e28e1d34691f5bb8b25f0b5a, type: 2}
+  - {fileID: 11400000, guid: e426f0a4ffea27741b94541efe64713e, type: 2}
+  - {fileID: 11400000, guid: 8d30bdcb3a7b91d47b86c8fc42b3aa7c, type: 2}
+  - {fileID: 11400000, guid: 69ebc74b34e022e418766a2ef2a9a27d, type: 2}
+  matchups:
+  - list: 4b00000064000000500000006400000064000000640000004b000000
+  - list: 0a0000007d0000004b0000007d0000007d0000006400000064000000
+  - list: 28000000960000003200000064000000320000006400000028000000
+  - list: 64000000640000003c00000032000000c8000000640000003c000000
+  - list: 280000003c00000032000000c8000000640000006400000032000000
+  - list: c8000000640000003c00000096000000640000006400000032000000
+  - list: 64000000640000006400000064000000640000006400000064000000
+  - list: 64000000640000006400000064000000640000006400000064000000

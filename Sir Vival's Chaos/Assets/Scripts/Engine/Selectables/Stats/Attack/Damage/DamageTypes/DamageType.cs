@@ -5,6 +5,5 @@ using UnityEngine;
 /// <summary>
 /// Abstract base class for all damage types
 /// </summary>
-public abstract class DamageType : ScriptableObject {
-    
-}
+[System.Serializable]
+public abstract class DamageType : StatType { }

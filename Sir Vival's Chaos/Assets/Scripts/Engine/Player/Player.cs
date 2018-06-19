@@ -8,11 +8,6 @@ public class Player : MonoBehaviour {
     /// Test ScriptableObject Race
     /// </summary>
     [SerializeField]
-    private TestRace r;
-
-    /// <summary>
-    /// The player's race
-    /// </summary>
     private Race race;
 
     /// <summary>
@@ -34,11 +29,11 @@ public class Player : MonoBehaviour {
     /// <summary>
     /// The player's race
     /// </summary>
-    public TestRace Race
+    public Race Race
     {
         get
         {
-            return r;
+            return race;
         }
     }
 
@@ -61,13 +56,13 @@ public class Player : MonoBehaviour {
         barracks = playerBuildingGroup.GetComponentsInChildren<Barrack>();
         towers = playerBuildingGroup.GetComponentsInChildren<Tower>();
 
-        nexus.SetAbilityList(r.NexusAbilities);
+        nexus.SetAbilityList(race.NexusAbilities);
 
         #region Set AbilityLists for all buildings
 
-        barracks[0].SetAbilityList((AbilityList)(AssetCopier.DeepCopy(r.BarrackAbilities)));
+        barracks[0].SetAbilityList((AbilityList)(AssetCopier.DeepCopy(race.BarrackAbilities)));
 
-        barracks[1].SetAbilityList(r.BarrackAbilities);
+        barracks[1].SetAbilityList(race.BarrackAbilities);
         //Set the nexus ability list, using the race's nexus abilities
 //        nexus.SetAbilityList(race.GetNewNexusAbilities(nexus));
 
