@@ -189,6 +189,29 @@ public class UIController : MonoBehaviour {
         agi.text = obj.Agility.ToString();
         intel.text = obj.Intelligence.ToString();
     }
+
+    /// <summary>
+    /// Redraw the object being displayed on the UI
+    /// </summary>
+    public void Redraw()
+    {
+        /**
+         * Display the object based on its lowest heirarchal type
+         */
+        if(objDisplayed is IAttributable)
+        {
+            DisplayInfo((IAttributable)objDisplayed);
+        }
+        else if(objDisplayed is ILevelableObject)
+        {
+            DisplayInfo((ILevelableObject)objDisplayed);
+        }
+        else
+        {
+            DisplayInfo(objDisplayed);
+        }
+    }
+
     #endregion
 
     /// <summary>

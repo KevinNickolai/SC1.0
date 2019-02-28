@@ -11,16 +11,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3580aeb8ad74e1a46b9e8ace0348df1c, type: 3}
   m_Name: NewRace
   m_EditorClassIdentifier: 
-  name: {fileID: 114807055053796278}
-  mageUpgr: {fileID: 0}
-  rangeUpgr: {fileID: 0}
-  meleeUpgr: {fileID: 0}
-  armorUpgr: {fileID: 0}
-  auxUpgrs: []
+  name: {fileID: 114860766976372204}
+  mageUpgr: {fileID: 11400000, guid: 565d7d3e1f672494fb6d0d1b150375bd, type: 2}
+  rangeUpgr: {fileID: 11400000, guid: 7923ca9bd3b62aa489c8acd11a226cf9, type: 2}
+  meleeUpgr: {fileID: 11400000, guid: 1d6178123a093b841b8b12474a7363e0, type: 2}
+  armorUpgr: {fileID: 11400000, guid: 715d8401d4ac8e34c90cd61f1fea64b6, type: 2}
+  auxUpgrs:
+  - {fileID: 11400000, guid: 7758f263598e28f4897c4ce010a776d5, type: 2}
+  - {fileID: 11400000, guid: c774387256a5d4e4b90629c81170e164, type: 2}
+  - {fileID: 11400000, guid: 8f2cdf7f92b53fa4cac64c77cf6106e6, type: 2}
+  - {fileID: 11400000, guid: 942b9cd4ffa72ed4bb690cd5b9c25b43, type: 2}
+  - {fileID: 11400000, guid: c05295cdc6f17b34ea848b697e4e4a17, type: 2}
+  - {fileID: 11400000, guid: 2d180a7991cf80245919cbe82ba577b2, type: 2}
+  - {fileID: 11400000, guid: dde3c4de32540654abdf60563d9e668b, type: 2}
+  - {fileID: 11400000, guid: 83ba1a23dca14a74fbcc23f0f17daade, type: 2}
+  - {fileID: 11400000, guid: f04888b36874777458c6985160e20433, type: 2}
+  - {fileID: 11400000, guid: 204527a134ffd6e49a92808fdb31ec31, type: 2}
+  - {fileID: 11400000, guid: 35fc84d8b0c035f4596f34eec0644d28, type: 2}
   nexusAbilities: {fileID: 11400000, guid: b0c1cd862568ed54e80f870539b8011f, type: 2}
   barrackAbilities: {fileID: 11400000, guid: 6da33fd3cd2138245b99862da06f584d, type: 2}
   towerAbilities: {fileID: 11400000, guid: d0d413c023d40694d9f72aa519e9c7aa, type: 2}
---- !u!114 &114807055053796278
+--- !u!114 &114860766976372204
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

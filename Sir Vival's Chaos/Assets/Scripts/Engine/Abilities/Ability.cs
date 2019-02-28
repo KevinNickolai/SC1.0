@@ -53,6 +53,20 @@ public abstract class Ability : ScriptableObject{
         }
     }
 
+    /// <summary>
+    /// The sprite for the ability
+    /// </summary>
+    [SerializeField]
+    private Sprite sprite;
+
+    /// <summary>
+    /// The sprite for the ability
+    /// </summary>
+    public Sprite Sprite
+    {
+        get { return sprite; }
+    }
+
     public virtual void SetLevelable(ILevelable b) { }
     public virtual void SetBuilding(Building b) { }
 }

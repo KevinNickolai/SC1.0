@@ -25,17 +25,32 @@ public abstract class LevelBuilding : Building, ILevelableObject{
         }
     }
 
-    public LevelBuilding()
-    {
+    /// <summary>
+    /// The maximum level the building can go to
+    /// </summary>
+    private int maxLevel = 1;
 
+    /// <summary>
+    /// Set the maximum level of the LevelBuilding
+    /// </summary>
+    /// <param name="max"></param>
+    protected void SetMaxLevel(int max)
+    {
+        maxLevel = max;
+    }
+
+    public override void SetProperties(Race race)
+    {
+        
     }
 
     /// <summary>
-    /// Level the building up by one
+    /// Level the building up by one if it's less than the maximum level
     /// </summary>
     public void LevelUp()
     {
-        ++this.level;
+        if(level < maxLevel)
+            ++this.level;
     }
 
     /// <summary>

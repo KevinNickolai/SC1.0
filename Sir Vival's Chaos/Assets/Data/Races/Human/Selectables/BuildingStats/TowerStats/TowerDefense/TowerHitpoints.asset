@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a79432f115a61244ae78f8a46e1731a, type: 3}
   m_Name: TowerHitpoints
   m_EditorClassIdentifier: 
-  maxHP: {fileID: 0}
+  maxHP: {fileID: 11400000, guid: 3b0d201de4987cf499d611adb90c9895, type: 2}

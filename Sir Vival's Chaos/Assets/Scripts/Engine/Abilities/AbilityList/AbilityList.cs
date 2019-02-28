@@ -68,9 +68,29 @@ public class AbilityList : ScriptableObject, IEnumerable
         }
     }
 
-    public AbilityList(Ability[] al)
+    public void OnEnable()
     {
-        list = al;
+        if(list == null)
+        {
+            Init();
+        }
+    }
+
+    /// <summary>
+    /// Initialize the AbilityList
+    /// </summary>
+    /// <param name="l">the starting list to create the AbilityList withs</param>
+    public void Init(Ability[] l)
+    {
+        //if the passed in list is null, initialize a blank ability list
+        if (l == null)
+        {
+            Init();
+        }
+        else if(list == null) //check to make sure that the current ability list is not already initialized
+        {
+            list = l;
+        }
     }
 
     /// <summary>

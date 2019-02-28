@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "NewUpgrade", menuName = "Upgrade", order = 1)]
+[System.Serializable]
 public class Upgrade : ScriptableObject, ILevelable {
 
     /// <summary>
@@ -25,5 +24,10 @@ public class Upgrade : ScriptableObject, ILevelable {
     public void LevelUp()
     {
         ++level;
+    }
+
+    public void OnEnable()
+    {
+        level = 0;
     }
 }

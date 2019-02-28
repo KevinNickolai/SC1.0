@@ -9,6 +9,7 @@ public abstract class Building : Selectable, IAbilityUsable {
     /// </summary>
     [SerializeField]
     private BuildingSet buildingSet;
+
     /// <summary>
     /// The player that owns this building
     /// </summary>
@@ -23,7 +24,7 @@ public abstract class Building : Selectable, IAbilityUsable {
     }
 
     [SerializeField]
-    private AbilityList abilities;
+    protected AbilityList abilities;
 
     public AbilityList Abilities
     {
@@ -36,17 +37,16 @@ public abstract class Building : Selectable, IAbilityUsable {
     /// <summary>
     /// Set the Ability List for this building
     /// </summary>
-    /// <param name="list">The initial AbilityList for this building</param>
-    public void SetAbilityList(AbilityList list)
-    {
-        abilities = list;
-    }
+    /// <param name="race">The race, with information on the properties for the building</param>
+    public virtual void SetProperties(Race race) { }
 
     /// <summary>
     /// Initialization of the building
     /// </summary>
     protected void Start()
     {
+        base.Start();
+
         buildingSet.Add(this);
 
         //associate the player that owns this building; incomplete due to differences of multiple players.

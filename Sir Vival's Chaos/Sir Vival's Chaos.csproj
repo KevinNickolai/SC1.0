@@ -82,6 +82,9 @@
     <Compile Include="Assets\Scripts\Engine\Abilities\Ability.cs" />
     <Compile Include="Assets\Scripts\Engine\Abilities\AbilityList\AbilityEnum.cs" />
     <Compile Include="Assets\Scripts\Engine\Abilities\AbilityList\AbilityList.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\AbilityList\BarrackAbilityList.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\AbilityList\NexusAbilityList.cs" />
+    <Compile Include="Assets\Scripts\Engine\Abilities\AbilityList\TowerAbilityList.cs" />
     <Compile Include="Assets\Scripts\Engine\Abilities\ActivatedAbility.cs" />
     <Compile Include="Assets\Scripts\Engine\Abilities\CastAbility.cs" />
     <Compile Include="Assets\Scripts\Engine\Abilities\CostedAbility.cs" />
@@ -102,6 +105,7 @@
     <Compile Include="Assets\Scripts\Engine\Developer Tools\RuntimeSets\PlayerRuntimeSets\UnitSet.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\RuntimeSets\RuntimeSet.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\Settings.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\TooltipCreator.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\Variables\FloatVariable.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\Variables\IntVariable.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\Variables\StringVariable.cs" />
@@ -116,6 +120,7 @@
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\MeleeUpgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\RangeUpgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\Upgrade.cs" />
+    <Compile Include="Assets\Scripts\Engine\scriptableobjecttest.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Barrack\Barrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Barrack\LeftBarrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Barrack\MiddleBarrack.cs" />
@@ -139,6 +144,7 @@
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Attack\Damage\DamageTypes\PiercingDamage.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Attack\Damage\DamageTypes\SiegeDamage.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Attack\Damage\DamageTypes\SpellDamage.cs" />
+    <Compile Include="Assets\Scripts\Engine\Selectables\Stats\CasterStats.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Defense\Armor\Armor.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Defense\Armor\ArmorTypes\ArmorType.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Defense\Armor\ArmorTypes\DivineArmor.cs" />
@@ -151,10 +157,11 @@
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Defense\Defense.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Defense\Hitpoints\Hitpoints.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Defense\Hitpoints\HPTracker.cs" />
+    <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Matchups\StatType.cs" />
+    <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Matchups\TypeMatchupTable.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Miscellaneous\Attributes\Attributes.cs" />
+    <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Miscellaneous\Mana\Mana.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Stats.cs" />
-    <Compile Include="Assets\Scripts\Engine\Selectables\Stats\StatType.cs" />
-    <Compile Include="Assets\Scripts\Engine\Selectables\Stats\TypeMatchupTable.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Units\Footman.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Units\Hero.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Units\Unit.cs" />
@@ -162,6 +169,7 @@
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\AbilityPanelManager.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\Hoverable.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\StatHoverable\ImagePane.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Minimap.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\RaxCounter.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\AuxiliaryTooltip.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\CastTooltip.cs" />
@@ -170,6 +178,7 @@
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\MatchupTooltip.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\Tooltip.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\BuildingSection.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\GivesSection.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\HeaderTooltipSection.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\MultiLineTooltipSection.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\TooltipSection.cs" />

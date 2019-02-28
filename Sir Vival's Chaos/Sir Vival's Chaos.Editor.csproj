@@ -123,6 +123,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\AbilityListEditor.cs" />
     <Compile Include="Assets\Editor\GamePropertiesWindow.cs" />
     <Compile Include="Assets\Editor\GenericReferenceDrawer.cs" />
     <Compile Include="Assets\Editor\NewRacePopup.cs" />

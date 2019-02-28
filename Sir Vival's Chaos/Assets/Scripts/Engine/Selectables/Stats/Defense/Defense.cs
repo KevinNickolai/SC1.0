@@ -24,11 +24,11 @@ public class Defense : ScriptableObject
     /// <summary>
     /// MaxHP for the object
     /// </summary>
-    public int MaxHP
+    public Hitpoints MaxHPRef
     {
         get
         {
-            return hp.MaxHP;
+            return hp;
         }
     }
 

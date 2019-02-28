@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Class describing an ability that will level something up
@@ -9,9 +7,9 @@ using UnityEngine;
 public class LevelAbility : CostedAbility {
 
     /// <summary>
-    /// The building associated with this Leveling ability
+    /// The ILevelable associated with this Leveling ability
     /// </summary>
-    LevelBuilding lb;
+    ILevelable levelable;
 
     /// <summary>
     /// AbilityLevel Constructor
@@ -26,12 +24,13 @@ public class LevelAbility : CostedAbility {
     /// </summary>
     public override void Activate()
     {
-        lb.LevelUp();
+        levelable.LevelUp();
+        UIController.GetInstance().Redraw();
     }
 
     public override void SetLevelable(ILevelable b)
     {
-        lb = (LevelBuilding)b;
+        levelable = b;
     }
 
 }

@@ -11,16 +11,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3580aeb8ad74e1a46b9e8ace0348df1c, type: 3}
   m_Name: NewRace
   m_EditorClassIdentifier: 
-  name: {fileID: 114280158925646200}
-  mageUpgr: {fileID: 0}
-  rangeUpgr: {fileID: 0}
-  meleeUpgr: {fileID: 0}
-  armorUpgr: {fileID: 0}
-  auxUpgrs: []
-  nexusAbilities: {fileID: 11400000, guid: 3474f7cc2736f1242a68a6c9a6292533, type: 2}
-  barrackAbilities: {fileID: 11400000, guid: 086f3e8574733414eaf82f36005a9220, type: 2}
-  towerAbilities: {fileID: 11400000, guid: 843ad03846d8a7d4997bd761210b74b8, type: 2}
---- !u!114 &114280158925646200
+  name: {fileID: 114141608770230276}
+  mageUpgr: {fileID: 11400000, guid: 134877043f3a439448371b67c34ac20c, type: 2}
+  rangeUpgr: {fileID: 11400000, guid: 7e44d026cb629124aa7725716480d668, type: 2}
+  meleeUpgr: {fileID: 11400000, guid: 7309fd8221e59c84fa86e31eda082d1c, type: 2}
+  armorUpgr: {fileID: 11400000, guid: bb352a0ddc7e3d14d93e2c82c296af24, type: 2}
+  auxUpgrs:
+  - {fileID: 11400000, guid: f85a50991ce792d4fad76d31c059882c, type: 2}
+  - {fileID: 11400000, guid: 001368160e697604498ebbf798d37c65, type: 2}
+  - {fileID: 11400000, guid: 994326a6c4e33304993f44b7aec18343, type: 2}
+  - {fileID: 11400000, guid: 87d4649abdf2af14aa481298760ba488, type: 2}
+  - {fileID: 11400000, guid: 32de49086d9b2584d9c685ed4f9042a5, type: 2}
+  - {fileID: 11400000, guid: b3d244dacae5e444fafb8dda9f2ca7ab, type: 2}
+  - {fileID: 11400000, guid: 38c9650ecf0876441b48f0845a48ab39, type: 2}
+  - {fileID: 11400000, guid: 6adf74af114f13e4dada7daf4045acb6, type: 2}
+  - {fileID: 11400000, guid: 67c6b8aff8c32f84f9bf3ca780ab843c, type: 2}
+  - {fileID: 11400000, guid: 06737eeef5f97ab40b35faa509c5c634, type: 2}
+  - {fileID: 11400000, guid: 8a14a476881224c4a90aeea93b2cbedc, type: 2}
+  nexusAbilities: {fileID: 11400000, guid: f458232109390b84193452c6d302803b, type: 2}
+  barrackAbilities: {fileID: 11400000, guid: 03128c95ac6bc934f9ab861253d43d4d, type: 2}
+  towerAbilities: {fileID: 11400000, guid: dd06b0c0eaa15b749999aab10f2a6ec0, type: 2}
+--- !u!114 &114141608770230276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

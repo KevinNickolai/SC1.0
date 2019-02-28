@@ -58,10 +58,15 @@ public class AbilityPanelManager : MonoBehaviour {
 
     public void SetPanes(AbilityList abilities)
     {
-        //for(int i = 0; i < AbilityList.MAX_SIZE; ++i)
-        //{
-        //    panes[i].Ability = abilities[i];
-        //}
+        if (!abilities)
+        {
+            Debug.LogWarning("Null Ability List for currently selected building.");
+            return;
+        }
+        for (int i = 0; i < AbilityList.MAX_SIZE; ++i)
+        {
+            panes[i].Ability = abilities[i];
+        }
     }
 
 	// Update is called once per frame

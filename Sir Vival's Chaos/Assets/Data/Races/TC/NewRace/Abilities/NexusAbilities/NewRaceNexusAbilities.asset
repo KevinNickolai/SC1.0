@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Name: NewRaceNexusAbilities
   m_EditorClassIdentifier: 
   list:
+  - {fileID: 11400000, guid: 3bec55ec428a4fc4fa8bc7da340af6d7, type: 2}
+  - {fileID: 11400000, guid: 89e0e18d0b72d4a40b3c99cf3b77fe72, type: 2}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: dccb2c6e7e21f88479fa7e6312a6388c, type: 2}
+  - {fileID: 11400000, guid: fb1572e6eb3d4cf4bbbf54ce72e667fc, type: 2}
+  - {fileID: 11400000, guid: 7dedbd5927b0706459349253e7263fcd, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

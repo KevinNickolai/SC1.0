@@ -36,45 +36,58 @@ public class GenericReferenceDrawer : PropertyDrawer
         label = EditorGUI.BeginProperty(position, label, property);
         position = EditorGUI.PrefixLabel(position, label);
 
-        EditorGUI.BeginChangeCheck();
+        if (property.objectReferenceValue)
+        {
+            EditorGUI.BeginChangeCheck();
 
-        SerializedObject so = new SerializedObject(property.objectReferenceValue);
+            SerializedObject so = new SerializedObject(property.objectReferenceValue);
 
-        // Get properties
-        SerializedProperty useConstant = so.FindProperty("UseConstant");
-        SerializedProperty constantValue = so.FindProperty("ConstantValue");
-        SerializedProperty variable = so.FindProperty("Variable");
+            // Get properties
+            SerializedProperty useConstant = so.FindProperty("UseConstant");
+            SerializedProperty constantValue = so.FindProperty("ConstantValue");
+            SerializedProperty variable = so.FindProperty("Variable");
 
-        /**
-         * Original serialized properties; unable to work 
-         */
-        //SerializedProperty useConstant =  property.FindPropertyRelative("UseConstant");
-        //SerializedProperty constantValue = property.FindPropertyRelative("ConstantValue");
-        //SerializedProperty variable = property.FindPropertyRelative("Variable");
+            /**
+             * Original serialized properties; unable to work 
+             */
+            //SerializedProperty useConstant =  property.FindPropertyRelative("UseConstant");
+            //SerializedProperty constantValue = property.FindPropertyRelative("ConstantValue");
+            //SerializedProperty variable = property.FindPropertyRelative("Variable");
 
-        // Calculate rect for configuration button
-        Rect buttonRect = new Rect(position);
-        buttonRect.yMin += popupStyle.margin.top;
-        buttonRect.width = popupStyle.fixedWidth + popupStyle.margin.right;
-        position.xMin = buttonRect.xMax;
+            // Calculate rect for configuration button
+            Rect buttonRect = new Rect(position);
+            buttonRect.yMin += popupStyle.margin.top;
+            buttonRect.width = popupStyle.fixedWidth + popupStyle.margin.right;
+            position.xMin = buttonRect.xMax;
 
-        // Store old indent level and set it to 0, the PrefixLabel takes care of it
-        int indent = EditorGUI.indentLevel;
-        EditorGUI.indentLevel = 0;
+            // Store old indent level and set it to 0, the PrefixLabel takes care of it
+            int indent = EditorGUI.indentLevel;
+            EditorGUI.indentLevel = 0;
 
-        int result = EditorGUI.Popup(buttonRect, useConstant.boolValue ? 0 : 1, popupOptions, popupStyle);
+            int result = EditorGUI.Popup(buttonRect, useConstant.boolValue ? 0 : 1, popupOptions, popupStyle);
 
-        useConstant.boolValue = result == 0;
+            useConstant.boolValue = result == 0;
 
-        EditorGUI.PropertyField(position,
-            useConstant.boolValue ? constantValue : variable,
-            GUIContent.none);
+            EditorGUI.PropertyField(position,
+                useConstant.boolValue ? constantValue : variable,
+                GUIContent.none);
 
-        if (EditorGUI.EndChangeCheck())
-            //property.serializedObject.ApplyModifiedProperties();
-            so.ApplyModifiedProperties();
+            if (EditorGUI.EndChangeCheck())
+                //property.serializedObject.ApplyModifiedProperties();
+                so.ApplyModifiedProperties();
 
-        EditorGUI.indentLevel = indent;
+            EditorGUI.indentLevel = indent;
+        }
+        else
+        {
+            EditorGUI.PropertyField(position, property, GUIContent.none);
+        }
+
         EditorGUI.EndProperty();
+    }
+
+    public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    {
+        return EditorGUI.GetPropertyHeight(property, true);
     }
 }

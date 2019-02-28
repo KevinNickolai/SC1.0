@@ -27,7 +27,7 @@ public class ImagePane : Hoverable {
             case PaneType.Attribute:
                 //UIController.GetInstance().DisplayAttributeTooltip();
                 throw new System.NotImplementedException("Attributes not displayable currently");                
-                break;
+                //break;
         }
     }
 

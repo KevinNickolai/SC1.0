@@ -36,13 +36,13 @@ public class HeaderTooltipSection : TooltipSection {
     /// Display the HeaderTooltipSection
     /// </summary>
     /// <returns></returns>
-    public virtual string Display()
+    public override string Display()
     {
         //display the header, colored a specific way
         string dispStr =
             "<color=" + HEADER_COLOR + ">" +
             header +
-            ":</color> ";
+            ":</color>\n";
 
         //return the displayed header and the base TooltipSection Display string
         return dispStr + base.Display();

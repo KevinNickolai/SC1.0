@@ -56,13 +56,13 @@ public class Player : MonoBehaviour {
         barracks = playerBuildingGroup.GetComponentsInChildren<Barrack>();
         towers = playerBuildingGroup.GetComponentsInChildren<Tower>();
 
-        nexus.SetAbilityList(race.NexusAbilities);
+        nexus.SetProperties(race);
 
         #region Set AbilityLists for all buildings
 
-        barracks[0].SetAbilityList((AbilityList)(AssetCopier.DeepCopy(race.BarrackAbilities)));
+        //barracks[0].SetProperties((AbilityList)(AssetCopier.DeepCopy(race.BarrackAbilities)));
 
-        barracks[1].SetAbilityList(race.BarrackAbilities);
+        //barracks[1].SetProperties(race.BarrackAbilities);
         //Set the nexus ability list, using the race's nexus abilities
 //        nexus.SetAbilityList(race.GetNewNexusAbilities(nexus));
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "NewMeleeUpgrade", menuName = "Upgrades/MeleeUpgrade")]
 public class MeleeUpgrade : AttackUpgrade {
 
 }

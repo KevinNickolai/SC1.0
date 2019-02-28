@@ -15,12 +15,7 @@ public class GamePropertiesWindow : EditorWindow
     /// </summary>
     private bool showMatchups = false;
 
-    /// <summary>
-    /// Position in the scroll view of the window
-    /// </summary>
-    private Vector2 scrollPos = Vector2.zero;
-
-    [MenuItem("Window/GameProperties/gp")]
+    [MenuItem("Window/GameProperties")]
     static void Init()
     {
         //get existing window if open, make a new one if none are open

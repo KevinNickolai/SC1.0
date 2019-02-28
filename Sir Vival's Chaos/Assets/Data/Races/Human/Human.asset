@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Name: Human
   m_EditorClassIdentifier: 
   name: {fileID: 11400000, guid: cc0307d47f279e0419772d7b154cbc03, type: 2}
-  mageUpgr: {fileID: 0}
-  rangeUpgr: {fileID: 0}
-  meleeUpgr: {fileID: 0}
-  armorUpgr: {fileID: 0}
+  mageUpgr: {fileID: 11400000, guid: fc4213ceeeb209c40870383f81b90e89, type: 2}
+  rangeUpgr: {fileID: 11400000, guid: 6dbf0390f704e864cab73c9da10bd722, type: 2}
+  meleeUpgr: {fileID: 11400000, guid: 1dcc963bfb5365645a82c311ef1d345e, type: 2}
+  armorUpgr: {fileID: 11400000, guid: 4abf105b5286d4846ad2b7f3be2120c2, type: 2}
   auxUpgrs:
   - {fileID: 0}
   - {fileID: 0}

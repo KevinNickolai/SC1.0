@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour {
 
     Barrack[] rax;
 
+    [SerializeField]
+    Settings setting;
     /// <summary>
     /// current time in game
     /// </summary>

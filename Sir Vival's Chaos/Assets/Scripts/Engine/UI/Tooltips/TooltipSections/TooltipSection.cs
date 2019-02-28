@@ -30,9 +30,9 @@ public class TooltipSection : ScriptableObject {
     /// <summary>
     /// Display the tooltip section in a formatted way
     /// </summary>
-    /// <returns></returns>
+    /// <returns>string of text to display for the tooltip</returns>
     public virtual string Display()
     {
-        return body;
+        return body + "\n";
     }
 }

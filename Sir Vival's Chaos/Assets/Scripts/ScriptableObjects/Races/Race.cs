@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewRace",menuName = "Race",order = 1)]
+/// <summary>
+/// Class describing a playable race and its properties in the game
+/// </summary>
 public class Race : ScriptableObject {
 
     /// <summary>
@@ -27,25 +29,25 @@ public class Race : ScriptableObject {
     /// The mage upgrade for the race
     /// </summary>
     [SerializeField]
-    private Upgrade mageUpgr;
+    private MageUpgrade mageUpgr;
 
     /// <summary>
     /// The range upgrade for the race
     /// </summary>
     [SerializeField]
-    private Upgrade rangeUpgr;
+    private RangeUpgrade rangeUpgr;
 
     /// <summary>
     /// The melee upgrade for the race
     /// </summary>
     [SerializeField]
-    private Upgrade meleeUpgr;
+    private MeleeUpgrade meleeUpgr;
 
     /// <summary>
     /// The armor upgrade for the race
     /// </summary>
     [SerializeField]
-    private Upgrade armorUpgr;
+    private DefenseUpgrade armorUpgr;
 
     /// <summary>
     /// Auxiliary upgrades for the race
@@ -53,45 +55,45 @@ public class Race : ScriptableObject {
     [SerializeField]
     private AuxUpgrade[] auxUpgrs;
 
-    //public MeleeUpgrade Melee
-    //{
-    //    get
-    //    {
-    //        return meleeUpgr;
-    //    }
-    //}
+    public MeleeUpgrade Melee
+    {
+        get
+        {
+            return meleeUpgr;
+        }
+    }
 
-    //public RangeUpgrade Range
-    //{
-    //    get
-    //    {
-    //        return rangeUpgr;
-    //    }
-    //}
+    public RangeUpgrade Range
+    {
+        get
+        {
+            return rangeUpgr;
+        }
+    }
 
-    //public MageUpgrade Mage
-    //{
-    //    get
-    //    {
-    //        return mageUpgr;
-    //    }
-    //}
+    public MageUpgrade Mage
+    {
+        get
+        {
+            return mageUpgr;
+        }
+    }
 
-    //public AuxUpgrade[] Auxiliary
-    //{
-    //    get
-    //    {
-    //        return auxUpgrs;
-    //    }
-    //}
+    public AuxUpgrade[] Auxiliary
+    {
+        get
+        {
+            return auxUpgrs;
+        }
+    }
 
-    //public DefenseUpgrade Armor
-    //{
-    //    get
-    //    {
-    //        return armorUpgr;
-    //    }
-    //}
+    public DefenseUpgrade Armor
+    {
+        get
+        {
+            return armorUpgr;
+        }
+    }
     #endregion
 
     #region Building AbilityLists
@@ -157,45 +159,6 @@ public class Race : ScriptableObject {
     /// </summary>
     [SerializeField]
     private readonly RaceFaction faction;
-
-    /// <summary>
-    /// Get a Base abilities list for any race's nexus
-    /// </summary>
-    /// <param name="nexus">The nexus to associate with the abilities</param>
-    /// <returns>A basic skeleton AbilityList object that has all basic tooltip structures common among all race nexus buildings</returns>
-    protected AbilityList BaseNexusAbilities(Nexus nexus)
-    {
-        //create an ability array to plug into an ability list
-        Ability[] nexusAbilities = new Ability[AbilityList.MAX_SIZE];
-
-        ////create skeleton descriptor tooltip
-        //nexusAbilities[0] = new InactiveAbility(new DescriptorTooltip());
-
-        ////create the abilities for upgrades
-        //nexusAbilities[1] = new LevelAbility(500, new UpgradeTooltip());
-        //nexusAbilities[3] = new LevelAbility(1500, new UpgradeTooltip());
-        //nexusAbilities[4] = new LevelAbility(200, new UpgradeTooltip());
-        //nexusAbilities[5] = new LevelAbility(300, new UpgradeTooltip());
-        //nexusAbilities[6] = new LevelAbility(300, new UpgradeTooltip());
-        //nexusAbilities[7] = new LevelAbility(500, new UpgradeTooltip());
-
-        ////set buildings for the abilities
-        //nexusAbilities[3].SetBuilding(nexus);
-
-        ////create the cast abilities
-        //nexusAbilities[8] = new CastAbility(50, new CastTooltip());
-        //nexusAbilities[9] = new CastAbility(150, new CastTooltip());
-
-        //TODO: Create nexus abilities for selection of aura & ultimate weapon
-
-        /**
-         * nexusAbilities[2]
-         * nexusAbilities[10]
-         */
-
-
-        return new AbilityList(nexusAbilities);
-    }
 }
 
 #region race code

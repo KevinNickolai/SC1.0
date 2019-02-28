@@ -44,6 +44,7 @@ public class Unit : Selectable {
 
     protected void Start()
     {
+        base.Start();
         unitSet.Add(this);
         name = gameObject.transform.name;
         spawnPoint = new Vector3(0, 30, 0);

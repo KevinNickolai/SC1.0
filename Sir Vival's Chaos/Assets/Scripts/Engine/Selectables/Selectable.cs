@@ -13,6 +13,14 @@ public abstract class Selectable : MonoBehaviour, IDescribable {
     [SerializeField]
     private Stats stats;
 
+    private HPTrackerUI hpUI;
+
+    public void Start()
+    {
+        hpUI = new HPTrackerUI(gameObject, stats.Defense.MaxHPRef);
+        
+    }
+
     /// <summary>
     /// The name of the selectable object
     /// </summary>
@@ -78,4 +86,5 @@ public abstract class Selectable : MonoBehaviour, IDescribable {
             return stats.Attack.Damage.DamageType;
         }
     }
+
 }
