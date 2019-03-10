@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: {fileID: 11400000, guid: 2671153fb3671b84cb45d4e55826af28, type: 2}
   atkSpd: {fileID: 11400000, guid: a3220b3e16988704f89750cdf77a0106, type: 2}
+  atkUpgr: 1

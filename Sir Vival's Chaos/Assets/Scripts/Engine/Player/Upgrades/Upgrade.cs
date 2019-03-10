@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Upgrade : ScriptableObject, ILevelable {
+public abstract class Upgrade : ScriptableObject, ILevelable {
 
     /// <summary>
     /// The level of the upgrade

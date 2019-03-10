@@ -10,27 +10,12 @@ public class Unit : Selectable {
     [SerializeField]
     private UnitSet unitSet;
 
-    public const string unit = "Prefabs/unit";
-
     protected Vector3 spawnPoint;
 
     /// <summary>
     /// The name of the unit
     /// </summary>
-    private new string name; //< the new keyword distinguishes Building::name from Object::name, since that's not the intended inheiritance.
-
-    /// <summary>
-    /// The player that owns this unit
-    /// </summary>
-    private Player player;
-
-    public Player Player
-    {
-        get
-        {
-            return player;
-        }
-    }
+    private new string name; //< the new keyword distinguishes Unit::name from Object::name, since that's not the intended inheiritance.
 
     private Ability[] abilities;
 
@@ -46,6 +31,7 @@ public class Unit : Selectable {
     {
         base.Start();
         unitSet.Add(this);
+
         name = gameObject.transform.name;
         spawnPoint = new Vector3(0, 30, 0);
     }
@@ -55,17 +41,23 @@ public class Unit : Selectable {
         GameObject.FindObjectOfType<UIController>().DisplayInfo(this);
     }
 
-    public static void Spawn(string prefabLoc, Vector3 pos, Quaternion rot)
+    /// <summary>
+    /// Spawn a unit at a certain position/rotation, owned by a specific player
+    /// </summary>
+    /// <param name="unitObj">The GameObject unit to spawn</param>
+    /// <param name="pos">The position to spawn the prefab at</param>
+    /// <param name="rot">The rotation of the prefab being spawned</param>
+    /// <param name="p">The player that owns the spawned prefab</param>
+    public static void Spawn(GameObject unitObj, Vector3 pos, Quaternion rot, Player p)
     {
-        GameObject unit = (GameObject)Resources.Load(prefabLoc, typeof(GameObject));
-
-        if(unit != null)
+        if(unitObj != null)
         {
-            Instantiate(unit, pos, rot);
+            GameObject instancedUnit = Instantiate(unitObj, pos, rot);
+            instancedUnit.GetComponent<Unit>().SetPlayer(p);
         }
         else
         {
-            Debug.Log("No prefab at location: " + prefabLoc);
+            Debug.LogError("Attempted to spawn null unit.");
         }
     }
 }

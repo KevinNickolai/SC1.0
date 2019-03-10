@@ -7,7 +7,7 @@ public class Barrack : LevelBuilding {
     /// <summary>
     /// List of things to spawn in a wave
     /// </summary>
-    private List<string> wave;
+    private List<GameObject> wave;
 
     /// <summary>
     /// The spawnpoints for this Barrack Object
@@ -27,17 +27,20 @@ public class Barrack : LevelBuilding {
         //we still want to initialize other features of the base classes
         base.Start();
 
-        wave = new List<string>();
-
-        wave.Add(Unit.unit);
-        wave.Add(Unit.unit);
-
-        
-        //wave.Add(Hero.hero);
-
         InitializeSpawnPoints();
 
         InitializeRaxCounter();
+    }
+
+    public override void SetProperties(Race race, Player p)
+    {
+        base.SetProperties(race, p);
+
+        wave = new List<GameObject>();
+        wave.Add(race.MeleeUnit);
+
+        //wave.Add(Unit.BaseHumanUnit);
+        //wave.Add(Hero.hero);
     }
 
     /// <summary>
@@ -83,9 +86,12 @@ public class Barrack : LevelBuilding {
     /// </summary>
     public void SpawnWave()
     {
-        foreach(string unit in wave)
+        foreach(GameObject unit in wave)
         {
-            Unit.Spawn(unit, this.transform.position + spawnPoints.GetNextSpawnPoint(), gameObject.transform.rotation);
+            Unit.Spawn(unit, 
+                this.transform.position + spawnPoints.GetNextSpawnPoint(),
+                gameObject.transform.rotation,
+                Player);
         }
     }
 
@@ -101,9 +107,9 @@ public class Barrack : LevelBuilding {
     /// <summary>
     /// Spawn a specific unit from the barrack
     /// </summary>
-    /// <param name="loc">the path of the prefab of the unit</param>
-    public void Spawn(string loc)
+    /// <param name="u">the unit GameObject to spawn</param>
+    public void Spawn(GameObject u)
     {
-        Unit.Spawn(loc, this.transform.position + new Vector3(0, 30, 0), this.transform.rotation);
+        Unit.Spawn(u, this.transform.position + new Vector3(0, 30, 0), this.transform.rotation, Player);
     }
 }

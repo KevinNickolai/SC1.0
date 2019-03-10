@@ -78,6 +78,10 @@ public class AbilityPane : Hoverable {
     {
         if(ability != null && ability.IsActivatable)
         {
+            if(ability is CostedAbility)
+            {
+
+            }
             ((ActivatedAbility)ability).Activate();
         }
     }

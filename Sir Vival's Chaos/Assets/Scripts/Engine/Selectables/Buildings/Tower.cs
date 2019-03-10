@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class Tower : Building {
 
-    public Tower()
-    {
-
-    }
 }

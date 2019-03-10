@@ -7,11 +7,15 @@ using UnityEngine;
 /// </summary>
 [CreateAssetMenu(fileName = "NewAttack", menuName = "Stats/Attack/Attack", order = 1)]
 public class Attack : ScriptableObject {
+
     [SerializeField]
     private Damage dmg;
 
     [SerializeField]
     private AttackSpeed atkSpd;
+
+    [SerializeField]
+    private Race.AttackUpgradeTypes atkUpgr;
 
     /// <summary>
     /// The damage aspect of the attack
@@ -35,5 +39,15 @@ public class Attack : ScriptableObject {
         }
     }
 
+    /// <summary>
+    /// The attack upgrade type that the object uses
+    /// </summary>
+    public Race.AttackUpgradeTypes AttackUpgrade
+    {
+        get
+        {
+            return atkUpgr;
+        }
+    }
     
 }

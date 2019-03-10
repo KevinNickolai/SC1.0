@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: TowerMinDamageRef
   m_EditorClassIdentifier: 
   UseConstant: 1
-  ConstantValue: 110
+  ConstantValue: 100
   Variable: {fileID: 0}

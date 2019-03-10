@@ -11,9 +11,9 @@ public class SpawnAbility : CostedAbility {
     Barrack barrack;
 
     /// <summary>
-    /// The location of the prefab of the unit to spawn
+    /// The prefab of the unit to spawn
     /// </summary>
-    string unitLoc;
+    GameObject unitLoc;
 
     /// <summary>
     /// SpawnAbility Constructor

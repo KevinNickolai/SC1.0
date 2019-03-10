@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour {
 
     Barrack[] rax;
 
+    Player[] players;
+
     [SerializeField]
     Settings setting;
     /// <summary>
@@ -30,6 +32,7 @@ public class GameController : MonoBehaviour {
 	void Start () {
         uiCont = gameObject.AddComponent<UIController>();
         rax = GameObject.FindObjectsOfType<Barrack>();
+        players = GameObject.FindObjectsOfType<Player>();
 	}
 	
 	// Update is called once per frame
@@ -40,6 +43,7 @@ public class GameController : MonoBehaviour {
 
         UpdateBarrackCounters(Time.deltaTime);
 
+        //UpdatePlayerGold();
 	}
 
     /// <summary>

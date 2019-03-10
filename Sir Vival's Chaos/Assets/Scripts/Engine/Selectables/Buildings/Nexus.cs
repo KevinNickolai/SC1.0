@@ -14,19 +14,21 @@ public class Nexus : LevelBuilding {
         this.SetMaxLevel(MAX_LEVEL);
     }
 
-    public override void SetProperties(Race race)
+    public override void SetProperties(Race race, Player p)
     {
+        base.SetProperties(race, p);
+
         this.abilities = race.NexusAbilities;
 
         //set the levelables for the nexus abilities
         abilities[NexusAbilityList.BUILDING_UPGRADE].SetLevelable(this);
 
-        abilities[NexusAbilityList.MAGE_UPGRADE].SetLevelable(race.Mage);
+        abilities[NexusAbilityList.MAGE_UPGRADE].SetLevelable(race.MageUpgrade);
 
-        abilities[NexusAbilityList.MELEE_UPGRADE].SetLevelable(race.Melee);
+        abilities[NexusAbilityList.MELEE_UPGRADE].SetLevelable(race.MeleeUpgrade);
 
-        abilities[NexusAbilityList.RANGE_UPGRADE].SetLevelable(race.Range);
+        abilities[NexusAbilityList.RANGE_UPGRADE].SetLevelable(race.RangeUpgrade);
 
-        abilities[NexusAbilityList.ARMOR_UPGRADE].SetLevelable(race.Armor);
+        abilities[NexusAbilityList.ARMOR_UPGRADE].SetLevelable(race.ArmorUpgrade);
     }   
 }

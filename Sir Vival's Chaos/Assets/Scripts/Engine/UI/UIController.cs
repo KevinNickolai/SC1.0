@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour {
 
     private const string STATS_PANEL = "Stats Panel";
     private const string ATTR_PANEL = "Attributes Panel";
-    private const string TT_PANEL = "Tooltip Panel";
+
     private const string DEF_LEVEL = "Defense Level";
     private const string ATK_LEVEL = "Attack Level";
 
@@ -28,12 +28,9 @@ public class UIController : MonoBehaviour {
     private const string STRENGTH = "Strength";
     private const string AGILITY = "Agility";
     private const string INTELLIGENCE = "Intelligence";
-
-    private const string TOOLTIP = "Tooltip";
-
-
     #endregion
 
+    #region Text and Image variables
     private Text timerText;
 
     private Text infoNameText;
@@ -49,7 +46,9 @@ public class UIController : MonoBehaviour {
     private Text agi;
     private Text intel;
 
-    private Text tooltip;
+    private Text atkLevel;
+    private Text defLevel;
+    #endregion
 
     /// <summary>
     /// The panel displaying stats information
@@ -64,7 +63,7 @@ public class UIController : MonoBehaviour {
     /// <summary>
     /// The panel displaying the tooltip
     /// </summary>
-    private GameObject tooltipPanel;
+    private TooltipManager tooltipManager;
 
     GameController gc;
 
@@ -91,12 +90,12 @@ public class UIController : MonoBehaviour {
 
         //initialize the AbilityPanelManager
         gameObject.AddComponent<AbilityPanelManager>();
+        tooltipManager = gameObject.AddComponent<TooltipManager>();
 
         instance = this;
 
         statsPanel = GameObject.Find(STATS_PANEL);
         attrPanel = GameObject.Find(ATTR_PANEL);
-        tooltipPanel = GameObject.Find(TT_PANEL);
 
         //timer text object
         timerText = GameObject.Find(TIMER_NAME).GetComponent<Text>();
@@ -118,11 +117,14 @@ public class UIController : MonoBehaviour {
         agi = GameObject.Find(AGILITY).GetComponent<Text>();
         intel = GameObject.Find(INTELLIGENCE).GetComponent<Text>();
 
-        //tooltip text object
-        tooltip = GameObject.Find(TOOLTIP).GetComponent<Text>();
+
 
         dmgType = GameObject.Find(ATTACK_IMAGE).GetComponent<Image>();
         armorType = GameObject.Find(DEFENSE_IMAGE).GetComponent<Image>();
+
+        //attack/defense level text objects
+        atkLevel = GameObject.Find(ATK_LEVEL).GetComponent<Text>();
+        defLevel = GameObject.Find(DEF_LEVEL).GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -158,6 +160,10 @@ public class UIController : MonoBehaviour {
         //set sprites for the Damage & Armor types
         dmgType.sprite = obj.DamageType.SpriteOfType;
         armorType.sprite = obj.ArmorType.SpriteOfType;
+
+        //set text level of the attack/defense levels
+        atkLevel.text = obj.Player.Race.GetAttackUpgrade(obj.AttackUpgradeType).Level.ToString();
+        defLevel.text = obj.Player.Race.ArmorUpgrade.Level.ToString();
     }
 
     /// <summary>
@@ -251,8 +257,7 @@ public class UIController : MonoBehaviour {
     /// <param name="tt">the tooltip string we want to display</param>
     public void DisplayTooltip(string tt)
     {
-        tooltipPanel.SetActive(true);
-        tooltip.text = tt;
+        tooltipManager.DisplayTooltip(tt);
     }
 
     /// <summary>
@@ -261,8 +266,7 @@ public class UIController : MonoBehaviour {
     /// <param name="tt">the Tooltip to display</param>
     public void DisplayTooltip(Tooltip tt)
     {
-        tooltipPanel.SetActive(true);
-        tooltip.text = tt.GetDisplayText();
+        tooltipManager.DisplayTooltip(tt);
     }
 
     public void DisplayDamageTypeTooltip()
@@ -281,7 +285,7 @@ public class UIController : MonoBehaviour {
     /// </summary>
     public void HideTooltip()
     {
-        tooltipPanel.SetActive(false);
+        tooltipManager.HideTooltip();
     }
 
     /// <summary>

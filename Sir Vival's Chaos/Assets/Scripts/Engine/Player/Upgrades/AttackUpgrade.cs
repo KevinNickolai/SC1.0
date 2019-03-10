@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class AttackUpgrade : Upgrade {
+public abstract class AttackUpgrade : Upgrade {
 
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Building : Selectable, IAbilityUsable {
 
+    private Highlight highlight;
+
     /// <summary>
     /// The building set that this building is associated with
     /// </summary>
@@ -11,21 +13,14 @@ public abstract class Building : Selectable, IAbilityUsable {
     private BuildingSet buildingSet;
 
     /// <summary>
-    /// The player that owns this building
+    /// The list of ability for the building
     /// </summary>
-    private Player player;
-
-    public Player Player
-    {
-        get
-        {
-            return player;
-        }
-    }
-
     [SerializeField]
     protected AbilityList abilities;
 
+    /// <summary>
+    /// The list of abilities for the building
+    /// </summary>
     public AbilityList Abilities
     {
         get
@@ -38,7 +33,10 @@ public abstract class Building : Selectable, IAbilityUsable {
     /// Set the Ability List for this building
     /// </summary>
     /// <param name="race">The race, with information on the properties for the building</param>
-    public virtual void SetProperties(Race race) { }
+    public virtual void SetProperties(Race race, Player p)
+    {
+        SetPlayer(p);
+    }
 
     /// <summary>
     /// Initialization of the building
@@ -49,8 +47,8 @@ public abstract class Building : Selectable, IAbilityUsable {
 
         buildingSet.Add(this);
 
-        //associate the player that owns this building; incomplete due to differences of multiple players.
-        player = GameObject.FindObjectOfType<Player>();
+        highlight = gameObject.GetComponentInChildren<Highlight>();
+        highlight.HideHighlight();
     }
 
     /// <summary>
@@ -69,6 +67,7 @@ public abstract class Building : Selectable, IAbilityUsable {
     /// </summary>
     protected void OnMouseEnter()
     {
+        highlight.ShowHighlight();
     }
 
     /// <summary>
@@ -76,6 +75,6 @@ public abstract class Building : Selectable, IAbilityUsable {
     /// </summary>
     protected void OnMouseExit()
     {
-        
+        highlight.HideHighlight();
     }
 }

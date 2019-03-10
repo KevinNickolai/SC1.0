@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: TowerMaxDamageRef
   m_EditorClassIdentifier: 
   UseConstant: 1
-  ConstantValue: 100
+  ConstantValue: 110
   Variable: {fileID: 0}

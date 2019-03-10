@@ -39,9 +39,9 @@ public abstract class LevelBuilding : Building, ILevelableObject{
         maxLevel = max;
     }
 
-    public override void SetProperties(Race race)
+    public override void SetProperties(Race race, Player p)
     {
-        
+        base.SetProperties(race, p);
     }
 
     /// <summary>

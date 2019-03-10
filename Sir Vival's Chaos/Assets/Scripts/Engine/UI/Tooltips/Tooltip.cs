@@ -36,7 +36,7 @@ public abstract class Tooltip : ScriptableObject {
     /// <returns>string of formatted text to display</returns>
     public string GetDisplayText()
     {
-        string dispStr = Title + "\n\n";
+        string dispStr = ""; // = Title + "\n\n";
         foreach(TooltipSection tts in sections)
         {
             dispStr += tts.Display() + '\n';

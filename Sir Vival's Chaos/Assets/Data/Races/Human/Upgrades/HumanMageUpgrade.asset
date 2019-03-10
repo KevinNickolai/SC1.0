@@ -9,6 +9,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf098f46641542a4b9cbc72a87a22561, type: 3}
-  m_Name: NewMageUpgrade
+  m_Name: HumanMageUpgrade
   m_EditorClassIdentifier: 
   level: 0

@@ -13,7 +13,7 @@ public interface IDescribable {
 
     string Name { get; }
 
-//    Player Player { get; }
+    Player Player { get; }
 
     int MinDamage { get; }
     int MaxDamage { get; }
@@ -22,4 +22,6 @@ public interface IDescribable {
 
     ArmorType ArmorType { get; }
     DamageType DamageType { get; }
+
+    Race.AttackUpgradeTypes AttackUpgradeType { get; }
 }

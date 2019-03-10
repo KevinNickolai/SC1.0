@@ -25,6 +25,25 @@ public class Race : ScriptableObject {
     }
 
     #region Upgrades
+
+    public enum AttackUpgradeTypes { Melee, Range, Mage }
+
+    public AttackUpgrade GetAttackUpgrade(AttackUpgradeTypes atkUpgrT)
+    {
+        switch (atkUpgrT)
+        {
+            case AttackUpgradeTypes.Melee:
+                return meleeUpgr;
+            case AttackUpgradeTypes.Mage:
+                return mageUpgr;
+            case AttackUpgradeTypes.Range:
+                return rangeUpgr;
+
+            default:
+                Debug.LogError("Attack Upgrade Type missing from selection of Race's retrieval of a specifc attack upgrade type");
+                return meleeUpgr;
+        }
+    }
     /// <summary>
     /// The mage upgrade for the race
     /// </summary>
@@ -55,7 +74,7 @@ public class Race : ScriptableObject {
     [SerializeField]
     private AuxUpgrade[] auxUpgrs;
 
-    public MeleeUpgrade Melee
+    public MeleeUpgrade MeleeUpgrade
     {
         get
         {
@@ -63,7 +82,7 @@ public class Race : ScriptableObject {
         }
     }
 
-    public RangeUpgrade Range
+    public RangeUpgrade RangeUpgrade
     {
         get
         {
@@ -71,7 +90,7 @@ public class Race : ScriptableObject {
         }
     }
 
-    public MageUpgrade Mage
+    public MageUpgrade MageUpgrade
     {
         get
         {
@@ -79,7 +98,7 @@ public class Race : ScriptableObject {
         }
     }
 
-    public AuxUpgrade[] Auxiliary
+    public AuxUpgrade[] AuxiliaryUpgrades
     {
         get
         {
@@ -87,7 +106,7 @@ public class Race : ScriptableObject {
         }
     }
 
-    public DefenseUpgrade Armor
+    public DefenseUpgrade ArmorUpgrade
     {
         get
         {
@@ -145,6 +164,19 @@ public class Race : ScriptableObject {
         get
         {
             return towerAbilities;
+        }
+    }
+    #endregion
+
+    #region Units
+    [SerializeField]
+    private GameObject meleeUnit;
+
+    public GameObject MeleeUnit
+    {
+        get
+        {
+            return meleeUnit;
         }
     }
     #endregion

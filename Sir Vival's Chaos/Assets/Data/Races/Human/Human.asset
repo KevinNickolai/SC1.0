@@ -29,3 +29,4 @@ MonoBehaviour:
   nexusAbilities: {fileID: 11400000, guid: 52c47f914cfad2a4983adde5371e01f3, type: 2}
   barrackAbilities: {fileID: 11400000, guid: 217a5c50b72dea44b91631ff6f0113a0, type: 2}
   towerAbilities: {fileID: 11400000, guid: 6c2958b6366c2db4fa41e242d678e62c, type: 2}
+  meleeUnit: {fileID: 1909816761647138, guid: 156e97c6fbd43614f874e8fdfdf70bb1, type: 2}

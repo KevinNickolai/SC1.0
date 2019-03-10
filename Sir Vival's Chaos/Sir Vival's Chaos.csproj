@@ -130,6 +130,7 @@
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\LevelBuilding.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Nexus.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Tower.cs" />
+    <Compile Include="Assets\Scripts\Engine\Selectables\Highlight.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Selectable.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\SelectableProperties.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Stats\Attack\Attack Speed\AttackSpeed.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\LevelTooltip.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\MatchupTooltip.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\Tooltip.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipManager.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\BuildingSection.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\GivesSection.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Tooltips\TooltipSections\HeaderTooltipSection.cs" />

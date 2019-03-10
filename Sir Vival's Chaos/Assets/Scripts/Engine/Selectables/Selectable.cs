@@ -13,12 +13,30 @@ public abstract class Selectable : MonoBehaviour, IDescribable {
     [SerializeField]
     private Stats stats;
 
-    private HPTrackerUI hpUI;
+    //private HPTrackerUI hpUI;
 
     public void Start()
     {
-        hpUI = new HPTrackerUI(gameObject, stats.Defense.MaxHPRef);
+        //hpUI = new HPTrackerUI(gameObject, stats.Defense.MaxHPRef);
         
+    }
+
+    protected void SetPlayer(Player p)
+    {
+        this.player = p;
+    }
+
+    /// <summary>
+    /// The player that owns this selectable
+    /// </summary>
+    private Player player;
+
+    public Player Player
+    {
+        get
+        {
+            return player;
+        }
     }
 
     /// <summary>
@@ -77,7 +95,7 @@ public abstract class Selectable : MonoBehaviour, IDescribable {
     }
 
     /// <summary>
-    /// DamateType of the selectable object
+    /// DamageType of the selectable object
     /// </summary>
     public DamageType DamageType
     {
@@ -87,4 +105,14 @@ public abstract class Selectable : MonoBehaviour, IDescribable {
         }
     }
 
+    /// <summary>
+    /// AttackUpgradeType of the selectable object
+    /// </summary>
+    public Race.AttackUpgradeTypes AttackUpgradeType
+    {
+        get
+        {
+            return stats.Attack.AttackUpgrade;
+        }
+    }
 }
