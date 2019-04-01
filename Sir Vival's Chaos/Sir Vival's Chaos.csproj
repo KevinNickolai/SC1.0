@@ -120,7 +120,6 @@
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\MeleeUpgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\RangeUpgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\Upgrade.cs" />
-    <Compile Include="Assets\Scripts\Engine\scriptableobjecttest.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Barrack\Barrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Barrack\LeftBarrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Barrack\MiddleBarrack.cs" />
