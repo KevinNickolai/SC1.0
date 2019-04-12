@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3580aeb8ad74e1a46b9e8ace0348df1c, type: 3}
+  m_Name: NewRace
+  m_EditorClassIdentifier: 
+  name: {fileID: 114337332183155030}
+  meleeUpgr: {fileID: 11400000, guid: dfdc379b0f098b44eae6e9167dbf5d17, type: 2}
+  gateUpgr: {fileID: 11400000, guid: cb1d589cc8a4e6640bb51659d384b912, type: 2}
+  mageUpgr: {fileID: 11400000, guid: e96496f7ab98a7e4db6e7287b73b1f09, type: 2}
+  armorUpgr: {fileID: 11400000, guid: 2410286d066d3be4a897e02b530cb820, type: 2}
+  fortUpgr: {fileID: 0}
+  auxUpgrs:
+  - {fileID: 11400000, guid: e05d0e5ef799e7b4381886efd6639e40, type: 2}
+  - {fileID: 11400000, guid: b16486d8579343e40aaa9528841c6597, type: 2}
+  - {fileID: 11400000, guid: f3aa00da48ced6742af9af439983e8f0, type: 2}
+  - {fileID: 11400000, guid: 56899e229eaf54a42aeb5a47367f1b9a, type: 2}
+  - {fileID: 11400000, guid: 196e83406f2276448be0ede4402b2b7c, type: 2}
+  - {fileID: 11400000, guid: 2b3f022989ef9a14ba7faa49d8d36f65, type: 2}
+  - {fileID: 11400000, guid: ab8daff8838c4ea49a1ca924cd46fb52, type: 2}
+  - {fileID: 11400000, guid: 1e19d43fb465ea0458e0bc5818f6c256, type: 2}
+  - {fileID: 11400000, guid: ec0271e7b7132b44e98869bff68e9477, type: 2}
+  - {fileID: 11400000, guid: d6bc8c8837b611c439b9aef610c8e747, type: 2}
+  - {fileID: 11400000, guid: 3616134c6b2b0374fa3b29b6e0cd9d13, type: 2}
+  nexusAbilities: {fileID: 11400000, guid: 2d393fd14243e3540b4d5b6140ca33d1, type: 2}
+  barrackAbilities: {fileID: 11400000, guid: 9642abb9c9d446f4c9178b69cb30a7d6, type: 2}
+  towerAbilities: {fileID: 11400000, guid: 73a46929429e6fd438d9b6e85df2e1d8, type: 2}
+  nexusStats: {fileID: 0}
+  barrackStats: {fileID: 0}
+  towerStats: {fileID: 0}
+  rangeUnit: {fileID: 0}
+  siegeUnit: {fileID: 0}
+  airUnit: {fileID: 0}
+  artilleryUnit: {fileID: 0}
+  meleeUnit: {fileID: 0}
+--- !u!114 &114337332183155030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d314aaa0a4aa743baeb61827251b51, type: 3}
+  m_Name: NewRaceRaceName
+  m_EditorClassIdentifier: 
+  UseConstant: 1
+  ConstantValue: NewRace
+  Variable: {fileID: 0}

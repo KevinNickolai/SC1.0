@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Name: Human
   m_EditorClassIdentifier: 
   name: {fileID: 11400000, guid: cc0307d47f279e0419772d7b154cbc03, type: 2}
-  mageUpgr: {fileID: 11400000, guid: fc4213ceeeb209c40870383f81b90e89, type: 2}
-  rangeUpgr: {fileID: 11400000, guid: 6dbf0390f704e864cab73c9da10bd722, type: 2}
   meleeUpgr: {fileID: 11400000, guid: 1dcc963bfb5365645a82c311ef1d345e, type: 2}
+  gateUpgr: {fileID: 11400000, guid: bdad5b13a849973448bc20206696003d, type: 2}
+  mageUpgr: {fileID: 11400000, guid: fc4213ceeeb209c40870383f81b90e89, type: 2}
   armorUpgr: {fileID: 11400000, guid: 4abf105b5286d4846ad2b7f3be2120c2, type: 2}
+  fortUpgr: {fileID: 11400000, guid: ff57724b9522e534391fdbeabee365c5, type: 2}
   auxUpgrs:
   - {fileID: 0}
   - {fileID: 0}
@@ -29,4 +30,11 @@ MonoBehaviour:
   nexusAbilities: {fileID: 11400000, guid: 52c47f914cfad2a4983adde5371e01f3, type: 2}
   barrackAbilities: {fileID: 11400000, guid: 217a5c50b72dea44b91631ff6f0113a0, type: 2}
   towerAbilities: {fileID: 11400000, guid: 6c2958b6366c2db4fa41e242d678e62c, type: 2}
+  nexusStats: {fileID: 0}
+  barrackStats: {fileID: 0}
+  towerStats: {fileID: 0}
+  rangeUnit: {fileID: 0}
+  siegeUnit: {fileID: 0}
+  airUnit: {fileID: 0}
+  artilleryUnit: {fileID: 0}
   meleeUnit: {fileID: 1909816761647138, guid: 156e97c6fbd43614f874e8fdfdf70bb1, type: 2}

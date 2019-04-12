@@ -30,4 +30,31 @@ public abstract class Upgrade : ScriptableObject, ILevelable {
     {
         level = 0;
     }
+
+    //The race that the upgrade belongs to
+    [SerializeField][ReadOnly]
+    private Race race;
+
+    public void SetRace(Race r)
+    {
+        race = r;
+    }
+
+    /// <summary>
+    /// List of the Stats objects that are using the upgrade
+    /// </summary>
+    protected List<Stats> affectedByUpgrade;
+
+    public void AddStatsToUpgrade(Stats stat)
+    {
+        if (!affectedByUpgrade.Contains(stat))
+        {
+            affectedByUpgrade.Add(stat);
+        }
+    }
+
+    public void RemoveFromUpgrade(Stats stat)
+    {
+        affectedByUpgrade.Remove(stat);
+    }
 }

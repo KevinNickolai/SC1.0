@@ -52,7 +52,7 @@ public static class RaceCreator{
      * Upgrade Assets
      */
     private static string MELEE_ASSET_NAME = "Melee";
-    private static string RANGED_ASSET_NAME = "Ranged";
+    private static string GATE_ASSET_NAME = "Gate";
     private static string MAGE_ASSET_NAME = "Mage";
     private static string ARMOR_ASSET_NAME = "Armor";
     private static string UPGRADE_SUFFIX = "Upgrade";
@@ -201,7 +201,7 @@ public static class RaceCreator{
 
         list[NexusAbilityList.MELEE_UPGRADE] = CreateAbility<LevelAbility>(levelAbilitiesFolderPath, raceName, MELEE_ASSET_NAME + LEVEL_ABILITY_ASSET_NAME);
 
-        list[NexusAbilityList.RANGE_UPGRADE] = CreateAbility<LevelAbility>(levelAbilitiesFolderPath, raceName, RANGED_ASSET_NAME + LEVEL_ABILITY_ASSET_NAME);
+        list[NexusAbilityList.RANGE_UPGRADE] = CreateAbility<LevelAbility>(levelAbilitiesFolderPath, raceName, GATE_ASSET_NAME + LEVEL_ABILITY_ASSET_NAME);
 
         AbilityList nexusAL = CreateAbilityList(abilityListPath, raceName, NEXUS_ABILITY_LIST_NAME, list);
 
@@ -304,7 +304,7 @@ public static class RaceCreator{
         string upgradesPath = AssetDatabase.GUIDToAssetPath(upgradesGUID);
 
         MeleeUpgrade meleeUpgr = CreateUpgrade<MeleeUpgrade>(upgradesPath, raceName, MELEE_ASSET_NAME);
-        RangeUpgrade rangeUpgr = CreateUpgrade<RangeUpgrade>(upgradesPath, raceName, RANGED_ASSET_NAME);
+        GateUpgrade gateUpgr = CreateUpgrade<GateUpgrade>(upgradesPath, raceName, GATE_ASSET_NAME);
         MageUpgrade mageUpgr = CreateUpgrade<MageUpgrade>(upgradesPath, raceName, MAGE_ASSET_NAME);
         DefenseUpgrade armorUpgr = CreateUpgrade<DefenseUpgrade>(upgradesPath, raceName, ARMOR_ASSET_NAME);
 
@@ -314,7 +314,7 @@ public static class RaceCreator{
          */
         SerializedObject soRace = new SerializedObject(raceAsset);
         soRace.FindProperty("meleeUpgr").objectReferenceValue = meleeUpgr;
-        soRace.FindProperty("rangeUpgr").objectReferenceValue = rangeUpgr;
+        soRace.FindProperty("gateUpgr").objectReferenceValue = gateUpgr;
         soRace.FindProperty("mageUpgr").objectReferenceValue = mageUpgr;
         soRace.FindProperty("armorUpgr").objectReferenceValue = armorUpgr;
 

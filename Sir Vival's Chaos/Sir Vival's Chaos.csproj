@@ -116,9 +116,10 @@
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\AttackUpgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\AuxUpgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\DefenseUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Engine\Player\Upgrades\FortUpgrade.cs" />
+    <Compile Include="Assets\Scripts\Engine\Player\Upgrades\GateUpgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\MageUpgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\MeleeUpgrade.cs" />
-    <Compile Include="Assets\Scripts\Engine\Player\Upgrades\RangeUpgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Player\Upgrades\Upgrade.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Barrack\Barrack.cs" />
     <Compile Include="Assets\Scripts\Engine\Selectables\Buildings\Barrack\LeftBarrack.cs" />

@@ -22,6 +22,12 @@ public class Defense : ScriptableObject
     private Armor armor;
 
     /// <summary>
+    /// The DefenseUpgrade the Defense scriptable object will use
+    /// </summary>
+    [SerializeField]
+    private DefenseUpgrade upgrade;
+
+    /// <summary>
     /// MaxHP for the object
     /// </summary>
     public Hitpoints MaxHPRef

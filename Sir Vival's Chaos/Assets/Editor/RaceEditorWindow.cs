@@ -28,6 +28,7 @@ public class RaceEditorWindow : EditorWindow
 
     private void OnGUI()
     {
+        
         //start a scrolling view to encapsulate the whole Race Editor Window
         scrollPosition = GUILayout.BeginScrollView(scrollPosition, false, false);
 
@@ -57,13 +58,55 @@ public class RaceEditorWindow : EditorWindow
             showingUpgrades = EditorGUILayout.Foldout(showingUpgrades, "Upgrades");
             if (showingUpgrades)
             {
-                EditorGUILayout.PropertyField(soRace.FindProperty("meleeUpgr"));
-                EditorGUILayout.PropertyField(soRace.FindProperty("rangeUpgr"));
-                EditorGUILayout.PropertyField(soRace.FindProperty("mageUpgr"));
-                EditorGUILayout.PropertyField(soRace.FindProperty("armorUpgr"));
+                //get the serialized property for an upgrade, and remove its race association, since we don't know if it will 
+                //continue to be used by the race
+                SerializedProperty melee = soRace.FindProperty("meleeUpgr");
+                AssociateRace(melee, null);
+
+                SerializedProperty gate = soRace.FindProperty("gateUpgr");
+                AssociateRace(gate, null);
+
+                SerializedProperty mage = soRace.FindProperty("mageUpgr");
+                AssociateRace(mage, null);
+
+                SerializedProperty armor = soRace.FindProperty("armorUpgr");
+                AssociateRace(armor, null);
+
+                SerializedProperty fort = soRace.FindProperty("fortUpgr");
+                AssociateRace(fort, null);
+
+                SerializedProperty aux = soRace.FindProperty("auxUpgrs");
+                if (aux.isArray)
+                {
+                    for(int i = 0; i < aux.arraySize; ++i)
+                    {
+                        AssociateRace(aux.GetArrayElementAtIndex(i), null);
+                    }
+                }
+
+                EditorGUILayout.PropertyField(melee);
+                EditorGUILayout.PropertyField(gate);
+                EditorGUILayout.PropertyField(mage);
+                EditorGUILayout.PropertyField(armor);
+                EditorGUILayout.PropertyField(fort);
 
                 //Show the property field for the auxiliary upgrades, including all children of the list
                 EditorGUILayout.PropertyField(soRace.FindProperty("auxUpgrs"), true);
+
+                //reassociate all upgrade properties with the race, since by this point any changed property will be considered "associated"
+                AssociateRace(melee, race);
+                AssociateRace(gate, race);
+                AssociateRace(mage, race);
+                AssociateRace(armor, race);
+                AssociateRace(fort, race);
+
+                if (aux.isArray)
+                {
+                    for (int i = 0; i < aux.arraySize; ++i)
+                    {
+                        AssociateRace(aux.GetArrayElementAtIndex(i), race);
+                    }
+                }
             }
             #endregion
 
@@ -90,6 +133,14 @@ public class RaceEditorWindow : EditorWindow
         //groupEnabled = EditorGUILayout.BeginToggleGroup("Optional Settings", groupEnabled);
 
         //EditorGUILayout.EndToggleGroup();
+    }
+
+    private void AssociateRace(SerializedProperty sp, Race r)
+    {
+        if (sp.objectReferenceValue != null)
+        {
+            ((Upgrade)(sp.objectReferenceValue)).SetRace(r);
+        }
     }
 }
 

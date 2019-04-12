@@ -161,9 +161,16 @@ public class UIController : MonoBehaviour {
         dmgType.sprite = obj.DamageType.SpriteOfType;
         armorType.sprite = obj.ArmorType.SpriteOfType;
 
+        /**
         //set text level of the attack/defense levels
-        atkLevel.text = obj.Player.Race.GetAttackUpgrade(obj.AttackUpgradeType).Level.ToString();
-        defLevel.text = obj.Player.Race.ArmorUpgrade.Level.ToString();
+        atkLevel.text = obj.
+            Player.
+            Race.
+            GetAttackUpgrade(
+            obj.AttackUpgradeType
+            )
+            .Level.ToString();
+        defLevel.text = obj.Player.Race.ArmorUpgrade.Level.ToString();*/
     }
 
     /// <summary>

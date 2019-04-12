@@ -5,9 +5,10 @@ using UnityEngine;
 public interface IUpgradable {
 
     MeleeUpgrade Melee { get; }
-    RangeUpgrade Range { get; }
+    GateUpgrade Gate { get; }
     MageUpgrade Mage { get; }
     DefenseUpgrade Armor { get; }
+    FortUpgrade Fort { get; }
 
     AuxUpgrade[] Auxiliary { get; }
 }

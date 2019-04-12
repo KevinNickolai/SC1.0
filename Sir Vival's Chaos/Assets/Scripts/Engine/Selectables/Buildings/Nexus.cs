@@ -27,7 +27,7 @@ public class Nexus : LevelBuilding {
 
         abilities[NexusAbilityList.MELEE_UPGRADE].SetLevelable(race.MeleeUpgrade);
 
-        abilities[NexusAbilityList.RANGE_UPGRADE].SetLevelable(race.RangeUpgrade);
+        abilities[NexusAbilityList.RANGE_UPGRADE].SetLevelable(race.GateUpgrade);
 
         abilities[NexusAbilityList.ARMOR_UPGRADE].SetLevelable(race.ArmorUpgrade);
     }   

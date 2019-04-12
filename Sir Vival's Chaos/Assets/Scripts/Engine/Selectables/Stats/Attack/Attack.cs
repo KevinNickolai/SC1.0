@@ -8,11 +8,23 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewAttack", menuName = "Stats/Attack/Attack", order = 1)]
 public class Attack : ScriptableObject {
 
+    /// <summary>
+    /// Damage object for the attack
+    /// </summary>
     [SerializeField]
     private Damage dmg;
 
+    /// <summary>
+    /// Attack speed object for the attack
+    /// </summary>
     [SerializeField]
     private AttackSpeed atkSpd;
+
+    /// <summary>
+    /// The AttackUpgrade the Attack object uses
+    /// </summary>
+    [SerializeField]
+    private AttackUpgrade upgrade;
 
     [SerializeField]
     private Race.AttackUpgradeTypes atkUpgr;

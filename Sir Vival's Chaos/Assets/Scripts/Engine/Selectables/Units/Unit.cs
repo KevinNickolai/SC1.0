@@ -38,7 +38,8 @@ public class Unit : Selectable {
 
     protected virtual void OnMouseDown()
     {
-        GameObject.FindObjectOfType<UIController>().DisplayInfo(this);
+        UIController.GetInstance().DisplayInfo(this);
+        //GameObject.FindObjectOfType<UIController>().DisplayInfo(this);
     }
 
     /// <summary>

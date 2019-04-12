@@ -4,5 +4,5 @@ using UnityEngine;
 
 [System.Serializable]
 public abstract class AttackUpgrade : Upgrade {
-
+    
 }

@@ -26,7 +26,7 @@ public class Race : ScriptableObject {
 
     #region Upgrades
 
-    public enum AttackUpgradeTypes { Melee, Range, Mage }
+    public enum AttackUpgradeTypes { Melee, Gate, Mage }
 
     public AttackUpgrade GetAttackUpgrade(AttackUpgradeTypes atkUpgrT)
     {
@@ -36,31 +36,32 @@ public class Race : ScriptableObject {
                 return meleeUpgr;
             case AttackUpgradeTypes.Mage:
                 return mageUpgr;
-            case AttackUpgradeTypes.Range:
-                return rangeUpgr;
+            case AttackUpgradeTypes.Gate:
+                return gateUpgr;
 
             default:
                 Debug.LogError("Attack Upgrade Type missing from selection of Race's retrieval of a specifc attack upgrade type");
                 return meleeUpgr;
         }
     }
-    /// <summary>
-    /// The mage upgrade for the race
-    /// </summary>
-    [SerializeField]
-    private MageUpgrade mageUpgr;
-
-    /// <summary>
-    /// The range upgrade for the race
-    /// </summary>
-    [SerializeField]
-    private RangeUpgrade rangeUpgr;
 
     /// <summary>
     /// The melee upgrade for the race
     /// </summary>
     [SerializeField]
-    private MeleeUpgrade meleeUpgr;
+    private AttackUpgrade meleeUpgr;
+
+    /// <summary>
+    /// The range upgrade for the race
+    /// </summary>
+    [SerializeField]
+    private AttackUpgrade gateUpgr;
+
+    /// <summary>
+    /// The mage upgrade for the race
+    /// </summary>
+    [SerializeField]
+    private MageUpgrade mageUpgr;
 
     /// <summary>
     /// The armor upgrade for the race
@@ -69,12 +70,18 @@ public class Race : ScriptableObject {
     private DefenseUpgrade armorUpgr;
 
     /// <summary>
+    /// The fort upgrade for the race
+    /// </summary>
+    [SerializeField]
+    private DefenseUpgrade fortUpgr;
+
+    /// <summary>
     /// Auxiliary upgrades for the race
     /// </summary>
     [SerializeField]
     private AuxUpgrade[] auxUpgrs;
 
-    public MeleeUpgrade MeleeUpgrade
+    public AttackUpgrade MeleeUpgrade
     {
         get
         {
@@ -82,11 +89,11 @@ public class Race : ScriptableObject {
         }
     }
 
-    public RangeUpgrade RangeUpgrade
+    public AttackUpgrade GateUpgrade
     {
         get
         {
-            return rangeUpgr;
+            return gateUpgr;
         }
     }
 
@@ -111,6 +118,14 @@ public class Race : ScriptableObject {
         get
         {
             return armorUpgr;
+        }
+    }
+
+    public DefenseUpgrade FortUpgrade
+    {
+        get
+        {
+            return fortUpgr;
         }
     }
     #endregion
@@ -168,7 +183,37 @@ public class Race : ScriptableObject {
     }
     #endregion
 
+    #region Building Stats
+
+    [SerializeField]
+    private Stats nexusStats;
+
+    [SerializeField]
+    private Stats barrackStats;
+
+    [SerializeField]
+    private Stats towerStats;
+
+    #endregion
+
     #region Units
+
+    //[SerializeField]
+    //private Stats meleeUnit;
+
+    [SerializeField]
+    private Stats rangeUnit;
+
+    [SerializeField]
+    private Stats siegeUnit;
+
+    [SerializeField]
+    private Stats airUnit;
+
+    [SerializeField]
+    private Stats artilleryUnit;
+
+
     [SerializeField]
     private GameObject meleeUnit;
 
@@ -218,7 +263,7 @@ public class Race : ScriptableObject {
 //    private MageUpgrade mageUpgr;
 
 //    [SerializeField]
-//    private RangeUpgrade rangeUpgr;
+//    private GateUpgrade gateUpgr;
 
 //    [SerializeField]
 //    private MeleeUpgrade meleeUpgr;
@@ -313,11 +358,11 @@ public class Race : ScriptableObject {
 //        }
 //    }
 
-//    public RangeUpgrade Range
+//    public GateUpgrade Range
 //    {
 //        get
 //        {
-//            return rangeUpgr;
+//            return gateUpgr;
 //        }
 //    }
 
