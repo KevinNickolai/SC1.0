@@ -72,6 +72,9 @@ public abstract class Building : Selectable, IResearcher {
         researcher.AddTime(t);
     }
 
+    /// <summary>
+    /// The current time elapsed, in seconds, of the building's current research
+    /// </summary>
     public float Timer
     {
         get
@@ -80,6 +83,9 @@ public abstract class Building : Selectable, IResearcher {
         }
     }
 
+    /// <summary>
+    /// The building's Researcher object
+    /// </summary>
     private Researcher researcher;
 
     /// <summary>

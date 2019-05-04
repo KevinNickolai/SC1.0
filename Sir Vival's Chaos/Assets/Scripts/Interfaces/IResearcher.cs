@@ -5,8 +5,14 @@ using UnityEngine;
 public class Researcher
 {
 
+    /// <summary>
+    /// the current timer
+    /// </summary>
     private float timer = 0;
 
+    /// <summary>
+    /// The timer for the current research
+    /// </summary>
     public float Timer
     {
         get
@@ -14,6 +20,24 @@ public class Researcher
             return timer;
         }
     }
+
+
+    public bool Researching
+    {
+        get
+        {
+            return !queue.Empty;
+        }
+    }
+
+    public ResearchQueue Queue
+    {
+        get
+        {
+            return queue;
+        }
+    }
+
 
     public class ResearchQueue
     {
@@ -31,6 +55,9 @@ public class Researcher
         /// </summary>
         int size = 0;
 
+        /// <summary>
+        /// constructor for a research queue
+        /// </summary>
         public ResearchQueue()
         {
             queue = new List<LevelAbility>(MAX_SIZE);
@@ -90,11 +117,17 @@ public class Researcher
             return false;
         }
 
+        /// <summary>
+        /// Remove an item at a relative position within the queue
+        /// </summary>
+        /// <param name="relativePosition">the relative position of the item to remove from the 0-indexed queue</param>
+        /// <returns>true if the item was successfully removed, false otherwise</returns>
         public bool Remove(int relativePosition)
         {
             //check if it's possible to remove an element at a position within our current array bounds
             if (relativePosition < size)
             {
+                //indicate to the research itself that it is no longer being researched
                 queue[relativePosition].EndResearch();
 
                 --size;
@@ -112,6 +145,9 @@ public class Researcher
             return false;
         }
 
+        /// <summary>
+        /// The number of elements currently in the queue
+        /// </summary>
         public int Size
         {
             get
@@ -120,6 +156,9 @@ public class Researcher
             }
         }
 
+        /// <summary>
+        /// Flag indicating if the queue is empty
+        /// </summary>
         public bool Empty
         {
             get
@@ -128,6 +167,11 @@ public class Researcher
             }
         }
 
+        /// <summary>
+        /// indexer into the research queue
+        /// </summary>
+        /// <param name="key">the index to be looked at within the queue</param>
+        /// <returns>the LevelAbility at the index key of the queue</returns>
         public LevelAbility this[int key]
         {
             get
@@ -145,19 +189,32 @@ public class Researcher
         }
     }
 
+    /// <summary>
+    /// The queue used to track our research priority
+    /// </summary>
     ResearchQueue queue = new ResearchQueue();
 
+    /// <summary>
+    /// Attempt to research a LevelAbility for this given researcher
+    /// </summary>
+    /// <param name="toResearch">The LevelAbility to attempt to research</param>
+    /// <returns>true if the Researcher is able to research the LevelAbility, false otherwise</returns>
     public bool Research(LevelAbility toResearch)
     {
         return queue.Push(toResearch);
     }
 
-    public bool CancelResearch(int position)
+    /// <summary>
+    /// Attempt to cancel research at a specific position within the ResearchQueue
+    /// </summary>
+    /// <param name="relativePosition">the position of the research we are trying to cancel</param>
+    /// <returns>true if a research at the position was cancellable and cancelled</returns>
+    public bool CancelResearch(int relativePosition)
     {
-        if (queue.Remove(position))
+        if (queue.Remove(relativePosition))
         {
             //reset timer on removal of the first slot of research
-            if(position == 0)
+            if(relativePosition == 0)
             {
                 timer = 0;
             }
@@ -168,21 +225,6 @@ public class Researcher
         //return queue.Remove(position);
     }
 
-    public bool Researching
-    {
-        get
-        {
-            return !queue.Empty;
-        }
-    }
-
-    public ResearchQueue Queue
-    {
-        get
-        {
-            return queue;
-        }
-    }
 
     public void AddTime(float t)
     {
