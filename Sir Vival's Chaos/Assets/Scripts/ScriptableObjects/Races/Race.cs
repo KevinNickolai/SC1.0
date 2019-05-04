@@ -28,6 +28,8 @@ public class Race : ScriptableObject {
 
     public enum AttackUpgradeTypes { Melee, Gate, Mage }
 
+    public enum DefenseUpgradeTypes { Armor, Fort }
+
     public AttackUpgrade GetAttackUpgrade(AttackUpgradeTypes atkUpgrT)
     {
         switch (atkUpgrT)
@@ -45,34 +47,49 @@ public class Race : ScriptableObject {
         }
     }
 
+    public DefenseUpgrade GetDefenseUpgrade(DefenseUpgradeTypes defUpgrT)
+    {
+        switch (defUpgrT)
+        {
+            case DefenseUpgradeTypes.Armor:
+                return armorUpgr;
+            case DefenseUpgradeTypes.Fort:
+                return fortUpgr;
+
+            default:
+                Debug.LogError("Def Upgrade Type missing from selection of race's defense upgrade type");
+                return armorUpgr;
+        }
+    }
+
     /// <summary>
     /// The melee upgrade for the race
     /// </summary>
-    [SerializeField]
+    [SerializeField][ReadOnly]
     private AttackUpgrade meleeUpgr;
 
     /// <summary>
     /// The range upgrade for the race
     /// </summary>
-    [SerializeField]
+    [SerializeField][ReadOnly]
     private AttackUpgrade gateUpgr;
 
     /// <summary>
     /// The mage upgrade for the race
     /// </summary>
-    [SerializeField]
+    [SerializeField][ReadOnly]
     private MageUpgrade mageUpgr;
 
     /// <summary>
     /// The armor upgrade for the race
     /// </summary>
-    [SerializeField]
+    [SerializeField][ReadOnly]
     private DefenseUpgrade armorUpgr;
 
     /// <summary>
     /// The fort upgrade for the race
     /// </summary>
-    [SerializeField]
+    [SerializeField][ReadOnly]
     private DefenseUpgrade fortUpgr;
 
     /// <summary>

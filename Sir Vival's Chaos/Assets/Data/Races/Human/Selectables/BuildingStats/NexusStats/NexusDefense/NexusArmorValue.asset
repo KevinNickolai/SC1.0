@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: NexusArmorValue
   m_EditorClassIdentifier: 
   UseConstant: 1
-  ConstantValue: 0
+  ConstantValue: 8
   Variable: {fileID: 0}

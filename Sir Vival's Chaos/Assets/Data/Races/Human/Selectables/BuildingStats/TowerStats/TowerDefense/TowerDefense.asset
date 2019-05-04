@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: TowerDefense
   m_EditorClassIdentifier: 
   hp: {fileID: 11400000, guid: a3982cddc0c986b478c6524140d3e152, type: 2}
-  armor: {fileID: 11400000, guid: 9c9914f9a40e65841aa899030e0ebbc8, type: 2}
+  armor: {fileID: 11400000, guid: 45ed26240c57a434b8aa4cb397be6bc2, type: 2}
+  defUpgr: 0

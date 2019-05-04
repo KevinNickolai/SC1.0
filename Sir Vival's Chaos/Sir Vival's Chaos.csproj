@@ -169,6 +169,8 @@
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\AbilityPane.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\AbilityPanelManager.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\Hoverable.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Hoverables\ResearchPane.cs" />
+    <Compile Include="Assets\Scripts\Engine\UI\Hoverables\ResearchPanelManager.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Hoverables\StatHoverable\ImagePane.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\Minimap.cs" />
     <Compile Include="Assets\Scripts\Engine\UI\RaxCounter.cs" />
@@ -196,6 +198,7 @@
     <Compile Include="Assets\Scripts\Interfaces\IDescribable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ILevelable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\ILevelableObject.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IResearcher.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IUpgradable.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Races\Race.cs" />
     <Compile Include="Assets\Walk.cs" />

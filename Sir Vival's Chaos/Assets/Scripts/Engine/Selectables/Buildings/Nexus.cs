@@ -20,6 +20,12 @@ public class Nexus : LevelBuilding {
 
         this.abilities = race.NexusAbilities;
 
+        foreach(Ability a in race.NexusAbilities)
+        {
+            if(a != null)
+                a.SetBuilding(this);
+        }
+
         //set the levelables for the nexus abilities
         abilities[NexusAbilityList.BUILDING_UPGRADE].SetLevelable(this);
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Building : Selectable, IAbilityUsable {
+public abstract class Building : Selectable, IResearcher {
 
     private Highlight highlight;
 
@@ -45,10 +45,72 @@ public abstract class Building : Selectable, IAbilityUsable {
     {
         base.Start();
 
-        buildingSet.Add(this);
+        //buildingSet.Add(this);
 
         highlight = gameObject.GetComponentInChildren<Highlight>();
         highlight.HideHighlight();
+        researcher = new Researcher();
+    }
+
+    private void Update()
+    {
+        if (researcher.Researching)
+        {
+            AddTime(Time.deltaTime);
+        }
+    }
+    public Researcher.ResearchQueue Queue
+    {
+        get
+        {
+            return researcher.Queue;
+        }
+    }
+
+    public void AddTime(float t)
+    {
+        researcher.AddTime(t);
+    }
+
+    public float Timer
+    {
+        get
+        {
+            return researcher.Timer;
+        }
+    }
+
+    private Researcher researcher;
+
+    /// <summary>
+    /// Cancel the research at a specific position in the queue of research for the building
+    /// </summary>
+    /// <param name="relativePosition">the position of the object in the queue</param>
+    /// <returns>true if the research was properly cancelled</returns>
+    public bool CancelResearch(int relativePosition)
+    {
+        return researcher.CancelResearch(relativePosition);
+    }
+
+    /// <summary>
+    /// Research a LevelAbility on the building
+    /// </summary>
+    /// <param name="toResearch">the LevelAbility that is being attempted to research</param>
+    /// <return>true if the researcher is able to research the LevelAbility at this time</return>
+    public bool Research(LevelAbility toResearch)
+    {
+        return researcher.Research(toResearch);
+    }
+
+    /// <summary>
+    /// Flag indicating if the building is currently researching
+    /// </summary>
+    public bool Researching
+    {
+        get
+        {
+            return researcher.Researching;
+        }
     }
 
     /// <summary>

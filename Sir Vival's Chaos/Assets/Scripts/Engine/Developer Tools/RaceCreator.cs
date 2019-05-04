@@ -55,6 +55,7 @@ public static class RaceCreator{
     private static string GATE_ASSET_NAME = "Gate";
     private static string MAGE_ASSET_NAME = "Mage";
     private static string ARMOR_ASSET_NAME = "Armor";
+    private static string FORT_ASSET_NAME = "Fort";
     private static string UPGRADE_SUFFIX = "Upgrade";
     private static string AUXILIARY_ASSET_PREFIX = "Aux";
     #endregion

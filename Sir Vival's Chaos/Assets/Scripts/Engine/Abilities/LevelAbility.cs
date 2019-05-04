@@ -11,6 +11,15 @@ public class LevelAbility : CostedAbility {
     /// </summary>
     ILevelable levelable;
 
+    Building building;
+
+    public Building Building
+    {
+        get
+        {
+            return building;
+        }
+    }
     /// <summary>
     /// AbilityLevel Constructor
     /// </summary>
@@ -18,14 +27,49 @@ public class LevelAbility : CostedAbility {
     /// <param name="tt">The Tooltip for this ability</param>
     //public LevelAbility(int cost, Tooltip tt) : base(CostType.GOLD,cost,tt)
 
+    /// <summary>
+    /// the time to research the LevelAbility, before the level is applied, in seconds
+    /// </summary>
+    [SerializeField]
+    private int researchTime = 0;
+
+    private bool researching = false;
+
+    public bool Research
+    {
+        get
+        {
+            return researching;
+        }
+    }
+
+    public int ResearchTime
+    {
+        get
+        {
+            return researchTime;
+        }
+    }
 
     /// <summary>
     /// Activate a level up ability
     /// </summary>
     public override void Activate()
     {
+        if (building.Research(this))
+        {
+            researching = true;
+            SetActivatable(false);
+            UIController.GetInstance().Redraw();
+        }
+        //levelable.LevelUp();
+    }
+
+    public void CompleteResearch()
+    {
         levelable.LevelUp();
-        UIController.GetInstance().Redraw();
+        researching = false;
+        SetActivatable(true);
     }
 
     public override void SetLevelable(ILevelable b)
@@ -33,4 +77,14 @@ public class LevelAbility : CostedAbility {
         levelable = b;
     }
 
+    public override void SetBuilding(Building b)
+    {
+        building = b;
+    }
+
+    public void EndResearch()
+    {
+        researching = false;
+        SetActivatable(true);
+    }
 }

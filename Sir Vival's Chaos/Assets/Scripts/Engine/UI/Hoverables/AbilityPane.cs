@@ -41,9 +41,8 @@ public class AbilityPane : Hoverable {
             SetSprite();
         }
     }
-
-
-    private void SetSprite()
+    
+    protected virtual void SetSprite()
     {
         if (ability)
         {
@@ -74,7 +73,7 @@ public class AbilityPane : Hoverable {
         }
     }
 
-    private void OnMouseDown()
+    protected virtual void OnMouseDown()
     {
         if(ability != null && ability.IsActivatable)
         {

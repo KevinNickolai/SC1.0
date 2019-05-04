@@ -9,6 +9,8 @@ public class UIController : MonoBehaviour {
 
     #region Constant Text Object names
     private const string TIMER_NAME = "Timer";
+    private const string RESEARCH_TIMER_TEXT = "Research Timer";
+    private const string RESEARCH_TOTAL_TIME_TEXT = "Research Total Time";
 
     private const string INFO_NAME = "InfoName";
     private const string INFO_LEVEL = "InfoLevel";
@@ -28,10 +30,14 @@ public class UIController : MonoBehaviour {
     private const string STRENGTH = "Strength";
     private const string AGILITY = "Agility";
     private const string INTELLIGENCE = "Intelligence";
+
+    private const string RESEARCH_PANEL = "Research Panel";
     #endregion
 
     #region Text and Image variables
-    private Text timerText;
+    private Text gameTimerText;
+    private Text researchTimerText;
+    private Text researchTotalTimeText;
 
     private Text infoNameText;
     private Text infoLevelText;
@@ -61,12 +67,20 @@ public class UIController : MonoBehaviour {
     private GameObject attrPanel;
 
     /// <summary>
+    /// The panel displaying research related information
+    /// </summary>
+    private GameObject researchPanel;
+
+    /// <summary>
     /// The panel displaying the tooltip
     /// </summary>
     private TooltipManager tooltipManager;
 
     GameController gc;
 
+    /// <summary>
+    /// The IDescribable object that is currently being displayed
+    /// </summary>
     IDescribable objDisplayed;
 
     /// <summary>
@@ -90,15 +104,19 @@ public class UIController : MonoBehaviour {
 
         //initialize the AbilityPanelManager
         gameObject.AddComponent<AbilityPanelManager>();
+        gameObject.AddComponent<ResearchPanelManager>();
         tooltipManager = gameObject.AddComponent<TooltipManager>();
 
         instance = this;
 
         statsPanel = GameObject.Find(STATS_PANEL);
         attrPanel = GameObject.Find(ATTR_PANEL);
+        researchPanel = GameObject.Find(RESEARCH_PANEL);
 
         //timer text object
-        timerText = GameObject.Find(TIMER_NAME).GetComponent<Text>();
+        gameTimerText = GameObject.Find(TIMER_NAME).GetComponent<Text>();
+        researchTimerText = GameObject.Find(RESEARCH_TIMER_TEXT).GetComponent<Text>();
+        researchTotalTimeText = GameObject.Find(RESEARCH_TOTAL_TIME_TEXT).GetComponent<Text>();
 
         //information panel name text object
         infoNameText = GameObject.Find(INFO_NAME).GetComponent<Text>();
@@ -118,7 +136,7 @@ public class UIController : MonoBehaviour {
         intel = GameObject.Find(INTELLIGENCE).GetComponent<Text>();
 
 
-
+        //damage and armor type images
         dmgType = GameObject.Find(ATTACK_IMAGE).GetComponent<Image>();
         armorType = GameObject.Find(DEFENSE_IMAGE).GetComponent<Image>();
 
@@ -129,8 +147,26 @@ public class UIController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        timerText.text = convertTime(gc.GameTime);
+        //update timer
+        gameTimerText.text = convertTime(gc.GameTime);
+
+        //update the research if an IResearcher is being displayed
+        if(objDisplayed != null && objDisplayed is IResearcher && ((IResearcher)objDisplayed).Researching)
+        {
+            UpdateResearch();
+
+            researchTimerText.text = ((int)(((IResearcher)objDisplayed).Timer)).ToString();
+            
+        }
 	}
+
+    /// <summary>
+    /// Update the research shown on the ResearchPanelManager
+    /// </summary>
+    private void UpdateResearch()
+    {
+        ResearchPanelManager.Instance.UpdateResearch(((IResearcher)objDisplayed));
+    }
 
     #region Displaying Information for objects
   
@@ -144,6 +180,19 @@ public class UIController : MonoBehaviour {
         ClearInfo();
 
         objDisplayed = obj;
+
+        //if the object doesn't use abilities, clear the ability panels
+        if (!(obj is IAbilityUsable))
+        {
+            AbilityPanelManager.GetInstance().ClearPanes();
+        }
+        
+        if(obj is IResearcher && ((IResearcher)obj).Researching)
+        {
+            researchPanel.SetActive(true);
+            researchTotalTimeText.text = ((IResearcher)obj).Queue[0].ResearchTime.ToString();
+            UpdateResearch();
+        }
 
         //set text for the object's name
         infoNameText.text = obj.Name;
@@ -161,7 +210,6 @@ public class UIController : MonoBehaviour {
         dmgType.sprite = obj.DamageType.SpriteOfType;
         armorType.sprite = obj.ArmorType.SpriteOfType;
 
-        /**
         //set text level of the attack/defense levels
         atkLevel.text = obj.
             Player.
@@ -170,7 +218,7 @@ public class UIController : MonoBehaviour {
             obj.AttackUpgradeType
             )
             .Level.ToString();
-        defLevel.text = obj.Player.Race.ArmorUpgrade.Level.ToString();*/
+        defLevel.text = obj.Player.Race.ArmorUpgrade.Level.ToString();
     }
 
     /// <summary>
@@ -236,6 +284,7 @@ public class UIController : MonoBehaviour {
         infoLevelText.text = "";
         statsPanel.SetActive(false);
         attrPanel.SetActive(false);
+        researchPanel.SetActive(false);
 
         objDisplayed = null;
     }

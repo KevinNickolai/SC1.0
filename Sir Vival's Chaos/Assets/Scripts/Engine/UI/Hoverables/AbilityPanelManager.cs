@@ -69,6 +69,14 @@ public class AbilityPanelManager : MonoBehaviour {
         }
     }
 
+    public void ClearPanes()
+    {
+        for(int i = 0; i < panes.Length; ++i)
+        {
+            panes[i].Ability = null;
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
 		

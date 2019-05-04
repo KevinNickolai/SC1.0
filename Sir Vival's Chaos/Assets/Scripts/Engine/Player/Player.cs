@@ -47,7 +47,6 @@ public class Player : MonoBehaviour {
 
     public void Start()
     {
-        //race = new Human();
 
         GameObject playerBuildingGroup = GameObject.Find("Player 3");
 

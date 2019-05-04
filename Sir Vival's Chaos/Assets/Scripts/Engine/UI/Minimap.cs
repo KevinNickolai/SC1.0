@@ -70,14 +70,14 @@ public class Minimap : MonoBehaviour
                 Debug.DrawRay(stwp.origin, stwp.direction * hit.distance, Color.red);
             }
 
-            Vector3 vp = mmCam.WorldToViewportPoint(hit.point);
+            //Vector3 vp = mmCam.WorldToViewportPoint(hit.point);
             //Debug.Log(vp);
         }
     }
 
     private void OnMouseDown()
     {
-        int mmLayer = LayerMask.GetMask("Minimap");
+        //int mmLayer = LayerMask.GetMask("Minimap");
 
         //no need to check for collider existence; a collider must exist for OnMouseDown to execute
         Vector3 mmSize = transform.GetComponent<BoxCollider>().size;

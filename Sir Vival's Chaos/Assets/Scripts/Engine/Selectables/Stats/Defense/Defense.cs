@@ -25,7 +25,7 @@ public class Defense : ScriptableObject
     /// The DefenseUpgrade the Defense scriptable object will use
     /// </summary>
     [SerializeField]
-    private DefenseUpgrade upgrade;
+    private Race.DefenseUpgradeTypes defUpgr;
 
     /// <summary>
     /// MaxHP for the object
@@ -57,6 +57,14 @@ public class Defense : ScriptableObject
         get
         {
             return armor.ArmorType;
+        }
+    }
+
+    public Race.DefenseUpgradeTypes DefenseUpgradeType
+    {
+        get
+        {
+            return defUpgr;
         }
     }
 }

@@ -15,3 +15,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 4bb3b011440e2804f94bca4c6664cc69, type: 3}
   cost: 1500
   costType: 0
+  researchTime: 25
