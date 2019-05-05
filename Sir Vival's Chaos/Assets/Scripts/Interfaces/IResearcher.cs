@@ -225,7 +225,10 @@ public class Researcher
         //return queue.Remove(position);
     }
 
-
+    /// <summary>
+    /// Add time to the researching timer
+    /// </summary>
+    /// <param name="t">the time to add to the timer</param>
     public void AddTime(float t)
     {
         if (Researching)

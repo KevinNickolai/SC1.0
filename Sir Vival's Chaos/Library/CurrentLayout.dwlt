@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 11}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -250,7 +250,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1007
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &12
 MonoBehaviour:
@@ -717,9 +717,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.49811065, y: -0.0044127405, z: 0.0025351283, w: -0.8670985}
   m_Size:
-    m_Target: 168.10246
+    m_Target: 228.7642
     speed: 2
-    m_Value: 168.10246
+    m_Value: 228.7642
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -829,7 +829,7 @@ MonoBehaviour:
     width: 849
     height: 250
   m_SearchFilter:
-    m_NameFilter: input
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -840,19 +840,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scripts/Engine/Selectables/Buildings
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/Engine/Selectables/Buildings
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Public\Documents\Unity Projects\SC1.0\Sir Vival's Chaos
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 000000001827000090270000f6270000fc2700007428000076280000c2280000ca280000e028000014290000682900009c290000a8290000b0290000d8290000e2290000f8290000082a0000402a00004e2a0000682a0000923000009430000096300000983000009a3000009c3000009e300000a0300000a2300000a4300000a6300000a8300000aa300000ac300000ae300000b0300000b2300000b4300000ffffff7f
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: a8280000
+    m_LastClickedID: 10408
+    m_ExpandedIDs: 000000001827000090270000f6270000fc2700007428000076280000c2280000ca280000e0280000142900009c290000a8290000b0290000d8290000e2290000f8290000082a0000402a00004e2a0000682a0000923000009430000096300000983000009a3000009c3000009e300000a0300000a2300000a4300000a6300000a8300000aa300000ac300000ae300000b0300000b2300000b4300000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -880,7 +880,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001827000090270000f6270000fc270000702800007428000076280000c2280000ca280000e028000014290000682900009c290000a8290000b0290000d8290000e2290000f8290000082a0000402a00004e2a0000682a0000923000009430000096300000983000009a3000009c3000009e300000a0300000a2300000a4300000a6300000a8300000aa300000ac300000ae300000b0300000b2300000b4300000
+    m_ExpandedIDs: 000000001827000090270000f6270000fc2700007428000076280000c2280000ca280000e0280000142900009c290000a8290000b0290000d8290000e2290000f8290000082a0000402a00004e2a0000682a0000923000009430000096300000983000009a3000009c3000009e300000a0300000a2300000a4300000a6300000a8300000aa300000ac300000ae300000b0300000b2300000b4300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -907,7 +907,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000fe4100000a3600004e2d0000c43b00001027000052510000d6d8f8ff16fefdff72b4ffffa470ffff984bffff923cfffffe35ffff342effff0a20ffff52d0feff6e9bfeffa43b0000c04d0000ce760000c6760000d401ffff00000000fe280000e4c1ffff3a4ffffff6f5feffcce4feff48380000ca2f00009c2900004828000024440000542700006a2700005e3f0000a8050000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
