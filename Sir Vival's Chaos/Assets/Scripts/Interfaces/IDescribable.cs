@@ -24,4 +24,5 @@ public interface IDescribable {
     DamageType DamageType { get; }
 
     Race.AttackUpgradeTypes AttackUpgradeType { get; }
+    Race.DefenseUpgradeTypes DefenseUpgradeType { get; }
 }

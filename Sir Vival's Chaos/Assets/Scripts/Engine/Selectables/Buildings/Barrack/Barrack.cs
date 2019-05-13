@@ -36,6 +36,8 @@ public class Barrack : LevelBuilding {
     {
         base.SetProperties(race, p);
 
+        SetStats(race.BarrackStats);
+
         wave = new List<GameObject>();
         wave.Add(race.MeleeUnit);
 

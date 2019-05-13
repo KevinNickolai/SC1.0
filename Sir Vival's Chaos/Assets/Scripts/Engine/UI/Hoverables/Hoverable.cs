@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that describes a Hoverable UI element
+/// </summary>
 public abstract class Hoverable : MonoBehaviour {
 
-    private void OnMouseDown()
+    protected virtual void OnMouseDown()
     {
         Debug.Log("Clicked Hoverable");
     }

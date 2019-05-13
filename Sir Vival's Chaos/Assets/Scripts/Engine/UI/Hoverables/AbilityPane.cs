@@ -3,85 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AbilityPane : Hoverable {
+public class AbilityPane : Pane {
 
-    public static Color FADED_PANE = new Color(1f, 1f, 1f, .4f);
-    public static Color SOLID_PANE = new Color(255f, 255f, 255f, 255f);
-    private void Start()
+    protected override void SetSprite()
     {
-        uiImage = gameObject.GetComponent<Image>();
-        startSprite = uiImage.sprite;
-    }
-
-    /// <summary>
-    /// Temporary sprite used as a filler for null ability sprites
-    /// </summary>
-    private Sprite startSprite;
-
-    /// <summary>
-    /// the image associated with this AbilityPane
-    /// </summary>
-    private Image uiImage;
-
-    /// <summary>
-    /// the ability this AbilityPane is displaying
-    /// </summary>
-    private Ability ability;
-
-    public Ability Ability
-    {
-        get
+        if (Ability)
         {
-            return ability;
-        }
-
-        set
-        {
-            ability = value;
-            SetSprite();
-        }
-    }
-    
-    protected virtual void SetSprite()
-    {
-        if (ability)
-        {
-            //set the image color based on the ability's activatable state.
-            uiImage.color = ability.IsActivatable ? SOLID_PANE : FADED_PANE;
-
-            //set the uiImage sprite to the ability sprite if it exists, or the starting ability pane sprite otherwise
-            uiImage.sprite = ability.Sprite ? ability.Sprite : startSprite;
+            if (Ability is LevelAbility && ((LevelAbility)Ability).Researching)
+            {
+                SetInactiveSprite();
+            }
+            else
+            {
+                SetActiveOrInactiveSprite();
+            }
         }
         else
         {
-            uiImage.color = FADED_PANE;
-            uiImage.sprite = startSprite;
+            SetBasicSprite();
         }
+
     }
 
-    protected override void OnMouseEnter()
+    /// <summary>
+    /// Called when the user clicks the collider attached to GameObject the AbilityPane is on
+    /// </summary>
+    protected override void OnMouseDown()
     {
-        //Display tooltip
-        //Debug.Log("Display Tooltip");
-        if (ability == null)
+        //if a non-null, activatable ability is clicked, process the interaction
+        if(Ability != null && Ability.IsActivatable)
         {
-            UIController.GetInstance().DisplayTooltip("Null Ability on: " + gameObject.name);
-        }
-        else
-        {
-            UIController.GetInstance().DisplayTooltip(ability.Tooltip);
-        }
-    }
-
-    protected virtual void OnMouseDown()
-    {
-        if(ability != null && ability.IsActivatable)
-        {
-            if(ability is CostedAbility)
+            //checking for associated costs of the ability
+            if(Ability is CostedAbility)
             {
 
             }
-            ((ActivatedAbility)ability).Activate();
+
+            //activate the ability
+            ((ActivatedAbility)Ability).Activate();
+
+            Redraw();
         }
     }
 }

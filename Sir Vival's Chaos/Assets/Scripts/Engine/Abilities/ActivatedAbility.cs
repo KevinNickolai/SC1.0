@@ -10,7 +10,7 @@ public abstract class ActivatedAbility : Ability {
     /// <summary>
     /// OnEnable initializes the instance when the instance is loaded
     /// </summary>
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         SetActivatable(true);
     }

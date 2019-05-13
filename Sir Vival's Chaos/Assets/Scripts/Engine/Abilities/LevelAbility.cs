@@ -6,6 +6,12 @@
 [CreateAssetMenu(fileName = "NewLevelAbility", menuName = "Abilities/Ability/LevelAbility", order = 1)]
 public class LevelAbility : CostedAbility {
 
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        researching = false;
+    }
     /// <summary>
     /// The ILevelable associated with this Leveling ability
     /// </summary>
@@ -35,7 +41,7 @@ public class LevelAbility : CostedAbility {
 
     private bool researching = false;
 
-    public bool Research
+    public bool Researching
     {
         get
         {
@@ -65,11 +71,17 @@ public class LevelAbility : CostedAbility {
         //levelable.LevelUp();
     }
 
+    private void OnResearchEnd()
+    {
+        researching = false;
+        SetActivatable(true);
+        UIController.GetInstance().RedrawAbilities();
+    }
+
     public void CompleteResearch()
     {
         levelable.LevelUp();
-        researching = false;
-        SetActivatable(true);
+        OnResearchEnd();
     }
 
     public override void SetLevelable(ILevelable b)
@@ -84,7 +96,6 @@ public class LevelAbility : CostedAbility {
 
     public void EndResearch()
     {
-        researching = false;
-        SetActivatable(true);
+        OnResearchEnd();
     }
 }

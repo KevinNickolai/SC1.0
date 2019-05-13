@@ -60,6 +60,7 @@ public class AbilityPanelManager : MonoBehaviour {
     {
         if (!abilities)
         {
+            ClearPanes();
             Debug.LogWarning("Null Ability List for currently selected building.");
             return;
         }
@@ -74,6 +75,17 @@ public class AbilityPanelManager : MonoBehaviour {
         for(int i = 0; i < panes.Length; ++i)
         {
             panes[i].Ability = null;
+        }
+    }
+
+    public void Redraw()
+    {
+        for(int i = 0; i < panes.Length; ++i)
+        {
+            if (panes[i].Ability)
+            {
+                panes[i].Redraw();
+            }
         }
     }
 

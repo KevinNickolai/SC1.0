@@ -30,9 +30,9 @@ MonoBehaviour:
   nexusAbilities: {fileID: 11400000, guid: 52c47f914cfad2a4983adde5371e01f3, type: 2}
   barrackAbilities: {fileID: 11400000, guid: 217a5c50b72dea44b91631ff6f0113a0, type: 2}
   towerAbilities: {fileID: 11400000, guid: 6c2958b6366c2db4fa41e242d678e62c, type: 2}
-  nexusStats: {fileID: 0}
-  barrackStats: {fileID: 0}
-  towerStats: {fileID: 0}
+  nexusStats: {fileID: 11400000, guid: aeefcfb50e6bffe4f97bfd231d09da07, type: 2}
+  barrackStats: {fileID: 11400000, guid: 6436677b998d09c4fa529c9625365043, type: 2}
+  towerStats: {fileID: 11400000, guid: e3cbfc679e32bb6449f819d70b189844, type: 2}
   rangeUnit: {fileID: 0}
   siegeUnit: {fileID: 0}
   airUnit: {fileID: 0}

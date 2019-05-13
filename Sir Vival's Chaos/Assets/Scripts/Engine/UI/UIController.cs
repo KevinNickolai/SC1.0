@@ -218,7 +218,7 @@ public class UIController : MonoBehaviour {
             obj.AttackUpgradeType
             )
             .Level.ToString();
-        defLevel.text = obj.Player.Race.ArmorUpgrade.Level.ToString();
+        defLevel.text = obj.Player.Race.GetDefenseUpgrade(obj.DefenseUpgradeType).Level.ToString();
     }
 
     /// <summary>
@@ -335,7 +335,6 @@ public class UIController : MonoBehaviour {
         DisplayTooltip(objDisplayed.ArmorType.GetMatchupTooltip());
     }
 
-
     /// <summary>
     /// Hide the tooltip
     /// </summary>
@@ -351,5 +350,10 @@ public class UIController : MonoBehaviour {
     public void SetAbilityPanes(AbilityList list)
     {
         AbilityPanelManager.GetInstance().SetPanes(list);
+    }
+
+    public void RedrawAbilities()
+    {
+        AbilityPanelManager.GetInstance().Redraw();
     }
 }

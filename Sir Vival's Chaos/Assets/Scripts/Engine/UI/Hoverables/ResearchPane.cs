@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class ResearchPane : AbilityPane {
+public class ResearchPane : Pane {
 
     [SerializeField]
     private int queuePosition = 0;
@@ -15,6 +15,19 @@ public class ResearchPane : AbilityPane {
         }
     }
 
+    protected override void SetSprite()
+    {
+        if (Ability)
+        {
+            SetActiveSprite();
+        }
+        else
+        {
+            SetBasicSprite();
+        }
+
+    }
+
     /// <summary>
     /// OnMouseDown for a ResearchPane indicates that the user is trying to cancel the given research
     /// </summary>
@@ -24,6 +37,7 @@ public class ResearchPane : AbilityPane {
         {
             ((LevelAbility)Ability).Building.CancelResearch(queuePosition);
             UIController.GetInstance().Redraw();
+            UIController.GetInstance().RedrawAbilities();
         }
     }
 }

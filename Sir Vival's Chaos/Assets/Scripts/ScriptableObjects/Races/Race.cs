@@ -65,31 +65,31 @@ public class Race : ScriptableObject {
     /// <summary>
     /// The melee upgrade for the race
     /// </summary>
-    [SerializeField][ReadOnly]
+    [SerializeField]//[ReadOnly]
     private AttackUpgrade meleeUpgr;
 
     /// <summary>
     /// The range upgrade for the race
     /// </summary>
-    [SerializeField][ReadOnly]
+    [SerializeField]//[ReadOnly]
     private AttackUpgrade gateUpgr;
 
     /// <summary>
     /// The mage upgrade for the race
     /// </summary>
-    [SerializeField][ReadOnly]
+    [SerializeField]//[ReadOnly]
     private MageUpgrade mageUpgr;
 
     /// <summary>
     /// The armor upgrade for the race
     /// </summary>
-    [SerializeField][ReadOnly]
+    [SerializeField]//[ReadOnly]
     private DefenseUpgrade armorUpgr;
 
     /// <summary>
     /// The fort upgrade for the race
     /// </summary>
-    [SerializeField][ReadOnly]
+    [SerializeField]//[ReadOnly]
     private DefenseUpgrade fortUpgr;
 
     /// <summary>
@@ -210,6 +210,30 @@ public class Race : ScriptableObject {
 
     [SerializeField]
     private Stats towerStats;
+
+    public Stats NexusStats
+    {
+        get
+        {
+            return nexusStats;
+        }
+    }
+
+    public Stats BarrackStats
+    {
+        get
+        {
+            return barrackStats;
+        }
+    }
+
+    public Stats TowerStats
+    {
+        get
+        {
+            return towerStats;
+        }
+    }
 
     #endregion
 

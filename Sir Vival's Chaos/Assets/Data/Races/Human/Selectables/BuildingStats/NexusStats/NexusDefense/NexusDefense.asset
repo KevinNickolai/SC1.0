@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: {fileID: 11400000, guid: 4b7f0a2025c31b043a19dadaf0c5ac00, type: 2}
   armor: {fileID: 11400000, guid: a006aa4ee14f77943b99886da629076d, type: 2}
-  upgrade: {fileID: 0}
+  defUpgr: 1

@@ -26,6 +26,11 @@ public abstract class Selectable : MonoBehaviour, IDescribable {
         this.player = p;
     }
 
+    protected void SetStats(Stats s)
+    {
+        stats = s;
+    }
+
     /// <summary>
     /// The player that owns this selectable
     /// </summary>
@@ -113,6 +118,17 @@ public abstract class Selectable : MonoBehaviour, IDescribable {
         get
         {
             return stats.Attack.AttackUpgrade;
+        }
+    }
+
+    /// <summary>
+    /// DefenseUpgradeType of the selectable object
+    /// </summary>
+    public Race.DefenseUpgradeTypes DefenseUpgradeType
+    {
+        get
+        {
+            return stats.Defense.DefenseUpgradeType;
         }
     }
 }

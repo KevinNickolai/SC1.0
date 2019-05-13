@@ -13,5 +13,6 @@ public class NexusAbilityList : AbilityList {
     public const int MELEE_UPGRADE = 4;
     public const int RANGE_UPGRADE = 5;
     public const int ARMOR_UPGRADE = 6;
+    public const int FORT_UPGRADE = 7;
 
 }

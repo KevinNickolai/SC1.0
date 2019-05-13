@@ -20,11 +20,15 @@ public class Nexus : LevelBuilding {
 
         this.abilities = race.NexusAbilities;
 
+        SetStats(race.NexusStats);
+
         foreach(Ability a in race.NexusAbilities)
         {
             if(a != null)
                 a.SetBuilding(this);
         }
+
+        
 
         //set the levelables for the nexus abilities
         abilities[NexusAbilityList.BUILDING_UPGRADE].SetLevelable(this);
@@ -36,5 +40,7 @@ public class Nexus : LevelBuilding {
         abilities[NexusAbilityList.RANGE_UPGRADE].SetLevelable(race.GateUpgrade);
 
         abilities[NexusAbilityList.ARMOR_UPGRADE].SetLevelable(race.ArmorUpgrade);
+
+        abilities[NexusAbilityList.FORT_UPGRADE].SetLevelable(race.FortUpgrade);
     }   
 }

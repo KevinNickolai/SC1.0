@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b774d51a26f15449f42330b9ca5e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 6436677b998d09c4fa529c9625365043, type: 2}
+  stats: {fileID: 0}
   buildingSet: {fileID: 11400000, guid: ff7efe7b62de70445a34aa266c070cb1, type: 2}
   abilities: {fileID: 0}
 --- !u!1 &327431448
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3495881509fe505439eca6ae6b000b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: e3cbfc679e32bb6449f819d70b189844, type: 2}
+  stats: {fileID: 0}
   buildingSet: {fileID: 11400000, guid: ff7efe7b62de70445a34aa266c070cb1, type: 2}
   abilities: {fileID: 0}
 --- !u!1 &361508762
@@ -956,6 +956,7 @@ GameObject:
   - component: {fileID: 415335783}
   - component: {fileID: 415335785}
   - component: {fileID: 415335784}
+  - component: {fileID: 415335786}
   m_Layer: 0
   m_Name: Research Timer
   m_TagString: Untagged
@@ -978,8 +979,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 5}
-  m_SizeDelta: {x: 25, y: 18}
+  m_AnchoredPosition: {x: 3, y: 5}
+  m_SizeDelta: {x: 28, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &415335784
 MonoBehaviour:
@@ -1020,6 +1021,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 415335782}
+--- !u!114 &415335786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415335782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &429524500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1142,7 @@ GameObject:
   - component: {fileID: 471355266}
   - component: {fileID: 471355268}
   - component: {fileID: 471355267}
+  - component: {fileID: 471355269}
   m_Layer: 0
   m_Name: Research Total Time
   m_TagString: Untagged
@@ -1149,8 +1165,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: 5}
-  m_SizeDelta: {x: 25, y: 18}
+  m_AnchoredPosition: {x: 37, y: 5}
+  m_SizeDelta: {x: 28, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &471355267
 MonoBehaviour:
@@ -1191,6 +1207,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 471355265}
+--- !u!114 &471355269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 471355265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &523650446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3495881509fe505439eca6ae6b000b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: e3cbfc679e32bb6449f819d70b189844, type: 2}
+  stats: {fileID: 0}
   buildingSet: {fileID: 11400000, guid: ff7efe7b62de70445a34aa266c070cb1, type: 2}
   abilities: {fileID: 0}
 --- !u!224 &652199188 stripped
@@ -1558,7 +1588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eaa4e02e5021854cae74d25d8d29ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 6436677b998d09c4fa529c9625365043, type: 2}
+  stats: {fileID: 0}
   buildingSet: {fileID: 11400000, guid: ff7efe7b62de70445a34aa266c070cb1, type: 2}
   abilities: {fileID: 0}
 --- !u!1 &705496299
@@ -1656,7 +1686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d89143bb8c47b64ab2efe1f85659f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 636b0b7ed4fced94d8ac94916a1dcb41, type: 2}
+  stats: {fileID: 0}
   buildingSet: {fileID: 11400000, guid: ff7efe7b62de70445a34aa266c070cb1, type: 2}
   abilities: {fileID: 0}
 --- !u!1 &736473968
@@ -3899,6 +3929,7 @@ GameObject:
   - component: {fileID: 1275193526}
   - component: {fileID: 1275193528}
   - component: {fileID: 1275193527}
+  - component: {fileID: 1275193529}
   m_Layer: 0
   m_Name: Research Time Separate
   m_TagString: Untagged
@@ -3963,6 +3994,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1275193525}
+--- !u!114 &1275193529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275193525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1428780254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4155,7 +4200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3495881509fe505439eca6ae6b000b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: e3cbfc679e32bb6449f819d70b189844, type: 2}
+  stats: {fileID: 0}
   buildingSet: {fileID: 11400000, guid: ff7efe7b62de70445a34aa266c070cb1, type: 2}
   abilities: {fileID: 0}
 --- !u!1 &1489461874
@@ -4601,7 +4646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3495881509fe505439eca6ae6b000b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: e3cbfc679e32bb6449f819d70b189844, type: 2}
+  stats: {fileID: 0}
   buildingSet: {fileID: 11400000, guid: ff7efe7b62de70445a34aa266c070cb1, type: 2}
   abilities: {fileID: 0}
 --- !u!1 &1653132280
@@ -5173,7 +5218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb92209a6cc09648a7ad1462b8019f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 6436677b998d09c4fa529c9625365043, type: 2}
+  stats: {fileID: 0}
   buildingSet: {fileID: 11400000, guid: ff7efe7b62de70445a34aa266c070cb1, type: 2}
   abilities: {fileID: 0}
 --- !u!1 &1734443779
@@ -5875,8 +5920,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42.5, y: 30}
-  m_SizeDelta: {x: 55, y: 12}
+  m_AnchoredPosition: {x: -40, y: 30}
+  m_SizeDelta: {x: 60, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1930147178
 MonoBehaviour:

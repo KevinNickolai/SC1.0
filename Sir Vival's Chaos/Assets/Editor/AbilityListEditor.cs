@@ -16,12 +16,23 @@ public class AbilityListDrawer : Editor
 
     public override void OnInspectorGUI()
     {
+        //update the object with any potentially unrepresented changes made to it
         serializedObject.Update();
 
-            for(int i = 0; i < soAbilityList.arraySize; ++i)
-            {
-                EditorGUILayout.PropertyField(soAbilityList.GetArrayElementAtIndex(i));
-            }
+        //start the check for serialized object changes
+        EditorGUI.BeginChangeCheck();
+
+        for(int i = 0; i < soAbilityList.arraySize; ++i)
+        {
+            EditorGUILayout.PropertyField(soAbilityList.GetArrayElementAtIndex(i));
+        }
+
+        //apply changed properties if anything was changed on the serialized object
+        if (EditorGUI.EndChangeCheck())
+        {
+            serializedObject.ApplyModifiedProperties();
+        }
+        
         //label = EditorGUI.BeginProperty(position, label, property);
         //EditorGUI.PropertyField(position, property, label, true);
 
