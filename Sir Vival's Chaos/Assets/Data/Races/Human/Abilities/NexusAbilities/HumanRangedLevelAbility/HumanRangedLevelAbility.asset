@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b5230bcb76da94f85d87da63c27122, type: 3}
   m_Name: HumanRangedLevelAbility
   m_EditorClassIdentifier: 
+  name: 
   tooltip: {fileID: 11400000, guid: 946644c5ca0f0d14e90955a039e5a7d4, type: 2}
-  sprite: {fileID: 0}
-  cost: 0
+  sprite: {fileID: 21300000, guid: dfa698b623ee5174f9956b07f1aae4f5, type: 3}
+  cost: 200
   costType: 0
   researchTime: 5

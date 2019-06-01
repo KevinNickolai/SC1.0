@@ -26,6 +26,7 @@ public class LevelAbility : CostedAbility {
             return building;
         }
     }
+
     /// <summary>
     /// AbilityLevel Constructor
     /// </summary>

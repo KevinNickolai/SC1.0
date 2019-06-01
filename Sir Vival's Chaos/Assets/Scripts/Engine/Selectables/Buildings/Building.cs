@@ -93,9 +93,16 @@ public abstract class Building : Selectable, IResearcher {
     /// </summary>
     /// <param name="relativePosition">the position of the object in the queue</param>
     /// <returns>true if the research was properly cancelled</returns>
-    public bool CancelResearch(int relativePosition)
+    public bool CancelResearch(int relativePosition, LevelAbility ability)
     {
-        return researcher.CancelResearch(relativePosition);
+        bool cancelled = researcher.CancelResearch(relativePosition);
+
+        if (cancelled)
+        {
+            this.Player.GiveGold((int)System.Math.Floor(ability.Cost * .75));
+        }
+
+        return cancelled;
     }
 
     /// <summary>
@@ -105,7 +112,21 @@ public abstract class Building : Selectable, IResearcher {
     /// <return>true if the researcher is able to research the LevelAbility at this time</return>
     public bool Research(LevelAbility toResearch)
     {
-        return researcher.Research(toResearch);
+        bool startedResearch = false;
+        if (CanPay(toResearch.Cost, toResearch.TypeOfCost))
+        {
+            startedResearch = researcher.Research(toResearch);
+
+            if (startedResearch)
+            {
+                Pay(toResearch.Cost, toResearch.TypeOfCost);
+            }
+        }
+        else
+        {
+            UIController.GetInstance().DisplayMessage("Not enough gold");
+        }
+        return startedResearch;
     }
 
     /// <summary>
@@ -117,6 +138,45 @@ public abstract class Building : Selectable, IResearcher {
         {
             return researcher.Researching;
         }
+    }
+
+    private void Pay(int cost, CostedAbility.CostType type)
+    {
+        switch (type)
+        {
+            case CostedAbility.CostType.GOLD:
+                this.Player.Pay(cost);
+                break;
+
+            case CostedAbility.CostType.MANA:
+                throw new System.NotImplementedException("Buildings cannot pay manacosts yet.");
+                break;
+
+            default:
+                throw new System.NotImplementedException("Cost type '" + type + "' not implemented yet.");
+        }
+    }
+
+    private bool CanPay(int cost, CostedAbility.CostType type)
+    {
+        switch (type)
+        {
+            case CostedAbility.CostType.GOLD:
+                if(this.Player.Gold >= cost)
+                {
+                    return true;
+                }
+                break;
+
+            case CostedAbility.CostType.MANA:
+                throw new System.NotImplementedException("Mana Not implemented yet.");
+                break;
+
+            default:
+                throw new System.NotImplementedException("Cost Type '" + type + "' not implemented.");
+        }
+
+        return false;
     }
 
     /// <summary>

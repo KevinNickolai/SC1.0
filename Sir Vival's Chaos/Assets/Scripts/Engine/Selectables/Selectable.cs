@@ -131,4 +131,12 @@ public abstract class Selectable : MonoBehaviour, IDescribable {
             return stats.Defense.DefenseUpgradeType;
         }
     }
+
+    public Mana Mana
+    {
+        get
+        {
+            return ((CasterStats)stats).Mana;
+        }
+    }
 }

@@ -21,7 +21,6 @@ public class Researcher
         }
     }
 
-
     public bool Researching
     {
         get
@@ -37,7 +36,6 @@ public class Researcher
             return queue;
         }
     }
-
 
     public class ResearchQueue
     {
@@ -121,7 +119,7 @@ public class Researcher
         /// Remove an item at a relative position within the queue
         /// </summary>
         /// <param name="relativePosition">the relative position of the item to remove from the 0-indexed queue</param>
-        /// <returns>true if the item was successfully removed, false otherwise</returns>
+        /// <returns>the LevelAbility removed</returns>
         public bool Remove(int relativePosition)
         {
             //check if it's possible to remove an element at a position within our current array bounds
@@ -133,7 +131,7 @@ public class Researcher
                 --size;
 
                 //move items up in the queue, starting from the position of the removal
-                for (int i = relativePosition; i < size; ++i)
+                for(int i = relativePosition; i < size; ++i)
                 {
                     queue[i] = queue[i + 1];
                 }
@@ -222,7 +220,6 @@ public class Researcher
             return true;
         }
         return false;
-        //return queue.Remove(position);
     }
 
     /// <summary>
@@ -245,11 +242,10 @@ public class Researcher
     }
 }
 
-
 public interface IResearcher : IAbilityUsable {
     bool Research(LevelAbility toResearch);
 
-    bool CancelResearch(int relativePosition);
+    bool CancelResearch(int relativePosition, LevelAbility cancelledAbility);
 
     bool Researching { get; }
 

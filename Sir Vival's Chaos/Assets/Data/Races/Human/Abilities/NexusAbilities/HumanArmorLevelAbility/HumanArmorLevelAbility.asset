@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b5230bcb76da94f85d87da63c27122, type: 3}
   m_Name: HumanArmorLevelAbility
   m_EditorClassIdentifier: 
+  name: 
   tooltip: {fileID: 11400000, guid: 6c13cd99290a9b044a2126bff488ba79, type: 2}
-  sprite: {fileID: 0}
-  cost: 0
+  sprite: {fileID: 21300000, guid: 9be4b0655434d3447a46d96fff5b0f1b, type: 3}
+  cost: 300
   costType: 0
   researchTime: 20

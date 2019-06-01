@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -95,6 +93,15 @@
     <Compile Include="Assets\Scripts\Engine\Abilities\RepairAbility.cs" />
     <Compile Include="Assets\Scripts\Engine\Abilities\SpawnAbility.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\AssetCopier.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\GameEvent\ArgumentEvents\Events\ArgumentGameEvent.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\GameEvent\ArgumentEvents\Events\IntArgGameEvent.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\GameEvent\ArgumentEvents\Events\StringArgGameEvent.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\GameEvent\ArgumentEvents\IntArgUnityEvent.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\GameEvent\ArgumentEvents\Listeners\ArgumentGameEventListener.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\GameEvent\ArgumentEvents\Listeners\IntArgGameEventListener.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\GameEvent\ArgumentEvents\Listeners\StringArgGameEventListener.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\GameEvent\GameEvent.cs" />
+    <Compile Include="Assets\Scripts\Engine\Developer Tools\GameEvent\GameEventListener.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\ListWrappers\FloatListWrapper.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\ListWrappers\IntListWrapper.cs" />
     <Compile Include="Assets\Scripts\Engine\Developer Tools\ListWrappers\ListWrapper.cs" />

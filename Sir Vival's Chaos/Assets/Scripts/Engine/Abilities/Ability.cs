@@ -9,6 +9,9 @@ using UnityEngine;
 /// </summary>
 public abstract class Ability : ScriptableObject{
 
+    [SerializeField]
+    private new string name;
+
     /// <summary>
     /// flag indicating if the ability is activatable or not
     /// readonly indicates this is known when the object is created,

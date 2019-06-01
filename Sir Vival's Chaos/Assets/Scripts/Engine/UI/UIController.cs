@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,9 @@ public class UIController : MonoBehaviour {
     private static UIController instance;
 
     #region Constant Text Object names
+
+    private const string GOLD_TEXT = "Gold";
+
     private const string TIMER_NAME = "Timer";
     private const string RESEARCH_TIMER_TEXT = "Research Timer";
     private const string RESEARCH_TOTAL_TIME_TEXT = "Research Total Time";
@@ -32,9 +36,14 @@ public class UIController : MonoBehaviour {
     private const string INTELLIGENCE = "Intelligence";
 
     private const string RESEARCH_PANEL = "Research Panel";
+
+    private const string MESSAGE_PANEL = "Message Panel";
+    private const string MESSAGE_BODY = "Message Body";
     #endregion
 
     #region Text and Image variables
+    private Text goldText;
+
     private Text gameTimerText;
     private Text researchTimerText;
     private Text researchTotalTimeText;
@@ -54,6 +63,8 @@ public class UIController : MonoBehaviour {
 
     private Text atkLevel;
     private Text defLevel;
+
+    private Text messageText;
     #endregion
 
     /// <summary>
@@ -76,6 +87,8 @@ public class UIController : MonoBehaviour {
     /// </summary>
     private TooltipManager tooltipManager;
 
+    private GameObject messagePanel;
+
     GameController gc;
 
     /// <summary>
@@ -97,8 +110,17 @@ public class UIController : MonoBehaviour {
         return instance;
     }
 
-	// Use this for initialization
-	void Start () {
+    ///// <summary>
+    ///// Update the UI gold text
+    ///// </summary>
+    ///// <param name="amount"></param>
+    //public void UpdateGold(int amount)
+    //{
+    //    goldText.text = amount.ToString();
+    //}
+
+    // Use this for initialization
+    void Start () {
         //relation to GameController
         gc = GameObject.FindObjectOfType<GameController>();
 
@@ -112,6 +134,11 @@ public class UIController : MonoBehaviour {
         statsPanel = GameObject.Find(STATS_PANEL);
         attrPanel = GameObject.Find(ATTR_PANEL);
         researchPanel = GameObject.Find(RESEARCH_PANEL);
+        messagePanel = GameObject.Find(MESSAGE_PANEL);
+
+        messageText = GameObject.Find(MESSAGE_BODY).GetComponent<Text>();
+
+        //goldText = GameObject.Find(GOLD_TEXT).GetComponent<Text>();
 
         //timer text object
         gameTimerText = GameObject.Find(TIMER_NAME).GetComponent<Text>();
@@ -143,6 +170,7 @@ public class UIController : MonoBehaviour {
         //attack/defense level text objects
         atkLevel = GameObject.Find(ATK_LEVEL).GetComponent<Text>();
         defLevel = GameObject.Find(DEF_LEVEL).GetComponent<Text>();
+
     }
 
     // Update is called once per frame
@@ -342,6 +370,39 @@ public class UIController : MonoBehaviour {
     {
         tooltipManager.HideTooltip();
     }
+
+    #region Messages
+    Coroutine fade;
+
+    public void DisplayMessage(string message)
+    {
+        if (fade != null)
+        {
+            StopCoroutine(fade);
+        }
+
+        messagePanel.SetActive(true);
+        messageText.text = message;
+        fade = StartCoroutine(Fade());
+
+    }
+
+    IEnumerator Fade()
+    {
+        for (float f = 1f; f >= 0; f -= 0.005f)
+        {
+            Color c = messageText.GetComponent<CanvasRenderer>().GetColor();
+
+            c.a = f;
+
+            messageText.GetComponent<CanvasRenderer>().SetColor(c);
+            messagePanel.GetComponent<CanvasRenderer>().SetColor(c);
+            yield return null;
+        }
+
+        messagePanel.SetActive(false);
+    }
+    #endregion
 
     /// <summary>
     /// Set the ability panes for the currently selected object

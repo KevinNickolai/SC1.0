@@ -15,4 +15,6 @@ public class Mana : ScriptableObject{
             return maxMana.Value;
         }
     }
+
+
 }

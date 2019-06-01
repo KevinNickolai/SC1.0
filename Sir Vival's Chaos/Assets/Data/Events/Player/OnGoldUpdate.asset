@@ -8,11 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b5230bcb76da94f85d87da63c27122, type: 3}
-  m_Name: HumanFortLevelAbility
+  m_Script: {fileID: 11500000, guid: f7b53ee9ead8cb6438eb10267359f8ef, type: 3}
+  m_Name: OnGoldUpdate
   m_EditorClassIdentifier: 
-  tooltip: {fileID: 0}
-  sprite: {fileID: 0}
-  cost: 500
-  costType: 0
-  researchTime: 8

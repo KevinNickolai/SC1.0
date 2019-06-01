@@ -35,7 +35,9 @@ public class ResearchPane : Pane {
     {
         if (Ability != null)
         {
-            ((LevelAbility)Ability).Building.CancelResearch(queuePosition);
+            LevelAbility clicked = (LevelAbility)Ability;
+
+            clicked.Building.CancelResearch(queuePosition, clicked);
             UIController.GetInstance().Redraw();
             UIController.GetInstance().RedrawAbilities();
         }

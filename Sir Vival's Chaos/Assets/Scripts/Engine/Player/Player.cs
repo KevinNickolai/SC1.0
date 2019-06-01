@@ -1,8 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class Player : MonoBehaviour {
+
+    int income = 500;
+
+    [SerializeField]
+    private StringArgGameEventListener.StringArgUnityEvent GoldEvent;
 
     /// <summary>
     /// Test ScriptableObject Race
@@ -13,7 +19,7 @@ public class Player : MonoBehaviour {
     /// <summary>
     /// The player's gold
     /// </summary>
-    private int gold;
+    private int gold = 0;
 
     /// <summary>
     /// The player's gold
@@ -89,5 +95,22 @@ public class Player : MonoBehaviour {
         //add Player input controls to the camera
         Camera.main.gameObject.AddComponent<InputControls>();
     }
-    
+
+    public void GiveIncome()
+    {
+        GiveGold(income);
+    }
+
+    public void GiveGold(int amount)
+    {
+        gold += amount;
+        GoldEvent.Invoke(gold.ToString());
+        //UIController.GetInstance().UpdateGold(gold);
+    }
+
+    public void Pay(int cost)
+    {
+        gold -= cost;
+        GoldEvent.Invoke(gold.ToString());
+    }
 }
